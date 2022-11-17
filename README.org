@@ -1,0 +1,22 @@
+#+title: README
+
+このリポジトリでは、私、こなゆき(a.k.a. p-snow)が発表する文章を管理しています。
+
+* テキストの管理について
+:PROPERTIES:
+:CREATED:  [2022-11-16 Wed 18:44]
+:END:
+
+文章は「文芸的執筆」の手法を用いて管理しています。
+
+
+* 各ディレクトリの説明
+:PROPERTIES:
+:CREATED:  [2022-11-16 Wed 18:42]
+:END:
+
+- [[file:sources][sources]]
+
+* テキスト抽出方法
+: $ make tangle
+OSにEmacsがインストールされている必要があります(Ver.27.2以上を推奨)
