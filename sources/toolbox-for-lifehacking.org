@@ -90,7 +90,7 @@
 : ../public/ライフハックの道具箱2021年版/emacs.txt
 
 現在の文字数
-#+begin_src shell :tangle no :noweb yes
+#+begin_src shell :tangle no :noweb yes :exports results
   wc -m <<output-emacs()>>
 #+end_src
 

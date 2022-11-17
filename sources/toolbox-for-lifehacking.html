@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ライフハックの道具箱</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">ライフハックの道具箱</h1>
+<p>
+書籍『ライフハックの道具箱 2022年版』に投稿する文章
+</p>
+
+<div id="outline-container-org5c6874d" class="outline-2">
+<h2 id="org5c6874d">『ライフハックの道具箱』プロジェクト</h2>
+<div class="outline-text-2" id="text-org5c6874d">
+<p>
+『ライフハックの道具箱』は倉下忠憲(<a href="https://twitter.com/rashita2">@rashita2</a>)さんが編集する、ライフハックに関連するツールを紹介する書籍。
+年刊誌の側面もあり、毎年年末にその年に話題となったツール情報も入れ込んでアップデートされた内容を「20xx年版」と銘打ってkindle形式で販売している。
+初版となる2020年版は倉下さんが自身で執筆し、次版の2021年版では数名のツール利用者がそれぞれ自身の愛用するツールについての紹介文を寄稿した。自分はこの2021年版で<a href="https://twitter.com/rashita2/status/1455052352340127744">手を挙げて</a>テキストエディタ「Emacs」とアウトライナー「Org-mode」の記事を投稿した。
+</p>
+
+<ul class="org-ul">
+<li>2020年版
+<ul class="org-ul">
+<li><a href="https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2020%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B08RRQ4ZXS">Amazon.co.jp: ライフハックの道具箱 2020年版 eBook : 倉下忠憲: 本</a></li>
+</ul></li>
+<li>2021年版
+<ul class="org-ul">
+<li><a href="https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2021%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B09P1LHDPY">ライフハックの道具箱 2021年版 | 倉下忠憲, PADAone, ゆうびんや, こなゆき, Tak., 大橋悦夫 | 実践経営・リーダーシップ | Kindleストア | Amazon</a></li>
+<li><a href="https://rashita.net/blog/?p=30836">『ライフハックの道具箱 2021年版』プロジェクト始動 | R-style</a></li>
+<li><a href="https://rashita.net/blog/?tag=%E3%80%8E%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2021%E5%B9%B4%E7%89%88%E3%80%8F">『ライフハックの道具箱 2021年版』 | R-style</a></li>
+<li><p>
+<a href="https://note.com/rashita/n/n227a80a2446d">『ライフハックの道具箱』について/セッション・ライティング/定期連絡の効用｜倉下忠憲｜note</a>
+■先へ先への誘惑
+</p>
+<blockquote>
+<p>
+「ライフハック」は、いわゆるアーリーアダプターが多く、新しいツールに興味関心を持ち、その情報を多くの人に共有する姿勢を持っています。素晴らしい姿勢です。しかし、彼らのそうした性質は、「通り過ぎてしまったもの」の扱いを軽くしてしまいます。
+</p>
+
+<p>
+新機能が発表されないツールは見向きもされず、日常に溶け込んでしまって何を工夫しているのかも自分では忘れてしまっている話題はわざわざ記事に起こすことをしないのです。
+</p>
+
+<p>
+結果、最新の更新ばかりが目に入るタイムラインでは、「新しいツールの新しい機能」のことばかりが目に留まります。反面、長く使っていてほぼ安定軌道に入っているツールの話題はすっかり抜け落ちるのです。これはいびつでしょう。
+</p>
+
+<p>
+&#x2026;
+</p>
+
+<p>
+新しい情報を追い求めるライフハッカーは、そうした定番情報を抜け落としてきたと言えるでしょうし、Googleの「新しい情報ほど評価する」姿勢にすっかり飼いならされてしまったと言えるかもしれません。
+</p>
+</blockquote></li>
+</ul></li>
+<li>2022年版
+<ul class="org-ul">
+<li><a href="https://rashita.net/blog/?p=31179">『ライフハックの道具箱 2022年版』プロジェクト始動 | R-style</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa99c73" class="outline-2">
+<h2 id="orgaa99c73">投稿する原稿</h2>
+<div class="outline-text-2" id="text-orgaa99c73">
+<ul class="org-ul">
+<li><p>
+担当セクション
+書籍中で自分が担当する節は以下
+</p>
+<ul class="org-ul">
+<li><a href="#org1163174">Emacs</a></li>
+<li><a href="#org7269bf5">Org-mode</a></li>
+</ul>
+<p>
+それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
+</p></li>
+
+<li>原稿のレギュレーション
+<a href="https://rashita.net/blog/?p=31179">プロジェクト始動宣言ページ</a>の最後の方に記載あり
+<ul class="org-ul">
+<li>文字数: 2,000字前後</li>
+<li>文体:「です、ます」</li>
+<li>締め切り: 2022年11月いっぱい</li>
+</ul></li>
+
+<li>想定読者 (個人的な判断)
+日本のいわゆる「ライフハック」クラスタ、またこの分野に興味のある層
+<ul class="org-ul">
+<li>PC利用スキルは標準
+→ 極力、平易な言葉を使用</li>
+<li>Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討</li>
+</ul></li>
+</ul>
+
+<p>
+用語統一 :: 文章内の表記ゆれ対策
+</p>
+<ul class="org-ul">
+<li>Org-mode</li>
+<li id="パソコン">not PC、コンピュータ</li>
+<li id="MacOS">本書ではmacOSではない</li>
+</ul>
+
+<p>
+『道具箱』提出用ファイルの保存ディレクトリ
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="org4cfa7a3">(file-relative-name
+ (expand-file-name "../public/ライフハックの道具箱2021年版" ".")
+ default-directory)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1163174" class="outline-3">
+<h3 id="org1163174">Emacsセクション</h3>
+<div class="outline-text-3" id="text-org1163174">
+<p>
+アウトプットファイル (提出用)
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="org5c49c1c">(file-relative-name
+ (file-name-concat "../public/ライフハックの道具箱2021年版" "emacs.txt")
+ default-directory)
+</pre>
+</div>
+
+<p>
+現在の文字数
+</p>
+<pre class="example">
+1567 ../public/ライフハックの道具箱2021年版/emacs.txt
+</pre>
+
+
+<p>
+文法チェック
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">cat "../public/ライフハックの道具箱2021年版/emacs.txt" | textlint --stdin --config ../textlintrc  | cat -
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org4310fa8" class="outline-4">
+<h4 id="org4310fa8">イントロ</h4>
+<div class="outline-text-4" id="text-org4310fa8">
+<div class="org-src-container">
+<pre class="src src-text">Emacsは、パソコン上で動作するテキストエディタです。Windows・MacOS・Linux版のアプリケーションが公式サイトからダウンロード可能で、無料で利用することができます。
+
+文章執筆からプログラミング作成まで、テキストデータを扱う作業であればほぼすべてのケースに対応できるエディタです。キーボードのためのエディタという側面もあり、メニュー選択などのEmacs内のすべての機能がキーボードだけで操作可能です。数多く用意されているキーボードショートカットを駆使すれば、極めて快適な編集作業がおこなえます。
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-text">一般的なテキストエディタと比べてEmacsが際立っている点は、テキスト編集以外の機能も充実していることでしょう。その一例を挙げると、Webブラウザ・RSSリーダなどの情報をインプットするための機能、メール・チャット・Twitterなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。通常のテキストエディタが文章やコードを生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。インプットからアウトプットまでのプロセスをEmacsという一つのツールで完結できるので、データの移動やコピー、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
+
+さらにEmacsには、ユーザの好みに合わせて自由にカスタマイズできるという特性があります。カスタマイズできる項目は、各部の色やフォントなどUIの基本的な要素から、キーボードショートカット、各機能の動作を決定する調整値などで、実に幅広くまたその数は膨大です。そのうえEmacs Lispというプログミング言語を使えば、Emacsが提供するさまざまな機能を自在に組み合わせて使うことができ、自分の生産活動に特化した至福の環境をつくることができます。
+
+Emacsを快適に使えるようになるためには、その特異なキー操作に慣れたり、設定言語であるEmacs Lispをある程度は理解して書けるようになることが望ましいでしょう。使い方を学んでいく上では、Emacs内蔵の充実したマニュアルが役に立ちます。また世界中の多数のユーザから、掲示板・動画・SNS・メーリングリストなどのメディアを通してノウハウを手に入れることもできます。さらに近年では、あらかじめ特定の目的のための設定が施されたSpacemacsなどのスターターキットが登場し、初期ユーザの学習コストを抑えてEmacsを利用開始できる方法として注目を集めています。
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0bf6bef" class="outline-4">
+<h4 id="org0bf6bef">オープンソース</h4>
+<div class="outline-text-4" id="text-org0bf6bef">
+<div class="org-src-container">
+<pre class="src src-text">Emacsは長い間オープンソースソフトウェア(OSS)として開発されてきました。オープンソースとは、主に有志が開発を行い、ソースコードはネット上で公開され、誰でも自由に利用できるソフトウェアを生み出す体制のことです。この意味で企業が主体となって開発する製品ソフトウェアとは異なる性質をもちます。製品ソフトウェアは、企業の経営判断によって開発が終了するといった事態が起こりえますが、OSSではそのようなことはありません。もちろんOSSであっても、開発者や利用者が離れていくことによりプロジェクトが衰退や消滅するケースはあります。しかしEmacsには、長年にわたって育まれた層の厚いコミュニティがあり、現在でも活発に活動していることから、数年のうちに消滅するといった心配は無用でしょう。
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge34aa88" class="outline-4">
+<h4 id="orge34aa88">アウトロ</h4>
+<div class="outline-text-4" id="text-orge34aa88">
+<div class="org-src-container">
+<pre class="src src-text">このようにEmacsは使い方を学習する必要でありながらも、使えるようになれば自分のこだわりを徹底的に反映することのできるツールです。自分のための生産活動の場をじっくりつくりあげることに興味のある方にはおすすめします。
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7269bf5" class="outline-3">
+<h3 id="org7269bf5">Org-modeセクション</h3>
+<div class="outline-text-3" id="text-org7269bf5">
+<p>
+アウトプットファイル (提出用)
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp" id="org947dfbd">(file-relative-name
+ (file-name-concat "../public/ライフハックの道具箱2021年版" "org-mode.txt")
+ default-directory)
+</pre>
+</div>
+
+<p>
+現在の文字数
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">wc -m ../public/ライフハックの道具箱2021年版/org-mode.txt
+</pre>
+</div>
+
+<p>
+文法チェック
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">cat "../public/ライフハックの道具箱2021年版/org-mode.txt" | textlint --stdin --config ../textlintrc  | cat -
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge428f47" class="outline-4">
+<h4 id="orge428f47">イントロ</h4>
+<div class="outline-text-4" id="text-orge428f47">
+<div class="org-src-container">
+<pre class="src src-text">Org-modeは、テキストエディタEmacsの中で利用できる多機能アウトライナーです。
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb0dcd8d" class="outline-4">
+<h4 id="orgb0dcd8d">機能の紹介</h4>
+<div class="outline-text-4" id="text-orgb0dcd8d">
+<div class="org-src-container">
+<pre class="src src-text">アウトライナーとしてのOrg-modeの特筆すべき点は、Emacsの得意とするキーボード操作でアウトライン項目の折り畳み・移動・ズーム・検索などが自在に素早く行えることでしょう。主要なキーボードショートカットを覚えれば、アウトライン操作と文章作成がキーボードという軸でシームレスにつながり、両手をキーボードのホームポジションから移動させることなく、編集対象に最大限の注意を向けながら作業できます。
+
+もう一つ、Org-modeの特長として挙げられるのが、Emacsの拡張性の高さを活かして生み出された多くの機能を無料で利用できる点です。そのすべてを挙げると際限がないほどですが、一例としては、プロジェクト管理・タスクの実行時間の計測・表計算・メモの簡単な取り込み・いろいろな情報源へのリンク・HTMLなどへのエクスポートと言ったものがあります。さらに2021年には、Roam Researchにヒントを得たOrg-roamというパッケージの安定板がリリースされ、本書で言うネットワークファーミングツールとしての機能も備えるようになりました。これらのOrg-modeが提供する豊富な機能とEmacsが持つカスタマイズ性の高さを組み合わせて、日常生活や仕事における知識・タスク・資料などのさまざまな情報を管理・活用する環境をつくることがOrg-modeを使う醍醐味でしょう。
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga64d78c" class="outline-4">
+<h4 id="orga64d78c">literate programming</h4>
+<div class="outline-text-4" id="text-orga64d78c">
+<div class="org-src-container">
+<pre class="src src-text">一方で、Org-modeはプログラムコードの作成にも貢献します。一般的にプログラムコードを書く場合、コードの中にコメントとして変数や関数または処理の説明を書いて読み手にプログラムの意図を伝えます。ところが、コメントとして書ける分量は限定的であり、表現力も乏しいことから、プログラムの説明をする手段として充分とは言いがたい面があります。
+
+この問題を解決する手段をOrg-modeは備えています。Org-modeではコードブロックという、コードを収めるための記述様式があり、これは文書中のどこにでも、何個でも配置することができます。このコードブロックの仕組みを使うと、コードの中にコメントとして説明を書くという従来の構造とは逆の、つまり、説明(ドキュメント)の中にコードを書くという構造をつくることができます。ここでのポイントは、ドキュメント内に分散的に配置されたコードの断片は、Org-modeの機能を使うことにより、結合されてドキュメントとは別の一つの実行可能ファイルとして出力できる点です。
+
+この仕組みを使うメリットはいくつかあります。まず、ドキュメントはOrg-modeの形式で書けるので、アウトラインの階層構造などを使って表現力豊かにに記述できます。そして、ドキュメント内の各説明とそれを実現するコードを対応するかたちで配置できるので、プログラムの読み手の理解を深めます。「文芸的プログラミング」と呼ばれるこの手法は、プログラム作成のパラダイムを変えうる試みであり、適用範囲も広いため、一部で注目を集めています。Org-modeは文芸的プログラミングを強力にサポートするプラットフォームです。
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
