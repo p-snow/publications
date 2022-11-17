@@ -57,21 +57,66 @@
     → 極力、平易な言葉を使用
   + Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討
 
+- 文法チェック規則
+  #+begin_src json :tangle ../config/lhack-tbox.textlintrc :eval no :exports none
+    {
+      "rules": {
+        "preset-ja-technical-writing": {
+          "no-exclamation-question-mark": false,
+          "sentence-length": {
+            "max": 200
+          }
+        },
+        "spellcheck-tech-word": true,
+        "textlint-rule-write-good": true,
+        "preset-ja-spacing": true,
+        "prh": {
+          "rulePaths": [
+            "./lhack-tbox.yml"
+          ]
+        }
+      }
+    }
+  #+end_src
+
 - 書籍中で統一する表現 :: 表記ゆれチェック
   + Org-mode :: not org-mode, Org Mode
-  + パソコン :: not PC, コンピュータ
   + MacOS :: not macOS, Mac OS
+  #+begin_src yaml :tangle ../config/lhack-tbox.yml
+    version: 1
 
-『道具箱』提出用ファイルの保存ディレクトリ
-#+name: lhack-toolbox-dir
-#+begin_src emacs-lisp :tangle no :noweb yes :exports results
-  (file-relative-name
-   (expand-file-name "../public/ライフハックの道具箱2021年版" ".")
-   default-directory)
-#+end_src
+    rules:
+      - expected: 安定版
+        pattern:  安定板 # 本番誤植で迷惑かけた
 
-#+RESULTS: lhack-toolbox-dir
-: ../public/ライフハックの道具箱2021年版
+      - expected: Org-mode
+        patterns:
+          - /org-mode/
+          - /Org-Mode/
+          - orgmode
+
+      - expected: パソコン # 本書では「パソコン」で統一
+        patterns:
+          - PC
+          - コンピュータ
+          - コンピューター
+
+      - expected: MacOS # 本書では「MacOS」で統一
+        patterns:
+          - macOS
+          - Mac OS
+  #+end_src
+
+- 『道具箱』提出用ファイルの保存ディレクトリ
+  #+name: lhack-toolbox-dir
+  #+begin_src emacs-lisp :tangle no :noweb yes :exports results
+    (file-relative-name
+     (expand-file-name "../public/ライフハックの道具箱2021年版" ".")
+     default-directory)
+  #+end_src
+
+  #+RESULTS: lhack-toolbox-dir
+  : ../public/ライフハックの道具箱2021年版
 
 ** Emacsセクション
 :PROPERTIES:
@@ -101,7 +146,7 @@
 
 文法チェック
 #+begin_src shell :tangle no :noweb yes :results output :exports results
-  cat "<<output-emacs()>>" | textlint --stdin --config ../textlintrc  | cat -
+  cat "<<output-emacs()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
 #+end_src
 
 #+RESULTS:
@@ -187,23 +232,25 @@ Try to run: $ textlint --fix [file]
 
 文法チェック
 #+begin_src shell :tangle no :noweb yes :results output :exports results
-  cat "<<output-org()>>" | textlint --stdin --config ../textlintrc  | cat -
+  cat "<<output-org()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
 #+end_src
 
 #+RESULTS:
 #+begin_example
 
 <text>
+   1:1    ✓ error  orgmode => Org-mode                                                                                             prh
    5:3    ✓ error  一つ => 1つ
 数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
+   5:221  ✓ error  安定板 => 安定版                                                                                                prh
    9:87   ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
 解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2      ja-technical-writing/ja-no-redundant-expression
    9:256  ✓ error  一つ => 1つ
 数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
   11:74   error    "に" が連続して2回使われています。                                                                              ja-technical-writing/ja-no-successive-word
 
-✖ 4 problems (4 errors, 0 warnings)
-✓ 3 fixable problems.
+✖ 6 problems (6 errors, 0 warnings)
+✓ 5 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example

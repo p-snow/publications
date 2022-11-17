@@ -1,0 +1,22 @@
+version: 1
+
+rules:
+  - expected: 安定版
+    pattern:  安定板 # 本番誤植で迷惑かけた
+
+  - expected: Org-mode
+    patterns:
+      - /org-mode/
+      - /Org-Mode/
+      - orgmode
+
+  - expected: パソコン # 本書では「パソコン」で統一
+    patterns:
+      - PC
+      - コンピュータ
+      - コンピューター
+
+  - expected: MacOS # 本書では「MacOS」で統一
+    patterns:
+      - macOS
+      - Mac OS
