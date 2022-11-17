@@ -3,7 +3,7 @@
 
 書籍『ライフハックの道具箱 2022年版』に投稿する文章
 
-* 『ライフハックの道具箱』プロジェクト
+* 『ライフハックの道具箱』プロジェクトとは
 
 『ライフハックの道具箱』は倉下忠憲([[https://twitter.com/rashita2][@rashita2]])さんが編集する、ライフハックに関連するツールを紹介する書籍。
 年刊誌の側面もあり、毎年年末にその年に話題となったツール情報も入れ込んでアップデートされた内容を「20xx年版」と銘打ってkindle形式で販売している。
@@ -38,16 +38,18 @@
 :END:
 
 - 担当セクション
+
   書籍中で自分が担当する節は以下
-  - [[id:8754255c-d0e2-4b90-98d5-a3ea009c3db2][Emacs]]
-  - [[id:f2ac8a38-bc45-4566-8b50-262cc0c5ac07][Org-mode]]
-  それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
+  - [X] [[id:8754255c-d0e2-4b90-98d5-a3ea009c3db2][Emacs]]
+  - [X] [[id:f2ac8a38-bc45-4566-8b50-262cc0c5ac07][Org-mode]]
+  注意点
+  - [X] それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
 
 - 原稿のレギュレーション
   [[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
-  + 文字数: 2,000字前後
-  + 文体:「です、ます」
-  + 締め切り: 2022年11月いっぱい
+  + [X] 文字数: 2,000字前後
+  + [X] 文体:「です、ます」
+  + [ ] 締め切り: 2022年11月いっぱい
 
 - 想定読者 (個人的な判断)
   日本のいわゆる「ライフハック」クラスタ、またこの分野に興味のある層
@@ -55,10 +57,10 @@
     → 極力、平易な言葉を使用
   + Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討
 
-用語統一 :: 文章内の表記ゆれ対策
-- Org-mode
-- パソコン :: not PC、コンピュータ
-- MacOS :: 本書ではmacOSではない
+- 書籍中で統一する表現 :: 表記ゆれチェック
+  + Org-mode :: not org-mode, Org Mode
+  + パソコン :: not PC, コンピュータ
+  + MacOS :: not macOS, Mac OS
 
 『道具箱』提出用ファイルの保存ディレクトリ
 #+name: lhack-toolbox-dir
@@ -89,13 +91,13 @@
 #+RESULTS: output-emacs
 : ../public/ライフハックの道具箱2021年版/emacs.txt
 
-現在の文字数
+現在の文字数 (目安: 2,000文字前後)
 #+begin_src shell :tangle no :noweb yes :exports results
-  wc -m <<output-emacs()>>
+  echo -n $(cat <<output-emacs()>> | wc -m) '文字'
 #+end_src
 
 #+RESULTS:
-: 1567 ../public/ライフハックの道具箱2021年版/emacs.txt
+: 1567 文字
 
 文法チェック
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -130,6 +132,7 @@ Try to run: $ textlint --fix [file]
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 14:36]
 :END:
+
 #+begin_src text :eval no
   Emacsは、パソコン上で動作するテキストエディタです。Windows・MacOS・Linux版のアプリケーションが公式サイトからダウンロード可能で、無料で利用することができます。
 
@@ -174,13 +177,13 @@ Try to run: $ textlint --fix [file]
 #+RESULTS: output-org
 : ../public/ライフハックの道具箱2021年版/org-mode.txt
 
-現在の文字数
+現在の文字数 (目安: 2,000文字前後)
 #+begin_src shell :tangle no :noweb yes :exports results
-  wc -m <<output-org()>>
+  echo -n $(cat <<output-org()>> | wc -m) '文字'
 #+end_src
 
 #+RESULTS:
-: 1335 ../public/ライフハックの道具箱2021年版/org-mode.txt
+: 1335 文字
 
 文法チェック
 #+begin_src shell :tangle no :noweb yes :results output :exports results
