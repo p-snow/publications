@@ -80,8 +80,6 @@
   #+end_src
 
 - 書籍中で統一する表現 :: 表記ゆれチェック
-  + Org-mode :: not org-mode, Org Mode
-  + MacOS :: not macOS, Mac OS
   #+begin_src yaml :tangle ../config/lhack-tbox.yml
     version: 1
 
