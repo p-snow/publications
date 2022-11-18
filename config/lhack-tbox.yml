@@ -23,3 +23,9 @@ rules:
     patterns:
       - macOS
       - Mac OS
+
+  # Emacs利用者だけに通じる言葉は使わない
+  - expected: キーボードショートカット
+    patterns:
+      - キーバインド
+      - キーバインディング
