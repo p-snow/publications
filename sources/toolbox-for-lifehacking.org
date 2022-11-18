@@ -32,7 +32,7 @@
 - 2022年版
   + [[https://rashita.net/blog/?p=31179][『ライフハックの道具箱 2022年版』プロジェクト始動 | R-style]]
 
-* 提出までの手順
+* 原稿提出までの手順
 :PROPERTIES:
 :CREATED:  [2022-11-18 Fri 09:46]
 :END:
@@ -205,18 +205,16 @@ Emacsセクションのアウトプットファイル (提出用)
   1. Executableを公式サイトから入手
      - 公式サイト: [[https://www.gnu.org/software/emacs/][GNU Emacs - GNU Project]]
   2. 利用OSのGUIアプリマネージャを利用
+
      個別利用環境に依存した内容は書かない
   3. OSプリインストール版の言及
+
      旧バージョンの利用を促す危険性があるのでNG
      近年のMacにはemacsがプリインストールされているのだろうか？
   4. 利用環境のコマンドラインパッケージマネージャを利用
      本書のスコープ外
   5. ソースコードをビルド
      本書のスコープ外
-
-- 本書では以下は言及しない
-  + ターミナルEmacs
-  + Distributions(Doom, Spacemacs etc.)
 
 *** キーボードのためのテキストエディタ
 :PROPERTIES:
@@ -333,7 +331,6 @@ Org-modeセクションのアウトプットファイル (提出用)
 Try to run: $ textlint --fix [file]
 
 #+end_example
-
 
 *** イントロ・基本的な紹介
 :PROPERTIES:
