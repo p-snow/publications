@@ -2,7 +2,7 @@ version: 1
 
 rules:
   - expected: 安定版
-    pattern:  安定板 # 本番誤植で迷惑かけた
+    pattern:  安定板 # 2021年版本番稿の誤植、迷惑かけた
 
   - expected: Org-mode
     patterns:
@@ -10,13 +10,16 @@ rules:
       - /Org-Mode/
       - orgmode
 
-  - expected: パソコン # 本書では「パソコン」で統一
+  # 本書では「パソコン」で統一
+  # tech-word からのリンティング指摘は無視
+  - expected: パソコン
     patterns:
       - PC
       - コンピュータ
       - コンピューター
 
-  - expected: MacOS # 本書では「MacOS」で統一
+  # 本書では「MacOS」で統一
+  - expected: MacOS
     patterns:
       - macOS
       - Mac OS

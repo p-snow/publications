@@ -31,23 +31,45 @@
 - 2022年版
   + [[https://rashita.net/blog/?p=31179][『ライフハックの道具箱 2022年版』プロジェクト始動 | R-style]]
 
-* 投稿する原稿
+* 提出までの手順
+:PROPERTIES:
+:CREATED:  [2022-11-18 Fri 09:46]
+:END:
+
+1. このファイルの中で「文芸的執筆」スタイルで執筆
+2. コマンド'make tangle'で提出稿の書き出し
+3. 倉下さんに提出用ファイルの場所を伝える
+
+   提出用ファイルの保存ディレクトリ
+   #+name: lhack-toolbox-dir
+   #+begin_src emacs-lisp :tangle no :noweb yes :exports results
+     (file-relative-name
+      (expand-file-name "../public/ライフハックの道具箱2022年版" ".")
+      default-directory)
+   #+end_src
+
+   #+RESULTS: lhack-toolbox-dir
+   : ../public/ライフハックの道具箱2022年版
+
+
+* 原稿
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 12:22]
 :header-args+: :tangle-mode (identity #o644)
+:ID:       1dea9175-0709-4de5-af01-5eb2dfc5a70c
 :END:
 
 - 担当セクション
 
   書籍中で自分が担当する節は以下
-  - [X] [[id:8754255c-d0e2-4b90-98d5-a3ea009c3db2][Emacs]]
-  - [X] [[id:f2ac8a38-bc45-4566-8b50-262cc0c5ac07][Org-mode]]
+  - [X] [[Emacs]]
+  - [X] [[Org-mode][Org-mode]]
   注意点
   - [X] それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
 
 - 原稿のレギュレーション
   [[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
-  + [X] 文字数: 2,000字前後
+  + [X] 文字数: (各節)2,000字前後
   + [X] 文体:「です、ます」
   + [ ] 締め切り: 2022年11月いっぱい
 
@@ -57,7 +79,7 @@
     → 極力、平易な言葉を使用
   + Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討
 
-- 文法チェック規則
+- 自動原稿チェックの設定
   #+begin_src json :tangle ../config/lhack-tbox.textlintrc :eval no :exports none
     {
       "rules": {
@@ -79,13 +101,13 @@
     }
   #+end_src
 
-- 書籍中で統一する表現 :: 表記ゆれチェック
-  #+begin_src yaml :tangle ../config/lhack-tbox.yml
+- 書籍中で統一する文言表現ルール :: 表記ゆれチェック
+  #+begin_src yaml :tangle ../config/lhack-tbox.yml :eval no
     version: 1
 
     rules:
       - expected: 安定版
-        pattern:  安定板 # 本番誤植で迷惑かけた
+        pattern:  安定板 # 2021年版本番稿の誤植、迷惑かけた
 
       - expected: Org-mode
         patterns:
@@ -93,37 +115,29 @@
           - /Org-Mode/
           - orgmode
 
-      - expected: パソコン # 本書では「パソコン」で統一
+      # 本書では「パソコン」で統一
+      # tech-word からのリンティング指摘は無視
+      - expected: パソコン
         patterns:
           - PC
           - コンピュータ
           - コンピューター
 
-      - expected: MacOS # 本書では「MacOS」で統一
+      # 本書では「MacOS」で統一
+      - expected: MacOS
         patterns:
           - macOS
           - Mac OS
   #+end_src
 
-- 『道具箱』提出用ファイルの保存ディレクトリ
-  #+name: lhack-toolbox-dir
-  #+begin_src emacs-lisp :tangle no :noweb yes :exports results
-    (file-relative-name
-     (expand-file-name "../public/ライフハックの道具箱2021年版" ".")
-     default-directory)
-  #+end_src
-
-  #+RESULTS: lhack-toolbox-dir
-  : ../public/ライフハックの道具箱2021年版
-
-** Emacsセクション
+** Emacs
 :PROPERTIES:
 :CREATED:  [2022-11-09 Wed 16:45]
-:header-args+: :tangle "../public/ライフハックの道具箱2021年版/emacs.txt"
+:header-args+: :tangle "../public/ライフハックの道具箱2022年版/emacs.txt"
 :ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
 :END:
 
-アウトプットファイル (提出用)
+Emacsセクションのアウトプットファイル (提出用)
 #+name: output-emacs
 #+begin_src emacs-lisp :tangle no :noweb yes :exports results
   (file-relative-name
@@ -132,7 +146,7 @@
 #+end_src
 
 #+RESULTS: output-emacs
-: ../public/ライフハックの道具箱2021年版/emacs.txt
+: ../public/ライフハックの道具箱2022年版/emacs.txt
 
 現在の文字数 (目安: 2,000文字前後)
 #+begin_src shell :tangle no :noweb yes :exports results
@@ -142,7 +156,7 @@
 #+RESULTS:
 : 1567 文字
 
-文法チェック
+自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
   cat "<<output-emacs()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
 #+end_src
@@ -171,24 +185,51 @@ Try to run: $ textlint --fix [file]
 
 #+end_example
 
-*** イントロ
+*** イントロ・入手方法
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 14:36]
 :END:
 
 #+begin_src text :eval no
   Emacsは、パソコン上で動作するテキストエディタです。Windows・MacOS・Linux版のアプリケーションが公式サイトからダウンロード可能で、無料で利用することができます。
+#+end_src
 
+*** キーボードのためのエディタ
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:02]
+:END:
+
+#+begin_src text :eval no
   文章執筆からプログラミング作成まで、テキストデータを扱う作業であればほぼすべてのケースに対応できるエディタです。キーボードのためのエディタという側面もあり、メニュー選択などのEmacs内のすべての機能がキーボードだけで操作可能です。数多く用意されているキーボードショートカットを駆使すれば、極めて快適な編集作業がおこなえます。
 #+end_src
 
+*** OSとしてのEmacs
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:02]
+:END:
 #+begin_src text :eval no
   一般的なテキストエディタと比べてEmacsが際立っている点は、テキスト編集以外の機能も充実していることでしょう。その一例を挙げると、Webブラウザ・RSSリーダなどの情報をインプットするための機能、メール・チャット・Twitterなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。通常のテキストエディタが文章やコードを生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。インプットからアウトプットまでのプロセスをEmacsという一つのツールで完結できるので、データの移動やコピー、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
+#+end_src
+*** 高いカスタマイズ性
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:06]
+:END:
 
+#+begin_src text :eval no
   さらにEmacsには、ユーザの好みに合わせて自由にカスタマイズできるという特性があります。カスタマイズできる項目は、各部の色やフォントなどUIの基本的な要素から、キーボードショートカット、各機能の動作を決定する調整値などで、実に幅広くまたその数は膨大です。そのうえEmacs Lispというプログミング言語を使えば、Emacsが提供するさまざまな機能を自在に組み合わせて使うことができ、自分の生産活動に特化した至福の環境をつくることができます。
+#+end_src
 
+*** 学習コスト
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:07]
+:END:
+
+#+begin_src text :eval no
   Emacsを快適に使えるようになるためには、その特異なキー操作に慣れたり、設定言語であるEmacs Lispをある程度は理解して書けるようになることが望ましいでしょう。使い方を学んでいく上では、Emacs内蔵の充実したマニュアルが役に立ちます。また世界中の多数のユーザから、掲示板・動画・SNS・メーリングリストなどのメディアを通してノウハウを手に入れることもできます。さらに近年では、あらかじめ特定の目的のための設定が施されたSpacemacsなどのスターターキットが登場し、初期ユーザの学習コストを抑えてEmacsを利用開始できる方法として注目を集めています。
 #+end_src
+
+一般的にEmacsの学習を指して'a steep learnin curve'だと言われる。
+
 *** オープンソース
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 14:37]
@@ -203,13 +244,13 @@ Try to run: $ textlint --fix [file]
 #+begin_src text :eval no
   このようにEmacsは使い方を学習する必要でありながらも、使えるようになれば自分のこだわりを徹底的に反映することのできるツールです。自分のための生産活動の場をじっくりつくりあげることに興味のある方にはおすすめします。
 #+end_src
-** Org-modeセクション
+** Org-mode
 :PROPERTIES:
 :ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
-:header-args+: :tangle "../public/ライフハックの道具箱2021年版/org-mode.txt"
+:header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
 :END:
 
-アウトプットファイル (提出用)
+Org-modeセクションのアウトプットファイル (提出用)
 #+name: output-org
 #+begin_src emacs-lisp :tangle no :noweb yes :exports results
   (file-relative-name
@@ -218,7 +259,7 @@ Try to run: $ textlint --fix [file]
 #+end_src
 
 #+RESULTS: output-org
-: ../public/ライフハックの道具箱2021年版/org-mode.txt
+: ../public/ライフハックの道具箱2022年版/org-mode.txt
 
 現在の文字数 (目安: 2,000文字前後)
 #+begin_src shell :tangle no :noweb yes :exports results
@@ -228,7 +269,7 @@ Try to run: $ textlint --fix [file]
 #+RESULTS:
 : 1335 文字
 
-文法チェック
+自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
   cat "<<output-org()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
 #+end_src
@@ -237,7 +278,6 @@ Try to run: $ textlint --fix [file]
 #+begin_example
 
 <text>
-   1:1    ✓ error  orgmode => Org-mode                                                                                             prh
    5:3    ✓ error  一つ => 1つ
 数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
    5:221  ✓ error  安定板 => 安定版                                                                                                prh
@@ -247,8 +287,8 @@ Try to run: $ textlint --fix [file]
 数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
   11:74   error    "に" が連続して2回使われています。                                                                              ja-technical-writing/ja-no-successive-word
 
-✖ 6 problems (6 errors, 0 warnings)
-✓ 5 fixable problems.
+✖ 5 problems (5 errors, 0 warnings)
+✓ 4 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example
@@ -256,7 +296,7 @@ Try to run: $ textlint --fix [file]
 *** イントロ
 :PROPERTIES:
 :CREATED:  [2022-11-09 Wed 16:45]
-:header-args+: :tangle "../public/ライフハックの道具箱2021年版/org-mode.txt"
+:header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
 :END:
 
 #+begin_src text :eval no
