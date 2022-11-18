@@ -1,5 +1,6 @@
 #+TITLE: ライフハックの道具箱
 #+PROPERTY: header-args       :mkdirp yes
+#+OPTIONS: \n:t
 
 書籍『ライフハックの道具箱 2022年版』に投稿する文章
 
