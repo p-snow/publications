@@ -130,6 +130,12 @@
         patterns:
           - macOS
           - Mac OS
+
+      # Emacs利用者だけに通じる言葉は使わない
+      - expected: キーボードショートカット
+        patterns:
+          - キーバインド
+          - キーバインディング
   #+end_src
 
 ** Emacs
@@ -156,7 +162,7 @@ Emacsセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 1567 文字
+: 1563 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -166,24 +172,22 @@ Emacsセクションのアウトプットファイル (提出用)
 #+RESULTS:
 #+begin_example
 
-<text>
-   1:8    ✓ error  パソコン => PC                                                                                                  spellcheck-tech-word
-   1:37   ✓ error  MacOS => Mac OS                                                                                                 spellcheck-tech-word
-   1:81   ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
-解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2      ja-technical-writing/ja-no-redundant-expression
-   5:67   ✓ error  Webブラウザ => ブラウザ                                                                                         spellcheck-tech-word
-   5:78   ✓ error  リーダな => リーダーな                                                                                          spellcheck-tech-word
-   5:293  ✓ error  一つ => 1つ
-数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
-   7:112  error    一つの文で"、"を4つ以上使用しています                                                                           ja-technical-writing/max-ten
-  11:56   error    【dict5】 "開発を行う"は冗長な表現です。"開発する"など簡潔な表現にすると文章が明瞭になります。
-解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict5                  ja-technical-writing/ja-no-redundant-expression
-  13:53   error    【dict2】 "することのできるツール"は冗長な表現です。"することの"を省き簡潔な表現にすると文章が明瞭になります。
-解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
+  <text>
+     1:8    ✓ error  パソコン => PC                                                                                                  spellcheck-tech-word
+     1:37   ✓ error  MacOS => Mac OS                                                                                                 spellcheck-tech-word
+     5:67   ✓ error  Webブラウザ => ブラウザ                                                                                         spellcheck-tech-word
+     5:78   ✓ error  リーダな => リーダーな                                                                                          spellcheck-tech-word
+     5:293  ✓ error  一つ => 1つ
+  数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
+     7:112  error    一つの文で"、"を4つ以上使用しています                                                                           ja-technical-writing/max-ten
+    11:56   error    【dict5】 "開発を行う"は冗長な表現です。"開発する"など簡潔な表現にすると文章が明瞭になります。
+  解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict5                  ja-technical-writing/ja-no-redundant-expression
+    13:53   error    【dict2】 "することのできるツール"は冗長な表現です。"することの"を省き簡潔な表現にすると文章が明瞭になります。
+  解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
 
-✖ 9 problems (9 errors, 0 warnings)
-✓ 6 fixable problems.
-Try to run: $ textlint --fix [file]
+  ✖ 8 problems (8 errors, 0 warnings)
+  ✓ 5 fixable problems.
+  Try to run: $ textlint --fix [file]
 
 #+end_example
 
@@ -193,25 +197,50 @@ Try to run: $ textlint --fix [file]
 :END:
 
 #+begin_src text :eval no
-  Emacsは、パソコン上で動作するテキストエディタです。Windows・MacOS・Linux版のアプリケーションが公式サイトからダウンロード可能で、無料で利用することができます。
+  Emacsは、パソコン上で動作するテキストエディタです。Windows・MacOS・Linux版のアプリケーションが公式サイトからダウンロード可能で、無料で利用できます。
 #+end_src
 
-*** キーボードのためのエディタ
+- Emacsのインストール方法整理
+  1. Executableを公式サイトから入手
+     - 公式サイト: [[https://www.gnu.org/software/emacs/][GNU Emacs - GNU Project]]
+  2. 利用OSのGUIアプリマネージャを利用
+     個別利用環境に依存した内容は書かない
+  3. OSプリインストール版の言及
+     旧バージョンの利用を促す危険性があるのでNG
+     近年のMacにはemacsがプリインストールされているのだろうか？
+  4. 利用環境のコマンドラインパッケージマネージャを利用
+     本書のスコープ外
+  5. ソースコードをビルド
+     本書のスコープ外
+
+- 本書では以下は言及しない
+  + ターミナルEmacs
+  + Distributions(Doom, Spacemacs etc.)
+
+*** キーボードのためのテキストエディタ
 :PROPERTIES:
 :CREATED:  [2022-11-17 Thu 18:02]
 :END:
 
 #+begin_src text :eval no
-  文章執筆からプログラミング作成まで、テキストデータを扱う作業であればほぼすべてのケースに対応できるエディタです。キーボードのためのエディタという側面もあり、メニュー選択などのEmacs内のすべての機能がキーボードだけで操作可能です。数多く用意されているキーボードショートカットを駆使すれば、極めて快適な編集作業がおこなえます。
+  プログラムコード作成から文章執筆まで、テキストデータを扱う作業であればほぼすべてのケースに対応できるエディタです。キーボードのためのエディタという側面もあり、メニュー選択などのEmacs内のすべての機能がキーボードだけで操作可能です。数多く用意されているキーボードショートカットを駆使すれば、極めて快適な編集作業がおこなえます。
 #+end_src
+
+本書の特徴からEmacsに対して一般的に持ち出される以下のような文脈・視点は排除する
+- プログラミング言語編集のための「コードエディタ」としてVS CodeやVimなどとの対比 ([[https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%88%A6%E4%BA%89#bodyContent][Editor War]])
+- 熟達者から初心者に向けてよく行われる「Emacsはこう使うべし」論 (キーボード操作などでよく見られる)
 
 *** OSとしてのEmacs
 :PROPERTIES:
 :CREATED:  [2022-11-17 Thu 18:02]
 :END:
+
 #+begin_src text :eval no
   一般的なテキストエディタと比べてEmacsが際立っている点は、テキスト編集以外の機能も充実していることでしょう。その一例を挙げると、Webブラウザ・RSSリーダなどの情報をインプットするための機能、メール・チャット・Twitterなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。通常のテキストエディタが文章やコードを生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。インプットからアウトプットまでのプロセスをEmacsという一つのツールで完結できるので、データの移動やコピー、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
 #+end_src
+
+- [ ] [[https://github.com/hayamiz/twittering-mode][twittering-mode]]は利用者の少なさや、コードメンテがあまりされてない状況で書くのは適切か？
+
 *** 高いカスタマイズ性
 :PROPERTIES:
 :CREATED:  [2022-11-17 Thu 18:06]
@@ -236,16 +265,25 @@ Try to run: $ textlint --fix [file]
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 14:37]
 :END:
+
 #+begin_src text :eval no
   Emacsは長い間オープンソースソフトウェア(OSS)として開発されてきました。オープンソースとは、主に有志が開発を行い、ソースコードはネット上で公開され、誰でも自由に利用できるソフトウェアを生み出す体制のことです。この意味で企業が主体となって開発する製品ソフトウェアとは異なる性質をもちます。製品ソフトウェアは、企業の経営判断によって開発が終了するといった事態が起こりえますが、OSSではそのようなことはありません。もちろんOSSであっても、開発者や利用者が離れていくことによりプロジェクトが衰退や消滅するケースはあります。しかしEmacsには、長年にわたって育まれた層の厚いコミュニティがあり、現在でも活発に活動していることから、数年のうちに消滅するといった心配は無用でしょう。
 #+end_src
-*** アウトロ
+
+このパラグラフでは話をオープンソースまでに止めること
+OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるストールマンがFree Softwareムーブメントの先導的役割を果たしたことから、この話題を取り上げたくはなるがこの書籍のスコープではない。
+
+*** アウトロ・総括
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 14:38]
 :END:
+
 #+begin_src text :eval no
   このようにEmacsは使い方を学習する必要でありながらも、使えるようになれば自分のこだわりを徹底的に反映することのできるツールです。自分のための生産活動の場をじっくりつくりあげることに興味のある方にはおすすめします。
 #+end_src
+
+この記事を読んで「じゃEmacsを使ってみるか」なユーザに次の導入ステップを示せているか？
+
 ** Org-mode
 :PROPERTIES:
 :ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
@@ -295,7 +333,8 @@ Try to run: $ textlint --fix [file]
 
 #+end_example
 
-*** イントロ
+
+*** イントロ・基本的な紹介
 :PROPERTIES:
 :CREATED:  [2022-11-09 Wed 16:45]
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
