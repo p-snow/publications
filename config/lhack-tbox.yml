@@ -29,3 +29,11 @@ rules:
     patterns:
       - キーバインド
       - キーバインディング
+
+  # アウトライナー系用語の統一
+  - expected: ズーム
+    patterns:
+      - zoom
+      - ナロー
+      - narrow
+      - フォーカス

@@ -40,6 +40,7 @@
 1. このファイルの中で「文芸的執筆」スタイルで原稿を執筆
    - 各ステータス(現在の文字数、など)はC-x C-v bでアップデートされる
 2. コマンド'make tangle'で提出稿の書き出し
+   - Emacs内で作業していれば[[file:~/ghq/github.com/p-snow/publications/tangle.el][ファイルセーブするタイミングで上記コマンドが自動実行される仕組み]]になってる
 3. 倉下さんに提出用ファイルの場所を伝える
 
    提出用ファイルの保存フォルダ
@@ -137,6 +138,14 @@
         patterns:
           - キーバインド
           - キーバインディング
+
+      # アウトライナー系用語の統一
+      - expected: ズーム
+        patterns:
+          - zoom
+          - ナロー
+          - narrow
+          - フォーカス
   #+end_src
 
 ** Emacs
@@ -173,22 +182,22 @@ Emacsセクションのアウトプットファイル (提出用)
 #+RESULTS:
 #+begin_example
 
-  <text>
-     1:8    ✓ error  パソコン => PC                                                                                                  spellcheck-tech-word
-     1:37   ✓ error  MacOS => Mac OS                                                                                                 spellcheck-tech-word
-     5:67   ✓ error  Webブラウザ => ブラウザ                                                                                         spellcheck-tech-word
-     5:78   ✓ error  リーダな => リーダーな                                                                                          spellcheck-tech-word
-     5:293  ✓ error  一つ => 1つ
-  数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
-     7:112  error    一つの文で"、"を4つ以上使用しています                                                                           ja-technical-writing/max-ten
-    11:56   error    【dict5】 "開発を行う"は冗長な表現です。"開発する"など簡潔な表現にすると文章が明瞭になります。
-  解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict5                  ja-technical-writing/ja-no-redundant-expression
-    13:53   error    【dict2】 "することのできるツール"は冗長な表現です。"することの"を省き簡潔な表現にすると文章が明瞭になります。
-  解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
+<text>
+   1:8    ✓ error  パソコン => PC                                                                                                  spellcheck-tech-word
+   1:37   ✓ error  MacOS => Mac OS                                                                                                 spellcheck-tech-word
+   5:67   ✓ error  Webブラウザ => ブラウザ                                                                                         spellcheck-tech-word
+   5:78   ✓ error  リーダな => リーダーな                                                                                          spellcheck-tech-word
+   5:293  ✓ error  一つ => 1つ
+数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
+   7:112  error    一つの文で"、"を4つ以上使用しています                                                                           ja-technical-writing/max-ten
+  11:56   error    【dict5】 "開発を行う"は冗長な表現です。"開発する"など簡潔な表現にすると文章が明瞭になります。
+解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict5                  ja-technical-writing/ja-no-redundant-expression
+  13:53   error    【dict2】 "することのできるツール"は冗長な表現です。"することの"を省き簡潔な表現にすると文章が明瞭になります。
+解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
 
-  ✖ 8 problems (8 errors, 0 warnings)
-  ✓ 5 fixable problems.
-  Try to run: $ textlint --fix [file]
+✖ 8 problems (8 errors, 0 warnings)
+✓ 5 fixable problems.
+Try to run: $ textlint --fix [file]
 
 #+end_example
 
@@ -205,16 +214,14 @@ Emacsセクションのアウトプットファイル (提出用)
   1. Executableを公式サイトから入手
      - 公式サイト: [[https://www.gnu.org/software/emacs/][GNU Emacs - GNU Project]]
   2. 利用OSのGUIアプリマネージャを利用
-
-     個別利用環境に依存した内容は書かない
+     - 個別利用環境に依存した内容は書かない
   3. OSプリインストール版の言及
-
-     旧バージョンの利用を促す危険性があるのでNG
-     近年のMacにはemacsがプリインストールされているのだろうか？
-  4. 利用環境のコマンドラインパッケージマネージャを利用
-     本書のスコープ外
+     - 旧バージョンの利用を促す危険性があるのでNG
+     - 近年のMacにはemacsがプリインストールされているのだろうか？
+  4. 利用環境のコマンドラインパッケージマネージャを利用(e.g. brew apt)
+     - 本書の想定読者のニーズと不一致
   5. ソースコードをビルド
-     本書のスコープ外
+     - 本書コンセプトのスコープ外
 
 *** キーボードのためのテキストエディタ
 :PROPERTIES:
@@ -306,7 +313,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 1335 文字
+: 632 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -317,22 +324,17 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+begin_example
 
 <text>
-   5:3    ✓ error  一つ => 1つ
+  5:3    ✓ error  一つ => 1つ
 数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
-   5:221  ✓ error  安定板 => 安定版                                                                                                prh
-   9:87   ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
-解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2      ja-technical-writing/ja-no-redundant-expression
-   9:256  ✓ error  一つ => 1つ
-数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
-  11:74   error    "に" が連続して2回使われています。                                                                              ja-technical-writing/ja-no-successive-word
+  5:221  ✓ error  安定板 => 安定版                                                                                                prh
 
-✖ 5 problems (5 errors, 0 warnings)
-✓ 4 fixable problems.
+✖ 2 problems (2 errors, 0 warnings)
+✓ 2 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example
 
-*** イントロ・基本的な紹介
+*** イントロ・Org-modeの真の利点
 :PROPERTIES:
 :CREATED:  [2022-11-09 Wed 16:45]
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
@@ -340,7 +342,13 @@ Try to run: $ textlint --fix [file]
 
 #+begin_src text :eval no
   Org-modeは、テキストエディタEmacsの中で利用できる多機能アウトライナーです。
+
+  アウトライナーとしてのOrg-modeの特筆すべき点は、Emacsの得意とするキーボード操作でアウトライン項目の折り畳み・移動・ズーム・検索などが自在に素早く行えることでしょう。主要なキーボードショートカットを覚えれば、アウトライン操作と文章作成がキーボードという軸でシームレスにつながり、両手をキーボードのホームポジションから移動させることなく、編集対象に最大限の注意を向けながら作業できます。
 #+end_src
+
+「Org-modeは高機能・多機能である」はOrgを知る多くの人の認識(だと思う)だが、１つひとつの機能をリストアップしていけばわかるように、「これはOrgにしかない!」という機能は実はない。
+それよりも以下のように「組合せによる相乗効果」が真の意味での利点だと思う
+- Emacsの機能を行かした統一的な操作で情報を操作できる
 
 *** 機能の紹介
 :PROPERTIES:
@@ -348,11 +356,13 @@ Try to run: $ textlint --fix [file]
 :END:
 
 #+begin_src text :eval no
-  アウトライナーとしてのOrg-modeの特筆すべき点は、Emacsの得意とするキーボード操作でアウトライン項目の折り畳み・移動・ズーム・検索などが自在に素早く行えることでしょう。主要なキーボードショートカットを覚えれば、アウトライン操作と文章作成がキーボードという軸でシームレスにつながり、両手をキーボードのホームポジションから移動させることなく、編集対象に最大限の注意を向けながら作業できます。
-
   もう一つ、Org-modeの特長として挙げられるのが、Emacsの拡張性の高さを活かして生み出された多くの機能を無料で利用できる点です。そのすべてを挙げると際限がないほどですが、一例としては、プロジェクト管理・タスクの実行時間の計測・表計算・メモの簡単な取り込み・いろいろな情報源へのリンク・HTMLなどへのエクスポートと言ったものがあります。さらに2021年には、Roam Researchにヒントを得たOrg-roamというパッケージの安定板がリリースされ、本書で言うネットワークファーミングツールとしての機能も備えるようになりました。これらのOrg-modeが提供する豊富な機能とEmacsが持つカスタマイズ性の高さを組み合わせて、日常生活や仕事における知識・タスク・資料などのさまざまな情報を管理・活用する環境をつくることがOrg-modeを使う醍醐味でしょう。
 #+end_src
 
+** 文芸的執筆
+:PROPERTIES:
+:CREATED:  [2022-11-18 Fri 16:01]
+:END:
 *** literate programming
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 15:26]
