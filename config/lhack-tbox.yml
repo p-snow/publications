@@ -24,11 +24,21 @@ rules:
       - macOS
       - Mac OS
 
-  # Emacs利用者だけに通じる言葉は使わない
+  # Emacs用語は使わない
   - expected: キーボードショートカット
     patterns:
       - キーバインド
       - キーバインディング
+
+  - expected: カット
+    patterns:
+      - キル
+      - kill
+
+  - expected: ペースト
+    patterns:
+      - ヤンク
+      - yank
 
   # アウトライナー系用語の統一
   - expected: ズーム
