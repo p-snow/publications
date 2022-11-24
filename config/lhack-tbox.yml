@@ -4,9 +4,10 @@ rules:
   - expected: 安定版
     pattern:  安定板 # 2021年版本番稿の誤植、迷惑かけた
 
-  - expected: Org-mode
+  - expected: Org Mode
     patterns:
       - /org-mode/
+      - /Org-mode/
       - /Org-Mode/
       - orgmode
 
