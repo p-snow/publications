@@ -2,7 +2,7 @@
 #+PROPERTY: header-args       :mkdirp yes
 #+OPTIONS: \n:t
 
-書籍『ライフハックの道具箱 2022年版』に投稿する文章
+書籍『ライフハックの道具箱 2022年版』に投稿する[[https://twitter.com/_p_snow][こなゆき]]の原稿
 
 * 『ライフハックの道具箱』プロジェクトとは
 
@@ -337,7 +337,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS: output-org
-: ../public/ライフハックの道具箱2022年版/org-mode.txt
+: ../public/ライフハックの道具箱2022年版/literate-writing.txt
 
 現在の文字数 (目安: 2,000文字前後)
 #+begin_src shell :tangle no :noweb yes :exports results
@@ -423,7 +423,7 @@ Try to run: $ textlint --fix [file]
 
 #+begin_src text :eval no
   Org Modeはファイルベースで情報を管理するので、個人での情報利活用に向いています。
-  中でもタスク管理・ナレッジベース構築・文章作成・プログラミング開発支援の分野で利用されているのが多い印象です。
+  中でもタスク管理・ナレッジベース構築・アイデア整理・文章作成・プログラミング開発支援の分野で利用されているのが多い印象です。
 #+end_src
 
 *** 主な機能の紹介とワークフローの例
@@ -484,24 +484,80 @@ Markdownの標準化関連情報 (内容の裏取り)
 
 - [TELL] 2022年版でLogseqを取り上げるのが確認
 
-
-*** 文芸的執筆
+** 「文芸的プログラミング」と「文芸的ライティング」
 :PROPERTIES:
 :CREATED:  [2022-11-18 Fri 16:01]
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/literate-writing.txt"
 :END:
 
-文芸的執筆は言ってみれば「枠組み」
-さまざまな執筆法をこの枠組みの中で実践できる
-- [[https://rashita.net/blog/?p=31107][執筆はメモからはじめる | R-style]]
-- [[https://dot.asahi.com/wa/2022091500019.html?page=1][朝日新聞記者の「文章術」 “先に見出しを考える”が吉？〈週刊朝日〉 | AERA dot. (アエラドット)]]
-- 構文チェックなどさまざまな「自動化」
+Org-modeセクションのアウトプットファイル (提出用)
+#+name: output-literate
+#+begin_src emacs-lisp :tangle no :noweb yes :exports results
+  (file-relative-name
+   (file-name-concat "<<lhack-toolbox-dir()>>" "literate-writing.txt")
+   default-directory)
+#+end_src
 
-**** literate programming
+#+RESULTS: output-literate
+: ../public/ライフハックの道具箱2022年版/literate-writing.txt
+
+現在の文字数 (目安: 2,000文字前後)
+#+begin_src shell :tangle no :noweb yes :exports results
+  echo -n $(cat <<output-literate()>> | wc -m) '文字'
+#+end_src
+
+#+RESULTS:
+: 1199 文字
+
+自動原稿チェック結果
+#+begin_src shell :tangle no :noweb yes :results output :exports results
+  cat "<<output-literate()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+<text>
+   6:53  error    一つの文で"、"を4つ以上使用しています                                                                       ja-technical-writing/max-ten
+  11:24  ✓ error  コンピュータ => パソコン                                                                                    prh
+  15:26  ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
+解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
+  22:58  ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
+解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
+  29:41  error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+
+✖ 5 problems (5 errors, 0 warnings)
+✓ 3 fixable problems.
+Try to run: $ textlint --fix [file]
+
+#+end_example
+
+*** 文芸的プログラミング (Literate Programming)
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 15:26]
 :END:
 
+#+begin_src text :eval no
+  「文芸的プログラミング」はD.クヌース氏が発表したプログラミング手法です。
+  プログラミングのソースコードを、その理論的背景を説明する文章を添えながら書くというプログラミングスタイルです。
+  一般的にプログラミングとは頭の中で論理を考え、それをコードに落とし込む作業だと言えます。
+  しかし頭の中だけで構築されたその論理の正当性は危ういものがあります。
+  「文芸的プログラミング」では、論理的に説明できる単位ごとにコードと説明文をセットで書くことによって、貧弱な論理のもとで書かれようとしているコードを自動的にあぶり出すという効能があります。
+  また、コードを書く人間にとって、説明文を書くことはコードについて深く考える行為に相当し、書きながら考える、あるいは考えながら書くという姿勢を習慣づけるよい矯正環境となります。
+
+  クヌース氏はメソッドとともに「文芸的プログラミング」を支援するシステムも発表しています。
+  このシステムでは、主に2つの機能を提供します。
+  1つは、上記で説明したような、コードと文章が共存する文書を作成可能にする環境の提供です。
+  もう1つは、この文書からコードだけを抜き出し、コンピュータ上で実行可能な単体ファイルを作成する機能です。
+  「文芸的プログラミング」を支援するツールはクヌース氏が発表したもののほかにもいくつか存在します。
+  そのうちの1つがOrg Modeです。
+  Org Modeではコードブロックという、コードを収めるための記述様式があります。
+  これはOrg記法の文書中のどこにでも、何個でも配置することができます。
+  この特性を利用してコードと説明文が寄り添う文書を作成できます。
+  またコードブロック内のコードだけを集約して吐き出すことができ、この結果が実行可能なファイルとなります。
+#+end_src
+
+- 2021年版の記述
 #+begin_src text :eval no :tangle no
   一方で、Org-modeはプログラムコードの作成にも貢献します。一般的にプログラムコードを書く場合、コードの中にコメントとして変数や関数または処理の説明を書いて読み手にプログラムの意図を伝えます。ところが、コメントとして書ける分量は限定的であり、表現力も乏しいことから、プログラムの説明をする手段として充分とは言いがたい面があります。
 
@@ -510,24 +566,64 @@ Markdownの標準化関連情報 (内容の裏取り)
   この仕組みを使うメリットはいくつかあります。まず、ドキュメントはOrg-modeの形式で書けるので、アウトラインの階層構造などを使って表現力豊かにに記述できます。そして、ドキュメント内の各説明とそれを実現するコードを対応するかたちで配置できるので、プログラムの読み手の理解を深めます。「文芸的プログラミング」と呼ばれるこの手法は、プログラム作成のパラダイムを変えうる試みであり、適用範囲も広いため、一部で注目を集めています。Org-modeは文芸的プログラミングを強力にサポートするプラットフォームです。
 #+end_src
 
+文芸的プログラミング
+- [[https://www.cs.tufts.edu/~nr/noweb/][Noweb home page]]
+- [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
+  #+begin_quote
+  According to Knuth,[8][9] literate programming provides higher-quality programs, since it forces programmers to explicitly state the thoughts behind the program, making poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation.
+  #+end_quote
+- 2021年版の記述の問題点
+  - literate programmingは単なるコードとドキュメントを組合わせるシステムではない
+    + literate programming is not documentation generator
+  - プログラミングをweaveすることが重要
+
 - [[http://www.literateprogramming.com/index.html][Literate Programming]]
 
-**** 文芸的執筆
+*** 文芸的ライティング (Literate Writing)
 :PROPERTIES:
 :CREATED:  [2022-11-21 Mon 12:21]
 :END:
 
 #+begin_src text :eval no
-  突然ですが、プログラミングの話を少しさせてください。
-  プログラミングとは誰に宛てたメッセージでしょうか？もちろんコンピュータに宛てたものです。
-  コンピュータに対して具体的に処理してほしい内容を書いたメッセージ、それがプログラムコードです。
+  前置きが長くなりましたが、ここからが本題です。
 
-  このときドキュメントが書かれた
+  Org Modeのコードブロックに入れられるのはプログラミングのコードだけではありません。文章も入れられるのです。
+  文章を入れられると例えば、原稿とそれを説明する文を寄り添わせて記述でき、「文芸的プログラミング」の手法を執筆に応用することができます。
+  ここでは仮にこの手法「文芸的ライティング」と命名しておきます。
+  本原稿もこの手法で作成しましたので、その文書をご覧ください。
 
-  「文芸的プログラミング」
+  https://github.com/p-snow/publications/blob/main/sources/toolbox-for-lifehacking.org
+
+  文書では原稿の説明だけでなく、さまざまな種類の情報も組み入れています。
+  本書全体の説明、執筆までの経緯、原稿の制限、書いた内容を裏付ける情報源へのリンク、
+  これらの情報はどれも原稿をよりよく書くための一助となっています。
+  もちろんこの文書から本原稿を抽出してこの書籍に載せています。
+
+  考えながら書くことも可能です。
+
+  考えながら書くスタイルでよりよい文章を書いてみてはいかがでしょうか。
 #+end_src
+
+- 本書全体の説明と執筆までの経緯
+  翌年執筆時のための情報整理など
+- 原稿の期日・文体・文字数制限
+
+- 現在の文字数と構文チェック結果
+  常に更新されるので執筆最終段階でのカタストロフなエラーを防衛
+- 原稿のアイデア
+- 文章に対するセルフツッコミとそのエクスキューズ
+  とにかく筆を前に進める効果あり
+- 書いた内容を裏付ける情報源へのリンク
+  情報の正確性
+- パラグラフ毎の仮タイトル
+  とにかく仮でもタイトルをつけることによってそこに書いていく文章の軸ができる
 
 - 作成された文章(アウトプット)は読者のためのストリーム
 - 「文芸的執筆」で書かれるのは著者のための文脈
 - 読者に見せたい景色と著者が見るべき景色は違う
 - キーワード「タングル(tangle)」
+
+「文芸的ライティング」に関連しそうな記事
+- [[https://rashita.net/blog/?p=31107][執筆はメモからはじめる | R-style]]
+- [[https://dot.asahi.com/wa/2022091500019.html?page=1][朝日新聞記者の「文章術」 “先に見出しを考える”が吉？〈週刊朝日〉 | AERA dot. (アエラドット)]]
+- [[https://cyblog.jp/354][考えてから書くか、考えながら書くか | シゴタノ！]]
