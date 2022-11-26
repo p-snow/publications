@@ -66,14 +66,15 @@
   書籍中で自分が担当する節は以下
   - [X] [[* Emacs][Emacs]]
   - [X] [[* Org-mode][Org-mode]]
+  - [ ] [[* 「文芸的プログラミング」と原稿執筆への応用][「文芸的プログラミング」と原稿執筆への応用]]
   注意点
   - [X] それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
 
 - 原稿のレギュレーション
   [[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
+  + [ ] 締め切り: 2022年11月いっぱい
   + [X] 文字数: (各節)2,000字前後
   + [X] 文体:「です、ます」
-  + [ ] 締め切り: 2022年11月いっぱい
 
 - 想定読者 (個人的な判断)
   日本のいわゆる「ライフハック」クラスタ、またこの分野に興味のある層
@@ -486,7 +487,7 @@ Markdownの標準化関連情報 (内容の裏取り)
 
 - [TELL] 2022年版でLogseqを取り上げるのが確認
 
-** 「文芸的プログラミング」と執筆への応用
+** 「文芸的プログラミング」と原稿執筆への応用
 :PROPERTIES:
 :CREATED:  [2022-11-18 Fri 16:01]
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/literate-writing.txt"
@@ -509,7 +510,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 1927 文字
+: 1913 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -522,13 +523,12 @@ Org-modeセクションのアウトプットファイル (提出用)
 <text>
    4:29  ✓ error  コンピュータ => パソコン                                                                                        prh
   12:24  ✓ error  コンピュータ => パソコン                                                                                        prh
-  26:25  ✓ error  一つ => 1つ
+  18:37  ✓ error  コンピュータ => パソコン                                                                                        prh
+  26:26  ✓ error  一つ => 1つ
 数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
-  30:60  error    弱い表現: "思います" が使われています。                                                                         ja-technical-writing/ja-no-weak-phrase
-  40:10  error    一文に二回以上利用されている助詞 "に" がみつかりました。                                                        ja-technical-writing/no-doubled-joshi
 
-✖ 5 problems (5 errors, 0 warnings)
-✓ 3 fixable problems.
+✖ 4 problems (4 errors, 0 warnings)
+✓ 4 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example
@@ -538,19 +538,44 @@ Try to run: $ textlint --fix [file]
 :CREATED:  [2022-11-12 Sat 15:26]
 :END:
 
+文芸的プログラミング
+- [[https://www.cs.tufts.edu/~nr/noweb/][Noweb home page]]
+- [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
+  #+begin_quote
+  According to Knuth,[8][9] literate programming provides higher-quality programs, since it forces programmers to explicitly state the thoughts behind the program, making poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation.
+  #+end_quote
+- [[http://www.literateprogramming.com/index.html][Literate Programming]]
+- 2021年版の記述の問題点
+  - literate programmingは単なるコードとドキュメントを組合わせるシステムではない
+    + literate programming is not documentation generator
+  - プログラミングをweaveすることが重要
+
+**** 手法のあらまし・名前の由来
+:PROPERTIES:
+:CREATED:  [2022-11-26 Sat 15:23]
+:END:
+
 #+begin_src text :eval no
   「文芸的プログラミング」はD.クヌース氏が発表したプログラミング手法です。
   この手法は、プログラミングのソースコードをその理論的背景を説明する文章とともに書くことを奨励するものです。
-  結果として「文芸的」な読みものをつくり上げるように「プログラミング」できるのでこのような手法名になりました。
+  「文芸的」な読みものをつくり上げるように「プログラミング」できるのでこのような手法名になりました。
+#+end_src
+
+**** この手法で成果物はどうなるか
+:PROPERTIES:
+:CREATED:  [2022-11-26 Sat 15:26]
+:END:
+
+#+begin_src text :eval no
   一般的にプログラミングとは頭の中で理論を構築し、そこからコンピュータの処理内容を考え、それをコードに落とし込む作業だと言えます。
   しかし頭の中だけで組立てられた理論は、正確さが欠けていたり最適でなかったりすることがあります。
   「文芸的プログラミング」では、できるだけ細かい断片ごとにコードと説明文をセットで書くことで、貧弱な理論のもとで書かれようとしているコードを自動的にあぶり出すという効果があります。
-  またコードを作成する人にとって説明文を書く行為はコードについて深く考えることに相当するので、考えながら書くという姿勢を習慣づけることができます。
+  また、コードを作成する人にとって説明文を書く行為はコードについて深く考えることに相当するので、考えながら書くという姿勢を習慣づけることができるよい環境とも言えます。
 
   クヌース氏は方法論とともに「文芸的プログラミング」を支援するシステムも発表しています。
   このシステムでは、主に2つの機能を提供します。
   1つは、上記で説明したような、コードと説明文が共存する文書を作成可能にする環境の提供です。
-  もう1つは、この文書からコードだけを抜き出し、コンピュータ上で実行可能な別ファイルを作成する機能です。
+  もう1つは、この文書からコードだけを抜き出し、コンピュータ上で実行可能なファイルを別途作成する機能です。
   「文芸的プログラミング」を支援するツールはクヌース氏の発表したもののほかにもいくつか存在します。
   そのうちの1つがOrg Modeです。
   Org Modeではコードブロックという、コードを収めるための記述様式があります。
@@ -559,7 +584,7 @@ Try to run: $ textlint --fix [file]
   またコードブロック内のコードだけを集約して吐き出すことができ、この結果がコンピュータで実行可能なファイルとなります。
 #+end_src
 
-- 2021年版の記述
+- 2021年版の記述 (tangle対象外)
 #+begin_src text :eval no :tangle no
   一方で、Org-modeはプログラムコードの作成にも貢献します。一般的にプログラムコードを書く場合、コードの中にコメントとして変数や関数または処理の説明を書いて読み手にプログラムの意図を伝えます。ところが、コメントとして書ける分量は限定的であり、表現力も乏しいことから、プログラムの説明をする手段として充分とは言いがたい面があります。
 
@@ -568,18 +593,6 @@ Try to run: $ textlint --fix [file]
   この仕組みを使うメリットはいくつかあります。まず、ドキュメントはOrg-modeの形式で書けるので、アウトラインの階層構造などを使って表現力豊かにに記述できます。そして、ドキュメント内の各説明とそれを実現するコードを対応するかたちで配置できるので、プログラムの読み手の理解を深めます。「文芸的プログラミング」と呼ばれるこの手法は、プログラム作成のパラダイムを変えうる試みであり、適用範囲も広いため、一部で注目を集めています。Org-modeは文芸的プログラミングを強力にサポートするプラットフォームです。
 #+end_src
 
-文芸的プログラミング
-- [[https://www.cs.tufts.edu/~nr/noweb/][Noweb home page]]
-- [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
-  #+begin_quote
-  According to Knuth,[8][9] literate programming provides higher-quality programs, since it forces programmers to explicitly state the thoughts behind the program, making poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation.
-  #+end_quote
-- 2021年版の記述の問題点
-  - literate programmingは単なるコードとドキュメントを組合わせるシステムではない
-    + literate programming is not documentation generator
-  - プログラミングをweaveすることが重要
-
-- [[http://www.literateprogramming.com/index.html][Literate Programming]]
 
 *** 執筆への応用
 :PROPERTIES:
@@ -587,33 +600,26 @@ Try to run: $ textlint --fix [file]
 :END:
 
 #+begin_src text :eval no
-  Org Modeのコードブロックに記述可能なのは、プログラミングのコードだけではなく、日本語で書かれた文章も入れられます。
-  この性質を利用すると、例えば、コードブロック内に文章を置き、その文章の作成に役立つ情報を周辺に共存させることができます。
+  さて、Org Modeのコードブロックに記述可能なのはプログラミングのコードだけではなく、日本語で書かれた文章も入れられます。
+  この性質を利用すると、例えばコードブロック内に文章を置き、その文章の作成に役立つ情報を周辺に共存させることができます。
   これは「文芸的プログラミング」の手法を本や論文の原稿執筆に応用できることを意味します。
   原稿の素材となるメモや執筆に必要な周辺情報を揃えながら、原稿をつくり上げていくスタイルが可能なのです。
 
   実はみなさんが今読んでいるこの原稿は、この応用手法によってつくり上げられ、Org Modeの機能によって単独ファイルとして書き出されたものです。
-  全体の文書は以下のURLで参照できます。実践例の一つとしてご覧ください。
+  全体の文書は以下のURLから参照できます。実践例の一つとしてご覧ください。
 
   https://github.com/p-snow/publications/blob/main/sources/toolbox-for-lifehacking.org
 
-  ここでは、上記文書の中で、どのような情報を揃えながら原稿を書いたのかを、原稿にもたらした効能と合わせて説明してみたいと思います。
+  以下では、上記文書の中でどのような情報を揃えながら原稿を書いたのかを、その効能を考察しながら説明してみます。
 
-  1.文書のはじめでは、本書全体のプロジェクトの説明と私が執筆するまでの簡単な経緯などを書いています。
-  年刊誌である本書へは毎年アップデートした内容を寄稿するのですが1年ぶりのとりかかりの際の基本事項確認に役立ちます。
-  2.原稿の締切と文体・文字数の制限、および現在の原稿文字数を表します。
-  これは原稿の内容に集中している時でも、本情報を見ることで力の入れ具合などを調節するときに役立ちます。
-  3.構文チェック結果を表示します。
-  締切間際の慌しし状況で見落しがちな構文上の基本的なエラーを発見し修正するのに役立ちます。
-  4.パラグラフ毎に小見出しをつけています。
-  この小見出しは原稿に記載されるものではありませんが、つけることによって文章が方向性を見失わないというメリットがあります。
-  5.原稿執筆に参考にした情報源へのリンクを記入します。
-  原稿内容の妥当性をすばやく確認し問題があれば修正する、という一連の動作のスピードを速めます。
-  6.原稿に対する想定できる疑問や反論を書きます。
-  疑問はとりあえず脇に置き、とにかく筆を前に進める効果があります。また、原稿を読み返すごとに浮上する不安感の堂々巡りを防ぐことができます。
+  1つ目は、書籍全体の説明や私が執筆するまでの経緯などのバックグラウンド情報です。年刊誌である本書へは毎年アップデートした内容を寄稿するのですが、基本事項を再確認して1年ぶりの執筆をスムーズに再スタートさせるのに役立ちます。
+  2つ目は、自動原稿チェックのためのルールとチェック結果です。本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
+  3つ目は、原稿の各パラグラフにつける小見出しです。この小見出しは原稿に載せるものではありませんが、小見出しがあることにより原稿の方向性がぶれることなく書き進められるというメリットがあります。
+  4つ目は、参考にした情報源へのリンクです。原稿内での取り上げ方の再確認などをハイスピードで実施できます。
+  5つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。ツッコミから重要な気づきを得られることもありますが、今は書き進めたいという段階では足枷になり得ます。これをとりあえず保存することで心安らかに筆を進めることができます。
 
-  これはあくまで私の応用方法ですが、工夫次第でいろいろなことができます。
-  例えば、断片的な原稿アイデアをまずメモとして書き連ね、ある程度思索がまとまったらそれをもとに本番の原稿を組み上げていくという執筆スタイルなどが考えられます。
+  以上は私の実践ですが、工夫次第でいろいろな執筆手法を実装できる枠組みであることがこの仕組みのよいところです。
+  みなさんも自分で描いた執筆方法を具現化する場として活用してみてはいかがでしょうか。
 #+end_src
 
 メモの種類と効能
