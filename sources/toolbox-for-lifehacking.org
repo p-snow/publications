@@ -513,7 +513,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 1924 文字
+: 1931 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -541,27 +541,27 @@ Try to run: $ textlint --fix [file]
 :CREATED:  [2022-11-12 Sat 15:26]
 :END:
 
-文芸的プログラミング
-- [[https://www.cs.tufts.edu/~nr/noweb/][Noweb home page]]
-- [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
-  #+begin_quote
-  According to Knuth,[8][9] literate programming provides higher-quality programs, since it forces programmers to explicitly state the thoughts behind the program, making poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation.
-  #+end_quote
-- [[http://www.literateprogramming.com/index.html][Literate Programming]]
+- 文芸的プログラミング
+  + [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
+    #+begin_quote
+    According to Knuth,[8][9] literate programming provides higher-quality programs, since it forces programmers to explicitly state the thoughts behind the program, making poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation.
+    #+end_quote
+  + [[http://www.literateprogramming.com/index.html][Literate Programming]]
+  + [[https://www.cs.tufts.edu/~nr/noweb/][Noweb home page]]
 - 2021年版の記述の問題点
   - literate programmingは単なるコードとドキュメントを組合わせるシステムではない
     + literate programming is not documentation generator
   - プログラミングをweaveすることが重要
 
-**** LP紹介文
+**** LP紹介
 :PROPERTIES:
 :CREATED:  [2022-11-26 Sat 15:23]
 :END:
 
 #+begin_src text :eval no
-  「文芸的プログラミング」は、D.クヌース氏が発表したプログラミング手法です。
-  この手法は、プログラミングのソースコードをその理論的背景を説明する文章とともに書くことを奨励するものです。
-  「文芸的」な読みものをつくり上げるように「プログラミング」できるのでこのような手法名になりました。
+  「文芸的プログラミング」は、D.クヌース氏が提案したプログラミング方法論です。
+  ソースコードを書くとき、その理論的背景を説明する文章も同時に書くことを奨励するものです。
+  「文芸的」な読みものをつくり上げるように「プログラミング」できるのでこのような名前になりました。
 
   一般的にプログラミングとは頭の中で理論を構築し、そこからコンピュータの処理内容を考え、それをコードに落とし込む作業だと言えます。
   しかし頭の中だけで組立てられた理論は、正確さが欠けていたり最適でなかったりすることがあります。
@@ -569,7 +569,7 @@ Try to run: $ textlint --fix [file]
   また、コードを作成する人にとって説明文を書く行為はコードについて深く考えることに相当するので、考えながら書くという姿勢を習慣づけることができるよい環境とも言えます。
 #+end_src
 
-**** この手法で成果物はどうなるか
+**** WEBシステムの説明
 :PROPERTIES:
 :CREATED:  [2022-11-26 Sat 15:26]
 :END:
@@ -579,12 +579,6 @@ Try to run: $ textlint --fix [file]
   このシステムでは、主に2つの機能を提供します。
   1つは、上記で説明したような、コードと説明文が共存する文書を作成可能にする環境の提供です。
   もう1つは、この文書からコードだけを抜き出し、コンピュータ上で実行可能なファイルを別途作成する機能です。
-  「文芸的プログラミング」を支援するツールはクヌース氏の発表したもののほかにもいくつか存在します。
-  そのうちの1つがOrg Modeです。
-  Org Modeではコードブロックという、コードを収めるための記述様式があります。
-  これはOrg記法の文書中のどこにでも、何個でも配置できます。
-  この特性を利用してコードと説明文が寄り添う文書を作成できます。
-  またコードブロック内のコードだけを集約して吐き出すことができ、この結果がコンピュータで実行可能なファイルとなります。
 #+end_src
 
 - 2021年版の記述 (tangle対象外)
@@ -596,6 +590,19 @@ Try to run: $ textlint --fix [file]
   この仕組みを使うメリットはいくつかあります。まず、ドキュメントはOrg-modeの形式で書けるので、アウトラインの階層構造などを使って表現力豊かにに記述できます。そして、ドキュメント内の各説明とそれを実現するコードを対応するかたちで配置できるので、プログラムの読み手の理解を深めます。「文芸的プログラミング」と呼ばれるこの手法は、プログラム作成のパラダイムを変えうる試みであり、適用範囲も広いため、一部で注目を集めています。Org-modeは文芸的プログラミングを強力にサポートするプラットフォームです。
 #+end_src
 
+**** LPツールとしてのOrg Mode
+:PROPERTIES:
+:CREATED:  [2022-11-27 Sun 16:52]
+:END:
+
+#+begin_src text :eval no
+  「文芸的プログラミング」を支援するツールはクヌース氏の発表したもののほかにもいくつか存在します。
+  そのうちの1つがOrg Modeです。
+  Org Modeではコードブロックという、コードを収めるための記述様式があります。
+  これはOrg記法の文書中のどこにでも何個でも配置できます。
+  この特性を利用してコードと説明文が寄り添う文書を作成できます。
+  またコードブロック内のコードだけを集約して吐き出すことができ、この結果がコンピュータで実行可能なファイルとなります。
+#+end_src
 
 *** 執筆への応用
 :PROPERTIES:
@@ -603,30 +610,38 @@ Try to run: $ textlint --fix [file]
 :END:
 
 #+begin_src text :eval no
-  さて、Org Modeのコードブロックに記述可能なのはプログラミングのコードだけではなく、日本語で書かれた文章も入れられます。
+  さて、Org Modeのコードブロックに記述可能なのはプログラミングのコードだけではありません。
+  日本語で書かれた一般的な文章も入れられるのです。
   この性質を利用すると、例えばコードブロック内に文章を置き、その文章の作成に役立つ情報を周辺に共存させることができます。
-  これは「文芸的プログラミング」の手法を本や論文の原稿執筆に応用できることを意味します。
+  これは、「文芸的プログラミング」の手法を本や論文の原稿執筆に応用できることを意味します。
   原稿の素材となるメモや執筆に必要な周辺情報を揃えながら、原稿をつくり上げていくスタイルが可能なのです。
+#+end_src
 
+**** 本原稿を実践例として
+:PROPERTIES:
+:CREATED:  [2022-11-27 Sun 12:58]
+:END:
+
+#+begin_src text :eval no
   実はみなさんが今読んでいるこの原稿は、この応用手法によってつくり上げられ、Org Modeの機能によって単独ファイルとして書き出されたものです。
   全体の文書は以下のURLから参照できます。実践例の一つとしてご覧ください。
 
   https://github.com/p-snow/publications/blob/main/sources/toolbox-for-lifehacking.org
 #+end_src
 
-メモの種類と効能
-- 本書全体の説明と執筆までの経緯
-  - 翌年執筆時のための情報整理など
-- 原稿の締切・文体・文字数の制限
-  - 原稿の基本事項の遵守性の担保
-- 構文チェック結果
-  - 常に更新されるので執筆最終段階でのカタストロフなエラーを防衛
-- パラグラフ毎にタイトル付けしてアウトライン化
-  - とにかく仮でもタイトルをつけることによってそこに書いていく文章の軸ができる
-- 書いた内容を裏付ける情報源へのリンク
-  - 情報の正確性
-- 疑似他者からのツッコミ
-  - とにかく筆を前に進める効果あり
+- メモの種類と効能
+  + 本書全体の説明と執筆までの経緯
+    + 翌年執筆時のための情報整理など
+  + 原稿の締切・文体・文字数の制限
+    + 原稿の基本事項の遵守性の担保
+  + 構文チェック結果
+    + 常に更新されるので執筆最終段階でのカタストロフなエラーを防衛
+  + パラグラフ毎にタイトル付けしてアウトライン化
+    + とにかく仮でもタイトルをつけることによってそこに書いていく文章の軸ができる
+  + 書いた内容を裏付ける情報源へのリンク
+    + 情報の正確性
+  + 疑似他者からのツッコミ
+    + とにかく筆を前に進める効果あり
 
 - 作成された文章(アウトプット)は読者のためのストリーム
 - 「文芸的執筆」で書かれるのは著者のための文脈
@@ -663,18 +678,17 @@ Try to run: $ textlint --fix [file]
   本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
   特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
 
-  3つ目は、原稿の各パラグラフにつける小見出しです。
-  この小見出しは原稿に載せるものではありませんが、小見出しがあることにより原稿の方向性がぶれることなく書き進められるというメリットがあります。
+  3つ目は、文脈的な塊につける疑似小見出しです。
+  文章を書いた後で文脈を見つけて名付けることもありますし、逆に小見出しをつけてから書き始めることもあります。
+  前者はアウトライン操作をする最小単位として利用できますし、後者は文章の軸が、ぶれることなく書き進めるのに役立ちます。
 
   4つ目は、参考にした情報源へのリンクです。
   原稿内での取り上げ方の再確認などをハイスピードで実施できます。
 
   5つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。
   ツッコミから重要な気づきを得られることもありますが、今は書き進めたいという段階では足枷になり得ます。
-  これをとりあえず保存することで心安らかに筆を進めることができます。
-
-  (メモから原稿への昇華の話も書いておこう)
+  ツッコミを保存することで心安らかに筆を進めることができます。
 
   以上は私の実践ですが、工夫次第でいろいろな執筆手法を実装できる枠組みであることがこの仕組みのよいところです。
-  みなさんも自分で描いた執筆方法を具現化する場として活用してみてはいかがでしょうか。
+  みなさんも自分で描いた執筆方法を具現化する場としてこのような仕組みを取り入れてみてはいかがでしょうか。
 #+end_src
