@@ -185,7 +185,7 @@ Emacsセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 2176 文字
+: 2177 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -196,17 +196,14 @@ Emacsセクションのアウトプットファイル (提出用)
 #+begin_example
 
 <text>
-   1:8    ✓ error  パソコン => PC                                                                                                  spellcheck-tech-word
-   1:37   ✓ error  MacOS => Mac OS                                                                                                 spellcheck-tech-word
-   3:70   error    文末が"。"で終わっていません。                                                                                  ja-technical-writing/ja-no-mixed-period
-   4:15   ✓ error  Mac OS => MacOS                                                                                                 prh
-   8:66   ✓ error  Webブラウザ => ブラウザ                                                                                         spellcheck-tech-word
-   8:289  ✓ error  一つ => 1つ
-数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
-  10:112  error    一つの文で"、"を4つ以上使用しています                                                                           ja-technical-writing/max-ten
+   1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
+   1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
+   3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
+   4:15   ✓ error  Mac OS => MacOS                        prh
+  10:112  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
 
-✖ 7 problems (7 errors, 0 warnings)
-✓ 5 fixable problems.
+✖ 5 problems (5 errors, 0 warnings)
+✓ 3 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example
@@ -220,7 +217,7 @@ Try to run: $ textlint --fix [file]
   Emacsは、パソコン上で動作するテキストエディタです。
   Windows・MacOS・Linux版が無料で利用可能です。
   各OSでのインストール方法は公式サイトをご覧ください。
-  WindowsまたはMacOSをお使いで実行可能なアプリファイルを手軽に入手したい方は以下のページから入手するのがよいでしょう。
+  WindowsまたはMacOSをお使いで実行可能なアプリファイルを手軽に入手したい方は以下のページからダウンロードするのがよいでしょう。
 
   Windows版Emacsのダウンロードページ: http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/
   GNU Emacs For Mac OS X: https://emacsformacosx.com/
@@ -263,7 +260,10 @@ Try to run: $ textlint --fix [file]
 :END:
 
 #+begin_src text :eval no
-  一般的なテキストエディタと比べてEmacsのユニークな点は、テキスト編集以外の機能も充実していることでしょう。その一例を挙げると、Webブラウザ・RSSリーダーなどの情報をインプットするための機能、メール・チャット・SNSなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。通常のテキストエディタがコードや文章を生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。インプットからアウトプットまでのプロセスをEmacsという一つのツールで完結できるので、データの移動や加工、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
+  一般的なテキストエディタと比べてEmacsのユニークな点は、テキスト編集以外の機能も充実していることでしょう。
+  その一例を挙げると、ブラウザ・RSSリーダーなどの情報をインプットするための機能、メール・チャット・SNSなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。
+  通常のテキストエディタがコードや文章を生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。
+  インプットからアウトプットまでのプロセスをEmacsという単一のツールで完結できるので、データの移動や加工、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
 #+end_src
 
 - [[https://github.com/hayamiz/twittering-mode][twittering-mode]]は利用者の少なさや、コードメンテがあまりされてない状況で書くのは適切か？
@@ -507,7 +507,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 1989 文字
+: 1951 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -518,14 +518,12 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+begin_example
 
 <text>
-   3:29   ✓ error  コンピュータ => パソコン                                                                                        prh
-   5:135  ✓ error  コンピュータ => パソコン                                                                                        prh
-   7:205  ✓ error  コンピュータ => パソコン                                                                                        prh
-  11:98   ✓ error  一つ => 1つ
-数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
+  3:29   ✓ error  コンピュータ => パソコン  prh
+  5:135  ✓ error  パソコン => PC            spellcheck-tech-word
+  7:205  ✓ error  パソコン => PC            spellcheck-tech-word
 
-✖ 4 problems (4 errors, 0 warnings)
-✓ 4 fixable problems.
+✖ 3 problems (3 errors, 0 warnings)
+✓ 3 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example
@@ -572,7 +570,7 @@ Try to run: $ textlint --fix [file]
   クヌース氏は方法論とともに「文芸的プログラミング」を支援するシステムも発表しています。
   このシステムでは、主に2つの機能を提供します。
   1つは、上記で説明したような、コードと説明文が共存する文書を作成可能にする環境の提供です。
-  もう1つは、この文書からコードだけを抜き出し、コンピュータ上で実行可能なファイルを別途作成する機能です。
+  もう1つは、この文書からコードだけを抜き出し、パソコン上で実行可能なファイルを別途作成する機能です。
 #+end_src
 
 - 2021年版の記述 (tangle対象外)
@@ -595,7 +593,7 @@ Try to run: $ textlint --fix [file]
   Org Modeではコードブロックという、コードを収めるための記述様式があります。
   これはOrg記法の文書中のどこにでも何個でも配置できます。
   この特性を利用してコードと説明文が寄り添う文書を作成できます。
-  またコードブロック内のコードだけを集約して吐き出すことができ、この結果がコンピュータで実行可能なファイルとなります。
+  またコードブロック内のコードだけを集約して吐き出すことができ、この結果がパソコンで実行可能なファイルとなります。
 #+end_src
 
 *** 執筆への応用
@@ -618,7 +616,7 @@ Try to run: $ textlint --fix [file]
 
 #+begin_src text :eval no
   実はみなさんが今読んでいるこの原稿は、この応用手法によってつくり上げられ、Org Modeの機能によって単独ファイルとして書き出されたものです。
-  全体の文書は以下のURLから参照できます。実践例の一つとしてご覧ください。
+  全体の文書は以下のURLから参照できます。
 
   https://github.com/p-snow/publications/blob/main/sources/toolbox-for-lifehacking.org
 #+end_src
@@ -727,7 +725,13 @@ Try to run: $ textlint --fix [file]
   <<count()>>つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。
   ツッコミから重要な気づきを得られることもありますが、今は書き進めたいという段階では足枷になり得ます。
   ツッコミを保存することで心安らかに筆を進めることができます。
+#+end_src
+**** 総括
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:54]
+:END:
 
+#+begin_src text
   以上は私の実践ですが、工夫次第でいろいろな執筆手法を実装できる枠組みであることがこの仕組みのよいところです。
   みなさんも自分で描いた執筆方法を具現化する場としてこのような仕組みを取り入れてみてはいかがでしょうか。
 #+end_src
