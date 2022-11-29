@@ -32,7 +32,7 @@
 - 2022年版
   + [[https://rashita.net/blog/?p=31179][『ライフハックの道具箱 2022年版』プロジェクト始動 | R-style]]
 
-* 原稿提出までの手順
+* 提出までの手順
 :PROPERTIES:
 :CREATED:  [2022-11-18 Fri 09:46]
 :END:
@@ -54,74 +54,14 @@
    #+RESULTS: lhack-toolbox-dir
    : ../public/ライフハックの道具箱2022年版
 
-* 原稿
+* 補足情報
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 12:22]
 :header-args+: :tangle-mode (identity #o644)
 :ID:       1dea9175-0709-4de5-af01-5eb2dfc5a70c
 :END:
 
-- 担当セクション
-  - [X] [[* Emacs][Emacs]]
-    - アウトプットファイル (提出用)
-      #+name: output-emacs
-      #+begin_src emacs-lisp :tangle no :noweb yes :exports results
-        (file-relative-name
-         (file-name-concat "<<lhack-toolbox-dir()>>" "emacs.txt")
-         default-directory)
-      #+end_src
-
-      #+RESULTS: output-emacs
-      : ../public/ライフハックの道具箱2022年版/emacs.txt
-
-    - 現在の文字数 (目安: 2,000文字前後)
-      #+begin_src shell :tangle no :noweb yes :exports results
-        echo -n $(cat <<output-emacs()>> | wc -m) '文字'
-      #+end_src
-
-      #+RESULTS:
-      : 2177 文字
-
-    - 自動原稿チェック結果
-      #+begin_src shell :tangle no :noweb yes :results output :exports results
-        cat "<<output-emacs()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
-      #+end_src
-
-      #+RESULTS:
-      #+begin_example
-
-        <text>
-           1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
-           1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
-           3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
-           4:15   ✓ error  Mac OS => MacOS                        prh
-          10:112  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
-
-        ✖ 5 problems (5 errors, 0 warnings)
-        ✓ 3 fixable problems.
-        Try to run: $ textlint --fix [file]
-
-      #+end_example
-
-  - [X] [[* Org-mode][Org-mode]]
-  - [ ] [[* 「文芸的プログラミング」と原稿執筆への応用][「文芸的プログラミング」と原稿執筆への応用]]
-  注意点
-  - [X] それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
-
-- 原稿のレギュレーション
-  [[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
-  + [ ] 締め切り: 2022年11月いっぱい
-  + [X] 文字数: (各節)2,000字前後
-  + [X] 文体:「です、ます」
-
-- 想定読者 (個人的な判断)
-  日本のいわゆる「ライフハック」クラスタ、またこの分野に興味のある層
-  + PC利用スキルは標準
-    → 極力、平易な言葉を使用
-  + 2021年版を読んだ読者のことも忘れずに
-  + Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討
-
-- 自動原稿チェックの設定
+** 自動原稿チェックの設定
   #+begin_src json :tangle ../config/lhack-tbox.textlintrc :eval no :exports none
     {
       "rules": {
@@ -143,7 +83,7 @@
     }
   #+end_src
 
-- 書籍中で統一する文言 :: 表記ゆれチェック
+** 書籍中で統一する文言 表記ゆれチェック
 
   統一する文言ルールをチェッカーの設定ファイル形式で記述していく
   #+begin_src yaml :tangle ../config/lhack-tbox.yml :eval no
@@ -201,6 +141,151 @@
           - narrow
           - フォーカス
   #+end_src
+
+** 想定読者 (個人的な判断)
+  日本のいわゆる「ライフハック」クラスタ、またこの分野に興味のある層
+  + PC利用スキルは標準
+    → 極力、平易な言葉を使用
+  + 2021年版を読んだ読者のことも忘れずに
+  + Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討
+
+** 原稿のレギュレーション
+  [[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
+  + [ ] 締め切り: 2022年11月いっぱい
+  + [X] 文字数: (各節)2,000字前後
+  + [X] 文体:「です、ます」
+
+* 原稿ステータス
+- [X] [[* Emacs][Emacs]]
+  - アウトプットファイル (提出用)
+    #+name: output-emacs
+    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
+      (file-relative-name
+       (file-name-concat "<<lhack-toolbox-dir()>>" "emacs.txt")
+       default-directory)
+    #+end_src
+
+    #+RESULTS: output-emacs
+    : ../public/ライフハックの道具箱2022年版/emacs.txt
+
+  - 現在の文字数 (目安: 2,000文字前後)
+    #+begin_src shell :tangle no :noweb yes :exports results
+      echo -n $(cat <<output-emacs()>> | wc -m) '文字'
+    #+end_src
+
+    #+RESULTS:
+    : 2177 文字
+
+  - 自動原稿チェック結果
+    #+begin_src shell :tangle no :noweb yes :results output :exports results
+      cat "<<output-emacs()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+
+      <text>
+         1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
+         1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
+         3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
+         4:15   ✓ error  Mac OS => MacOS                        prh
+        10:112  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
+
+      ✖ 5 problems (5 errors, 0 warnings)
+      ✓ 3 fixable problems.
+      Try to run: $ textlint --fix [file]
+
+    #+end_example
+
+- [X] [[* Org-mode][Org-mode]]
+  - アウトプットファイル (提出用)
+    #+name: output-org
+    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
+      (file-relative-name
+       (file-name-concat "<<lhack-toolbox-dir()>>" "org-mode.txt")
+       default-directory)
+    #+end_src
+
+    #+RESULTS: output-org
+    : ../public/ライフハックの道具箱2022年版/org-mode.txt
+
+  - 現在の文字数
+    #+begin_src shell :tangle no :noweb yes :exports results
+      echo -n $(cat <<output-org()>> | wc -m) '文字'
+    #+end_src
+
+    #+RESULTS:
+    : 2055 文字
+
+  - 自動原稿チェック結果
+    #+begin_src shell :tangle no :noweb yes :results output :exports results
+      cat "<<output-org()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+
+    <text>
+       1:74   ✓ error  コンピュータ => パソコン                                  prh
+       1:269  ✓ error  Markdown => マークダウン                                  prh
+       1:314  error    一文に二回以上利用されている助詞 "に" がみつかりました。  ja-technical-writing/no-doubled-joshi
+       7:72   error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
+       9:120  error    一文に二回以上利用されている助詞 "で" がみつかりました。  ja-technical-writing/no-doubled-joshi
+      19:39   ✓ error  Markdown => マークダウン                                  prh
+      19:306  error    一文に二回以上利用されている助詞 "は" がみつかりました。  ja-technical-writing/no-doubled-joshi
+      19:444  error    弱い表現: "思います" が使われています。                   ja-technical-writing/ja-no-weak-phrase
+
+    ✖ 8 problems (8 errors, 0 warnings)
+    ✓ 3 fixable problems.
+    Try to run: $ textlint --fix [file]
+
+    #+end_example
+
+- [X] [[* 「文芸的プログラミング」と原稿執筆への応用][「文芸的プログラミング」と原稿執筆への応用]]
+  - アウトプットファイル (提出用)
+    #+name: output-literate
+    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
+      (file-relative-name
+       (file-name-concat "<<lhack-toolbox-dir()>>" "literate-writing.txt")
+       default-directory)
+    #+end_src
+
+    #+RESULTS: output-literate
+    : ../public/ライフハックの道具箱2022年版/literate-writing.txt
+
+  - 現在の文字数
+    #+begin_src shell :tangle no :noweb yes :exports results
+      echo -n $(cat <<output-literate()>> | wc -m) '文字'
+    #+end_src
+
+    #+RESULTS:
+    : 1931 文字
+
+  - 自動原稿チェック結果
+    #+begin_src shell :tangle no :noweb yes :results output :exports results
+      cat "<<output-literate()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+
+    <text>
+      3:29   ✓ error  コンピュータ => パソコン  prh
+      5:135  ✓ error  パソコン => PC            spellcheck-tech-word
+      7:205  ✓ error  パソコン => PC            spellcheck-tech-word
+
+    ✖ 3 problems (3 errors, 0 warnings)
+    ✓ 3 fixable problems.
+    Try to run: $ textlint --fix [file]
+
+    #+end_example
+
+* 原稿
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 14:23]
+:END:
+
+注意点: それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
 
 ** Emacs
 :PROPERTIES:
@@ -333,48 +418,7 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
 :END:
 
-Org-modeセクションのアウトプットファイル (提出用)
-#+name: output-org
-#+begin_src emacs-lisp :tangle no :noweb yes :exports results
-  (file-relative-name
-   (file-name-concat "<<lhack-toolbox-dir()>>" "org-mode.txt")
-   default-directory)
-#+end_src
 
-#+RESULTS: output-org
-: ../public/ライフハックの道具箱2022年版/org-mode.txt
-
-現在の文字数 (目安: 2,000文字前後)
-#+begin_src shell :tangle no :noweb yes :exports results
-  echo -n $(cat <<output-org()>> | wc -m) '文字'
-#+end_src
-
-#+RESULTS:
-: 2055 文字
-
-自動原稿チェック結果
-#+begin_src shell :tangle no :noweb yes :results output :exports results
-  cat "<<output-org()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
-#+end_src
-
-#+RESULTS:
-#+begin_example
-
-<text>
-   1:74   ✓ error  コンピュータ => パソコン                                  prh
-   1:269  ✓ error  Markdown => マークダウン                                  prh
-   1:314  error    一文に二回以上利用されている助詞 "に" がみつかりました。  ja-technical-writing/no-doubled-joshi
-   7:72   error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
-   9:120  error    一文に二回以上利用されている助詞 "で" がみつかりました。  ja-technical-writing/no-doubled-joshi
-  19:39   ✓ error  Markdown => マークダウン                                  prh
-  19:306  error    一文に二回以上利用されている助詞 "は" がみつかりました。  ja-technical-writing/no-doubled-joshi
-  19:444  error    弱い表現: "思います" が使われています。                   ja-technical-writing/ja-no-weak-phrase
-
-✖ 8 problems (8 errors, 0 warnings)
-✓ 3 fixable problems.
-Try to run: $ textlint --fix [file]
-
-#+end_example
 
 *** 丁寧なイントロ
 :PROPERTIES:
@@ -492,44 +536,6 @@ Markdownの標準化関連情報 (内容の裏取り)
 :CREATED:  [2022-11-18 Fri 16:01]
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/literate-writing.txt"
 :END:
-
-Org-modeセクションのアウトプットファイル (提出用)
-#+name: output-literate
-#+begin_src emacs-lisp :tangle no :noweb yes :exports results
-  (file-relative-name
-   (file-name-concat "<<lhack-toolbox-dir()>>" "literate-writing.txt")
-   default-directory)
-#+end_src
-
-#+RESULTS: output-literate
-: ../public/ライフハックの道具箱2022年版/literate-writing.txt
-
-現在の文字数 (目安: 2,000文字前後)
-#+begin_src shell :tangle no :noweb yes :exports results
-  echo -n $(cat <<output-literate()>> | wc -m) '文字'
-#+end_src
-
-#+RESULTS:
-: 1951 文字
-
-自動原稿チェック結果
-#+begin_src shell :tangle no :noweb yes :results output :exports results
-  cat "<<output-literate()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
-#+end_src
-
-#+RESULTS:
-#+begin_example
-
-<text>
-  3:29   ✓ error  コンピュータ => パソコン  prh
-  5:135  ✓ error  パソコン => PC            spellcheck-tech-word
-  7:205  ✓ error  パソコン => PC            spellcheck-tech-word
-
-✖ 3 problems (3 errors, 0 warnings)
-✓ 3 fixable problems.
-Try to run: $ textlint --fix [file]
-
-#+end_example
 
 *** 文芸的プログラミング (Literate Programming)
 :PROPERTIES:
