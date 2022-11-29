@@ -25,6 +25,9 @@ rules:
       - macOS
       - Mac OS
 
+  - expected: マークダウン
+    patterns: Markdown
+
   # Emacs用語は使わない
   - expected: キーボードショートカット
     patterns:

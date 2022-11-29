@@ -62,9 +62,47 @@
 :END:
 
 - 担当セクション
-
-  書籍中で自分が担当する節は以下
   - [X] [[* Emacs][Emacs]]
+    - アウトプットファイル (提出用)
+      #+name: output-emacs
+      #+begin_src emacs-lisp :tangle no :noweb yes :exports results
+        (file-relative-name
+         (file-name-concat "<<lhack-toolbox-dir()>>" "emacs.txt")
+         default-directory)
+      #+end_src
+
+      #+RESULTS: output-emacs
+      : ../public/ライフハックの道具箱2022年版/emacs.txt
+
+    - 現在の文字数 (目安: 2,000文字前後)
+      #+begin_src shell :tangle no :noweb yes :exports results
+        echo -n $(cat <<output-emacs()>> | wc -m) '文字'
+      #+end_src
+
+      #+RESULTS:
+      : 2177 文字
+
+    - 自動原稿チェック結果
+      #+begin_src shell :tangle no :noweb yes :results output :exports results
+        cat "<<output-emacs()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
+      #+end_src
+
+      #+RESULTS:
+      #+begin_example
+
+        <text>
+           1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
+           1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
+           3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
+           4:15   ✓ error  Mac OS => MacOS                        prh
+          10:112  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
+
+        ✖ 5 problems (5 errors, 0 warnings)
+        ✓ 3 fixable problems.
+        Try to run: $ textlint --fix [file]
+
+      #+end_example
+
   - [X] [[* Org-mode][Org-mode]]
   - [ ] [[* 「文芸的プログラミング」と原稿執筆への応用][「文芸的プログラミング」と原稿執筆への応用]]
   注意点
@@ -136,6 +174,9 @@
           - macOS
           - Mac OS
 
+      - expected: マークダウン
+        patterns: Markdown
+
       # Emacs用語は使わない
       - expected: キーボードショートカット
         patterns:
@@ -167,46 +208,6 @@
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/emacs.txt"
 :ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
 :END:
-
-Emacsセクションのアウトプットファイル (提出用)
-#+name: output-emacs
-#+begin_src emacs-lisp :tangle no :noweb yes :exports results
-  (file-relative-name
-   (file-name-concat "<<lhack-toolbox-dir()>>" "emacs.txt")
-   default-directory)
-#+end_src
-
-#+RESULTS: output-emacs
-: ../public/ライフハックの道具箱2022年版/emacs.txt
-
-現在の文字数 (目安: 2,000文字前後)
-#+begin_src shell :tangle no :noweb yes :exports results
-  echo -n $(cat <<output-emacs()>> | wc -m) '文字'
-#+end_src
-
-#+RESULTS:
-: 2177 文字
-
-自動原稿チェック結果
-#+begin_src shell :tangle no :noweb yes :results output :exports results
-  cat "<<output-emacs()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
-#+end_src
-
-#+RESULTS:
-#+begin_example
-
-<text>
-   1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
-   1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
-   3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
-   4:15   ✓ error  Mac OS => MacOS                        prh
-  10:112  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
-
-✖ 5 problems (5 errors, 0 warnings)
-✓ 3 fixable problems.
-Try to run: $ textlint --fix [file]
-
-#+end_example
 
 *** イントロ・入手方法
 :PROPERTIES:
@@ -361,14 +362,16 @@ Org-modeセクションのアウトプットファイル (提出用)
 
 <text>
    1:74   ✓ error  コンピュータ => パソコン                                  prh
+   1:269  ✓ error  Markdown => マークダウン                                  prh
    1:314  error    一文に二回以上利用されている助詞 "に" がみつかりました。  ja-technical-writing/no-doubled-joshi
    7:72   error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
    9:120  error    一文に二回以上利用されている助詞 "で" がみつかりました。  ja-technical-writing/no-doubled-joshi
+  19:39   ✓ error  Markdown => マークダウン                                  prh
   19:306  error    一文に二回以上利用されている助詞 "は" がみつかりました。  ja-technical-writing/no-doubled-joshi
   19:444  error    弱い表現: "思います" が使われています。                   ja-technical-writing/ja-no-weak-phrase
 
-✖ 6 problems (6 errors, 0 warnings)
-✓ 1 fixable problem.
+✖ 8 problems (8 errors, 0 warnings)
+✓ 3 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example
