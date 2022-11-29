@@ -668,7 +668,7 @@ Try to run: $ textlint --fix [file]
 
 #+name: count
 #+HEADER: :var init="1"
-#+begin_src shell :noweb no :eval yes :tangle no :results output :var cfile="tmp-count.txt"
+#+begin_src shell :noweb no :eval yes :tangle no :results output :var cfile="tmp-count.txt" :exports none
   if [ -f ${cfile} ]; then
     counter=$(cat ${cfile})
   else
@@ -698,14 +698,32 @@ Try to run: $ textlint --fix [file]
   <<count()>>つ目は、自動原稿チェックのためのルールとチェック結果です。
   本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
   特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
+#+end_src
+***** 疑似小見出し
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:40]
+:END:
 
+#+begin_src text :noweb yes
   <<count()>>つ目は、文脈的な塊につける疑似小見出しです。
   文章を書いた後で文脈を見つけて名付けることもありますし、逆に小見出しをつけてから書き始めることもあります。
-  前者はアウトライン操作をする最小単位として利用できますし、後者は文章の軸が、ぶれることなく書き進めるのに役立ちます。
+  前者はアウトライン操作をするときの最小単位として利用できますし、後者は文章の軸がぶれることなく書き進めるのに役立ちます。
+#+end_src
+***** 情報源へのリンク
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:42]
+:END:
 
+#+begin_src text :noweb tangle
   <<count()>>つ目は、参考にした情報源へのリンクです。
   原稿内での取り上げ方の再確認などをハイスピードで実施できます。
+#+end_src
+***** ツッコミ
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:43]
+:END:
 
+#+begin_src text :noweb tangle
   <<count()>>つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。
   ツッコミから重要な気づきを得られることもありますが、今は書き進めたいという段階では足枷になり得ます。
   ツッコミを保存することで心安らかに筆を進めることができます。
