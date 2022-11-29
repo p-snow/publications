@@ -1,4 +1,5 @@
 (require 'org)
+(require 'ob-shell)
 
 (defun my/org-babel-tangle-remove-single-line-break ()
   "Cull single line breaks after a period in Japanese to make a paragraph."
@@ -7,6 +8,11 @@
                                      (group (not space))))
                             "\\1\\2"
                             (point-min) (point-max)))
+
+(defun my/delete-tmp-files ()
+  "Delete files whose name start with 'tmp-'."
+  (dolist (del-file (file-expand-wildcards "*/tmp-*"))
+    (delete-file del-file)))
 
 (remove-hook 'org-babel-pre-tangle-hook
              'save-buffer)
@@ -22,4 +28,5 @@
   (dolist (org-file org-files)
     (unless (member org-file '("README.org"))
       (with-current-buffer (find-file-noselect org-file)
-        (org-babel-tangle)))))
+        (org-babel-tangle))))
+  (my/delete-tmp-files))

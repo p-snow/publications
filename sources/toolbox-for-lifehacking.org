@@ -341,7 +341,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS: output-org
-: ../public/ライフハックの道具箱2022年版/literate-writing.txt
+: ../public/ライフハックの道具箱2022年版/org-mode.txt
 
 現在の文字数 (目安: 2,000文字前後)
 #+begin_src shell :tangle no :noweb yes :exports results
@@ -349,7 +349,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 2000 文字
+: 2055 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -360,21 +360,15 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+begin_example
 
 <text>
-   3:11  ✓ error  コンピュータ => パソコン                                                                                        prh
-  13:21  ✓ error  文末が"。"で終わっていません。                                                                                  ja-technical-writing/ja-no-mixed-period
-  15:80  error    一文に二回以上利用されている助詞 "で" がみつかりました。                                                        ja-technical-writing/no-doubled-joshi
-  34:7   ✓ error  二つ => 2つ
-数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
-  36:9   error    文末が"。"で終わっていません。                                                                                  ja-technical-writing/ja-no-mixed-period
-  41:33  error    弱い表現: "思います" が使われています。                                                                         ja-technical-writing/ja-no-weak-phrase
-  47:4   error    文末が"。"で終わっていません。                                                                                  ja-technical-writing/ja-no-mixed-period
-  48:25  error    文末が"。"で終わっていません。                                                                                  ja-technical-writing/ja-no-mixed-period
-  51:40  error    文末が"。"で終わっていません。                                                                                  ja-technical-writing/ja-no-mixed-period
-  53:18  error    文末が"。"で終わっていません。                                                                                  ja-technical-writing/ja-no-mixed-period
-  57:47  error    弱い表現: "かも" が使われています。                                                                             ja-technical-writing/ja-no-weak-phrase
+   1:74   ✓ error  コンピュータ => パソコン                                  prh
+   1:314  error    一文に二回以上利用されている助詞 "に" がみつかりました。  ja-technical-writing/no-doubled-joshi
+   7:72   error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
+   9:120  error    一文に二回以上利用されている助詞 "で" がみつかりました。  ja-technical-writing/no-doubled-joshi
+  19:306  error    一文に二回以上利用されている助詞 "は" がみつかりました。  ja-technical-writing/no-doubled-joshi
+  19:444  error    弱い表現: "思います" が使われています。                   ja-technical-writing/ja-no-weak-phrase
 
-✖ 11 problems (11 errors, 0 warnings)
-✓ 3 fixable problems.
+✖ 6 problems (6 errors, 0 warnings)
+✓ 1 fixable problem.
 Try to run: $ textlint --fix [file]
 
 #+end_example
@@ -513,7 +507,7 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+end_src
 
 #+RESULTS:
-: 1931 文字
+: 1989 文字
 
 自動原稿チェック結果
 #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -524,10 +518,10 @@ Org-modeセクションのアウトプットファイル (提出用)
 #+begin_example
 
 <text>
-  3:29   ✓ error  コンピュータ => パソコン                                                                                        prh
-  5:135  ✓ error  コンピュータ => パソコン                                                                                        prh
-  5:369  ✓ error  コンピュータ => パソコン                                                                                        prh
-  9:98   ✓ error  一つ => 1つ
+   3:29   ✓ error  コンピュータ => パソコン                                                                                        prh
+   5:135  ✓ error  コンピュータ => パソコン                                                                                        prh
+   7:205  ✓ error  コンピュータ => パソコン                                                                                        prh
+  11:98   ✓ error  一つ => 1つ
 数量を表現し、数を数えられるものは算用数字を使用します。任意の数に置き換えても通用する語句がこれに該当します。  ja-technical-writing/arabic-kanji-numbers
 
 ✖ 4 problems (4 errors, 0 warnings)
@@ -668,24 +662,51 @@ Try to run: $ textlint --fix [file]
 :CREATED:  [2022-11-27 Sun 11:08]
 :END:
 
-#+begin_src text
+#+begin_src text :eval no
   以下では、上記文書の中でどのような情報を揃えながら原稿を書いたのかを、その効能を考察しながら説明してみます。
+#+end_src
 
-  1つ目は、書籍全体の説明や私が執筆するまでの経緯などのバックグラウンド情報です。
+#+name: count
+#+HEADER: :var init="1"
+#+begin_src shell :noweb no :eval yes :tangle no :results output :var cfile="tmp-count.txt"
+  if [ -f ${cfile} ]; then
+    counter=$(cat ${cfile})
+  else
+    counter=${init}
+  fi
+
+  echo -n $((${counter} + 1)) > ${cfile}
+  echo -n ${counter}
+#+end_src
+
+***** バックグラウンド情報
+:PROPERTIES:
+:CREATED:  [2022-11-28 Mon 15:24]
+:END:
+
+#+begin_src text :noweb yes
+  <<count()>>つ目は、書籍全体の説明や私が執筆するまでの経緯などのバックグラウンド情報です。
   年刊誌である本書へは毎年アップデートした内容を寄稿するのですが、基本事項を再確認して1年ぶりの執筆をスムーズに再スタートさせるのに役立ちます。
+#+end_src
 
-  2つ目は、自動原稿チェックのためのルールとチェック結果です。
+***** 自動原稿チェック
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:29]
+:END:
+
+#+begin_src text :noweb yes
+  <<count()>>つ目は、自動原稿チェックのためのルールとチェック結果です。
   本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
   特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
 
-  3つ目は、文脈的な塊につける疑似小見出しです。
+  <<count()>>つ目は、文脈的な塊につける疑似小見出しです。
   文章を書いた後で文脈を見つけて名付けることもありますし、逆に小見出しをつけてから書き始めることもあります。
   前者はアウトライン操作をする最小単位として利用できますし、後者は文章の軸が、ぶれることなく書き進めるのに役立ちます。
 
-  4つ目は、参考にした情報源へのリンクです。
+  <<count()>>つ目は、参考にした情報源へのリンクです。
   原稿内での取り上げ方の再確認などをハイスピードで実施できます。
 
-  5つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。
+  <<count()>>つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。
   ツッコミから重要な気づきを得られることもありますが、今は書き進めたいという段階では足枷になり得ます。
   ツッコミを保存することで心安らかに筆を進めることができます。
 
