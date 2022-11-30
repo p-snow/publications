@@ -2,17 +2,6 @@
 
 このリポジトリでは、私、こなゆき(a.k.a. p-snow)が発表する記事を管理しています。
 
-* 各ディレクトリの説明
-:PROPERTIES:
-:CREATED:  [2022-11-16 Wed 18:42]
-:END:
-
-- [[file:sources][sources]]
-  「文芸的執筆」の手法で記事を生み出すためのファイル
-
-- [[file:public][public]]
-  記事ファイル
-
 * 記事ファイルの抽出方法
 
 : $ make tangle
