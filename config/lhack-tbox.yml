@@ -19,6 +19,11 @@ rules:
       - コンピュータ
       - コンピューター
 
+  - expected: ユーザー
+    patterns:
+      - ユーザ
+      - 利用者
+
   # 本書では「MacOS」で統一
   - expected: MacOS
     patterns:

@@ -108,6 +108,11 @@
           - コンピュータ
           - コンピューター
 
+      - expected: ユーザー
+        patterns:
+          - ユーザ
+          - 利用者
+
       # 本書では「MacOS」で統一
       - expected: MacOS
         patterns:
@@ -143,11 +148,11 @@
   #+end_src
 
 ** 想定読者 (個人的な判断)
-  日本のいわゆる「ライフハック」クラスタ、またこの分野に興味のある層
-  + PC利用スキルは標準
-    → 極力、平易な言葉を使用
-  + 2021年版を読んだ読者のことも忘れずに
-  + Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討
+日本のいわゆる「ライフハック」クラスタ、またこの分野に興味のある層
++ PC利用スキルは標準
+  → 極力、平易な言葉を使用
++ 2021年版を読んだ読者のことも忘れずに
++ Emacs利用シナリオでライフハック界隈で使われる文脈に乗っかれるところがあれば採用を検討
 
 ** 原稿のレギュレーション
   [[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
@@ -184,16 +189,20 @@
     #+RESULTS:
     #+begin_example
 
-      <text>
-         1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
-         1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
-         3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
-         4:15   ✓ error  Mac OS => MacOS                        prh
-        10:112  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
+    <text>
+       1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
+       1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
+       3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
+       4:15   ✓ error  Mac OS => MacOS                        prh
+      10:12   ✓ error  ユーザ => ユーザー                     prh
+      10:112  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
+      12:132  ✓ error  ユーザ => ユーザー                     prh
+      12:242  ✓ error  ユーザ => ユーザー                     prh
+      14:225  ✓ error  利用者 => ユーザー                     prh
 
-      ✖ 5 problems (5 errors, 0 warnings)
-      ✓ 3 fixable problems.
-      Try to run: $ textlint --fix [file]
+    ✖ 9 problems (9 errors, 0 warnings)
+    ✓ 7 fixable problems.
+    Try to run: $ textlint --fix [file]
 
     #+end_example
 
@@ -215,7 +224,7 @@
     #+end_src
 
     #+RESULTS:
-    : 2055 文字
+    : 1956 文字
 
   - 自動原稿チェック結果
     #+begin_src shell :tangle no :noweb yes :results output :exports results
@@ -226,17 +235,17 @@
     #+begin_example
 
     <text>
-       1:74   ✓ error  コンピュータ => パソコン                                  prh
-       1:269  ✓ error  Markdown => マークダウン                                  prh
-       1:314  error    一文に二回以上利用されている助詞 "に" がみつかりました。  ja-technical-writing/no-doubled-joshi
-       7:72   error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
-       9:120  error    一文に二回以上利用されている助詞 "で" がみつかりました。  ja-technical-writing/no-doubled-joshi
-      19:39   ✓ error  Markdown => マークダウン                                  prh
-      19:306  error    一文に二回以上利用されている助詞 "は" がみつかりました。  ja-technical-writing/no-doubled-joshi
-      19:444  error    弱い表現: "思います" が使われています。                   ja-technical-writing/ja-no-weak-phrase
+       1:74  ✓ error  コンピュータ => パソコン                                  prh
+       3:4   ✓ error  Markdown => マークダウン                                  prh
+       3:49  error    一文に二回以上利用されている助詞 "に" がみつかりました。  ja-technical-writing/no-doubled-joshi
+       9:8   error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
+      11:72  error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
+      17:34  error    文末が"。"で終わっていません。                            ja-technical-writing/ja-no-mixed-period
+      18:54  error    一文に二回以上利用されている助詞 "は" がみつかりました。  ja-technical-writing/no-doubled-joshi
+      20:77  error    弱い表現: "思います" が使われています。                   ja-technical-writing/ja-no-weak-phrase
 
     ✖ 8 problems (8 errors, 0 warnings)
-    ✓ 3 fixable problems.
+    ✓ 2 fixable problems.
     Try to run: $ textlint --fix [file]
 
     #+end_example
@@ -293,6 +302,11 @@
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/emacs.txt"
 :ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
 :END:
+
+- 参考
+  + [[https://gihyo.jp/article/2022/11/obsidian-01?utm_source=feed][ローカル環境で動作し、Markdownで書いたノートをつなげるアプリ「Obsidian」とは | gihyo.jp]]
+    + Obsidianを紹介する技評サイト内の記事
+    + 一般ユーザにObsidianのような多様な切り口で語れるツールの紹介としてお手本になる
 
 *** イントロ・入手方法
 :PROPERTIES:
@@ -450,15 +464,18 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
   Emacsはファイルを開くとき、ファイルに書かれた言語を自動的に判別して適切なModeへの切り替えをします。
   プレーンテキストファイルを開けばText Modeに、JSONファイルを開けばJson Modeに、Pythonのソースコードを開けばPython Modeに切り替わる、といった具合です。
 
-  そしてMarkdownに似た、構造化された文章を表現するための独自記法ファイルを開いたときに有効になるのがOrg Modeです。
+  そしてマークダウンに似た、構造化された文章を表現するための独自記法ファイルを開いたときに有効になるのがOrg Modeです。
   この独自記法を本書ではOrg記法と呼びます。
   Org記法では、アウトラインをはじめハイパーリンク・表・TODOなどの表現ができます。
   Org Modeは、この多様な文書表現を活かして実に多くの機能をユーザに提供します。
   つまりOrg Modeとは、Emacsを多機能アウトライナーとして使用する場合の名称だとご理解ください。
 #+end_src
 
-- [ ] Org-modeの表記はどうする？
+- [X] Org-modeの表記はどうする？
   + Org Mode
+  + org-mode
+  + Org-Mode
+  + Org-mode
 - [TELL] Org Modeの表記を変えたことを連絡
 
 *** アウトライナーとしてのOrg
@@ -486,18 +503,106 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 :END:
 
 #+begin_src text :eval no
-  Org Modeはファイルベースで情報を管理するので、個人での情報利活用に向いています。
-  中でもタスク管理・ナレッジベース構築・アイデア整理・文章作成・プログラミング開発支援の分野で利用されているのが多い印象です。
+  Org Modeはパソコン上のファイルの中で情報を管理するので、個人での情報の利活用に向いています。
+  中でも、タスク管理・ナレッジベース構築・アイデア整理・文章作成・プログラミング開発支援の分野で利用されていることが多い印象です。
+
+  以下のリンクからタスク管理をしている様子を動画でご覧いただくことができます。
+
+  Org My Life 01: Org Modeを使ったタスク・プロジェクト管理方法: https://youtu.be/cpD3OH20KDw
+
+  専用のタスク管理アプリと比べるとずいぶん趣の異なる風景がご覧いただけたと思います。
+  Emacsは見た目について自由度高く設定できるので、この動画で見たようなダークテーマやフォントサイズは利用者の好みに合わせて変更できることは付言させてください。
+
+  Org Modeでタスク管理をするときに大活躍するのが動画でも登場したOrg Agendaです。
+  Org Agendaは、与えられた条件によってさまざまな視点のタスクリストを動的につくる機能をもちます。
+  タスク管理の領域以外にも、Org Modeはさまざまな機能を提供しています。
+  ぜひ公式サイトを覗いてご自身の目的にあった機能を見つけてみてください。
 #+end_src
 
-*** 主な機能の紹介とワークフローの例
+*** オープンソース
+:PROPERTIES:
+:CREATED:  [2022-11-30 Wed 16:11]
+:END:
+
+#+begin_src text :eval no
+  Org ModeはEmacsと同様にオープンソースで開発されています。
+  オープンソースの説明はEmacsの節をご覧ください。
+  ソフトウェアとしてのOrg Modeは、コア部分と拡張部分に分けて見ることができます。
+  Emacs本体に組み込まれているコア部分はコミュニティで開発・管理されていて、Org Modeの中心となる機能を提供しています。
+  拡張部分は世界中の開発者が自由な発想でつくったもので、インターネット上で公開されています。
+  このような開発体制のため、全体としては巨大なエコシステムを実現しつつ、各利用者は好みの拡張機能だけをインストールして利用することができます。
+#+end_src
+
+*** データと機能の柔軟性
+:PROPERTIES:
+:CREATED:  [2022-11-30 Wed 16:13]
+:END:
+
+#+begin_src text :eval no
+  Org Modeで提供される機能はどれもカスタマイズ性が高く、柔軟な動作ができるのが特徴です。
+  その理由は、Org記法で構造化されたテキストデータをEmacs Lispというプログラミング言語で扱えるからでしょう。
+  また、データはユーザのパソコンの中にファイルとして保存されるので、消失するリスクの管理さえすれば何でも自由にできてしまうのが魅力です。
+  例えば、Gitを使ってバージョン管理することも可能ですし、文書変換ツールpandocを使ってPDFに出力してチーム共有することもできます。
+#+end_src
+
+*** 個人の情報管理ツールの選定基準
+:PROPERTIES:
+:CREATED:  [2022-11-30 Wed 16:12]
+:END:
+
+#+begin_src text :eval no
+  個人的なデータは人生の中で長くつきあうものです。
+  ですからそれを管理するツールは、できれば同じかたちで長く使えるものが望ましいでしょう。
+  その意味でこれまでにお話しした、オープンソース体制での開発やユーザデータがテキスト形式でパソコン上にある点は、軽視できない点ではないでしょうか。
+  情報管理ツールを選ぶときは表面的な機能や華々しい見た目だけでなく、さまざまな視点を取り入れることで満足度の高い生活に繋がるかもしれません。
+#+end_src
+
+*** アウトライン構造と私たちの思考方法        :ARCHIVE:
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 17:48]
+:END:
+
+#+begin_src text
+  上記の動画では、プロジェクトとタスクをアウトラインの親子関係で表現して管理しました。
+
+  一方でタスク同士は横の関係を築き、リストとして表現されました。
+
+  私たちの暮らしはこのような構造をもった情報で溢れていることにお気づきでしょうか。
+
+  このような親子関係または兄弟関係で情報同士の関係性を表して階層化・リスト化するアウトラインの表現力は力があります。
+
+
+
+
+  アウトライン構造のデータは私たちに馴染深い
+
+  による情報表現と私たちの考え方との親和性です。
+
+  情報の親子関係と兄弟関係を利用した階層式とリスト式を組合わせた表現は実世界のかなりのものを表現できます。
+  今回はプロジェクト・タスクを表現しましたが、私の身のまわりには溢れています。
+
+  近代社会に生きる私たちは「情報をあつかう」と言ったときに知らず知らずのうちにアウトライン構造を内面化しているのではないでしょうか。
+
+  1.階層式・リスト式の情報表現は実世界のいろいろなものに適用可能。
+#+end_src
+
+- プロジェクト・タスク
+- カレンダー日時(年・月・日)
+- 行政管理区分(国・県・自治体)
+- 住所
+- インターネットドメイン
+- 企業内組織図
+- 図書分類法
+- 生物分類
+- Webサイトマップ
+- 帳簿
+
+*** 主な機能の紹介とワークフローの例          :ARCHIVE:
 :PROPERTIES:
 :CREATED:  [2022-11-22 Tue 15:09]
 :END:
 
-#+begin_src text :eval no
-  Org My Life 01: Org Modeを使ったタスク・プロジェクト管理方法: https://youtu.be/cpD3OH20KDw
-
+#+begin_src text :eval no :tangle no
   ここではタスク管理に関連するOrg Modeの代表的な機能をいくつか紹介します。
   Org Agendaは、タスク管理を実現する機能です。アウトライナーの一項目でタスクを表現し、実施日時や優先度などの付加データを設定することで適切なタイミングで実行すべきタスクを検索できる機能を提供します。
   Org Captureは、メモすばやく取るための機能です。
@@ -521,21 +626,22 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 - Orgの機能紹介としては列挙していくよりも充填分野を比較的詳しく書いた方が訴求力はあるのではないか？
 - [[https://www.weblio.jp/content/%E5%BE%A1%E6%A0%AA%E3%82%92%E5%A5%AA%E3%81%86][「御株を奪う」の意味や使い方 わかりやすく解説 Weblio辞書]]
 
-*** MarkdownとOrg記法
+*** MarkdownとOrg記法                         :ARCHIVE:
 :PROPERTIES:
 :CREATED:  [2022-11-19 Sat 17:20]
 :END:
 
 #+begin_src text :eval no
-  最後にOrg記法についてふれておきましょう。
-  共通部分の仕様が標準化されているMarkdownとは異なり、Org記法はOrg Modeとともに発展してきました。
+  最後に、Org記法についてふれておきましょう。
+  共通部分の仕様が標準化されているマークダウンとは異なり、Org記法はOrg Modeとともに発展してきました。
   つまり、Org Modeでの実装が事実上のOrg記法の標準となっています。
+
   想像に難くありませんが、Org記法はEmacsおよびOrg Modeの都合を色濃く反映したものになりました。
   その結果、Org記法エディタとしてのOrg Modeは洗練され、関連機能は非常に充実しています。
-  一方で他のエディタでのOrg記法の編集や、Org Mode自体の外部移植には今のところ輝かしい成功の例を見ません。
-  ここで、決してOrg記法の認知度が極端に低いわけではないことは付言させてください。
-  実際、GithubなどではOrg記法で書かれた文書がサポートされブラウザ上できれいに表示してくれます。
-  このように、ファイル形式とエディタとが密な関係にあるという事情なども考慮に入れてツール選びをしていただくと、より満足度の高い結果が得られるのではないかと思います。
+  一方で、他のエディタでのOrg記法の編集や、Org Mode自体の外部移植には今のところ輝かしい成功の例を見ません。
+
+  個人の情報管理ツールという分野は、ソフトウェア開発の視点から見て難しさを孕んでいると言えます。
+  その理由は、長期間の利用に耐えること、多様なユーザのニーズに応え続けなければいけないこと、マネタイズが難しいこと、などが考えられます。
 #+end_src
 
 本節は一般ユーザには難しい内容になってしまった
