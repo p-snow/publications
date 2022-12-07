@@ -110,7 +110,7 @@
 
       - expected: ユーザー
         patterns:
-          - /ユーザ/
+          - /ユーザ[^ー]/
           - 利用者
 
       # 本書では「MacOS」で統一
@@ -196,14 +196,10 @@
        1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
        3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
        4:15   ✓ error  Mac OS => MacOS                        prh
-      10:12   ✓ error  ユーザ => /ユーザー/                   prh
       10:113  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
-      12:132  ✓ error  ユーザ => /ユーザー/                   prh
-      12:243  ✓ error  ユーザ => /ユーザー/                   prh
-      14:225  ✓ error  ユーザ => /ユーザー/                   prh
 
-    ✖ 9 problems (9 errors, 0 warnings)
-    ✓ 7 fixable problems.
+    ✖ 5 problems (5 errors, 0 warnings)
+    ✓ 3 fixable problems.
     Try to run: $ textlint --fix [file]
 
     #+end_example
@@ -238,18 +234,13 @@
 
     <text>
        1:74   ✓ error  コンピュータ => パソコン        prh
-       3:159  ✓ error  ユーザ => ユーザー              prh
        7:10   ✓ error  パソコン => PC                  spellcheck-tech-word
       11:72   error    文末が"。"で終わっていません。  ja-technical-writing/ja-no-mixed-period
-      13:98   ✓ error  ユーザ => ユーザー              prh
-      17:250  ✓ error  ユーザ => ユーザー              prh
-      19:112  ✓ error  ユーザ => ユーザー              prh
       19:117  ✓ error  パソコン => PC                  spellcheck-tech-word
-      21:98   ✓ error  ユーザ => ユーザー              prh
-      21:113  ✓ error  パソコン => PC                  spellcheck-tech-word
+      21:105  ✓ error  パソコン => PC                  spellcheck-tech-word
 
-    ✖ 10 problems (10 errors, 0 warnings)
-    ✓ 9 fixable problems.
+    ✖ 5 problems (5 errors, 0 warnings)
+    ✓ 4 fixable problems.
     Try to run: $ textlint --fix [file]
 
     #+end_example

@@ -21,7 +21,7 @@ rules:
 
   - expected: ユーザー
     patterns:
-      - /ユーザ/
+      - /ユーザ[^ー]/
       - 利用者
 
   # 本書では「MacOS」で統一
