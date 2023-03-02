@@ -301,6 +301,8 @@
 :ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
 :END:
 
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/emacs.txt]["Emacs"の原稿]]
+
 - 参考
   + [[https://gihyo.jp/article/2022/11/obsidian-01?utm_source=feed][ローカル環境で動作し、Markdownで書いたノートをつなげるアプリ「Obsidian」とは | gihyo.jp]]
     + Obsidianを紹介する技評サイト内の記事
@@ -451,6 +453,8 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 :ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
 :END:
+
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/org-mode.txt]["Org Mode"の原稿]]
 
 *** 丁寧なイントロ
 :PROPERTIES:
@@ -638,6 +642,8 @@ Markdownの標準化関連情報 (内容の裏取り)
 :CREATED:  [2022-11-18 Fri 16:01]
 :header-args+: :tangle "../public/ライフハックの道具箱2022年版/literate-writing.txt"
 :END:
+
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/literate-writing.txt]["文芸的..."の原稿]]
 
 *** 文芸的プログラミング (Literate Programming)
 :PROPERTIES:
