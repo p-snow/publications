@@ -2,38 +2,32 @@
 #+PROPERTY: header-args       :mkdirp yes
 #+OPTIONS: \n:t
 
-書籍『ライフハックの道具箱 2022年版』に投稿する[[https://twitter.com/_p_snow][こなゆき]]の原稿
+書籍『ライフハックの道具箱』に投稿する[[https://twitter.com/_p_snow][こなゆき]]の原稿
 
-* 『ライフハックの道具箱』プロジェクトとは
+* 『ライフハックの道具箱』プロジェクト
 
 『ライフハックの道具箱』は倉下忠憲([[https://twitter.com/rashita2][@rashita2]])さんが編集する、ライフハックに関連するツールを紹介する書籍。
 年刊誌の側面もあり、毎年年末にその年に話題となったツール情報を前年版に入れ込んでアップデートされた内容を「20xx年版」と銘打ってkindle形式で販売している。
 初版となる2020年版は倉下さんが自身で執筆し、次版の2021年版では数名のツール利用者がそれぞれ自身の愛用するツールについての紹介文を寄稿した。私はこの2021年版で[[https://twitter.com/rashita2/status/1455052352340127744][手を挙げて]]テキストエディタ「Emacs」とアウトライナー「Org-mode」の記事を投稿した。
 
-- 2020年版
-  - [[https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2020%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B08RRQ4ZXS][Amazon.co.jp: ライフハックの道具箱 2020年版 eBook : 倉下忠憲: 本]]
-- 2021年版
-  + [[https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2021%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B09P1LHDPY][ライフハックの道具箱 2021年版 | 倉下忠憲, PADAone, ゆうびんや, こなゆき, Tak., 大橋悦夫 | 実践経営・リーダーシップ | Kindleストア | Amazon]]
-  + [[https://rashita.net/blog/?p=30836][『ライフハックの道具箱 2021年版』プロジェクト始動 | R-style]]
-  + [[https://rashita.net/blog/?tag=%E3%80%8E%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2021%E5%B9%B4%E7%89%88%E3%80%8F][『ライフハックの道具箱 2021年版』 | R-style]]
-  + [[https://note.com/rashita/n/n227a80a2446d][『ライフハックの道具箱』について/セッション・ライティング/定期連絡の効用｜倉下忠憲｜note]]
-    ■先へ先への誘惑
-    #+begin_quote
-      「ライフハック」は、いわゆるアーリーアダプターが多く、新しいツールに興味関心を持ち、その情報を多くの人に共有する姿勢を持っています。素晴らしい姿勢です。しかし、彼らのそうした性質は、「通り過ぎてしまったもの」の扱いを軽くしてしまいます。
+** 想定読者など (個人的な判断)
+- 日本語で「ライフハック」と聞いて文脈が掴める知識労働層
+- 日本のいわゆる「ライフハック・知的生産」クラスタ
+- また、この分野に興味のある層
+- PC利用スキルは標準レベル
+  → 極力、平易な言葉を使用
+- 2021年版を読んだ読者のことも忘れずに差分をできれば明確にする
+- 知的生産ツールとしてのEmacsの記述に止める
+  - エンジニア向けの内容・言葉遣いにはしない
+  - むしろライティングツールとしての有用性のアピールの場としてもいいかもしれない
 
-      新機能が発表されないツールは見向きもされず、日常に溶け込んでしまって何を工夫しているのかも自分では忘れてしまっている話題はわざわざ記事に起こすことをしないのです。
+** 原稿の要求仕様
+[[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
++ 締め切り: 11月いっぱい
++ 文字数: (各節)2,000字前後
++ 文体:「です、ます」
 
-      結果、最新の更新ばかりが目に入るタイムラインでは、「新しいツールの新しい機能」のことばかりが目に留まります。反面、長く使っていてほぼ安定軌道に入っているツールの話題はすっかり抜け落ちるのです。これはいびつでしょう。
-
-      ...
-
-      新しい情報を追い求めるライフハッカーは、そうした定番情報を抜け落としてきたと言えるでしょうし、Googleの「新しい情報ほど評価する」姿勢にすっかり飼いならされてしまったと言えるかもしれません。
-    #+end_quote
-- 2022年版
-  + [[https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2022%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B0BQZRZQ86/ref=sr_1_1?keywords=%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1&qid=1672051795&sr=8-1][ライフハックの道具箱 2022年版 | 倉下忠憲, PADAone, ゆうびんや, こなゆき, Tak., Go Fujita, タカヒロト | 経営情報システム | Kindleストア | Amazon]]
-  + [[https://rashita.net/blog/?p=31219][『ライフハックの道具箱 2022年版』発売となりました | R-style]]
-  + [[https://rashita.net/blog/?p=31179][『ライフハックの道具箱 2022年版』プロジェクト始動 | R-style]]
-* 提出までの手順
+** 提出までの手順
 :PROPERTIES:
 :CREATED:  [2022-11-18 Fri 09:46]
 :END:
@@ -45,17 +39,669 @@
 3. 倉下さんに提出用ファイルの場所を伝える
 
    提出用ファイルの保存フォルダ
-   #+name: lhack-toolbox-dir
    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
-     (file-relative-name
-      (expand-file-name "../public/ライフハックの道具箱2022年版" ".")
-      default-directory)
+     (setq output-dir
+           (file-relative-name
+            (expand-file-name "../public/ライフハックの道具箱2023年版" ".")
+            default-directory))
    #+end_src
 
-   #+RESULTS: lhack-toolbox-dir
-   : ../public/ライフハックの道具箱2022年版
+   #+RESULTS:
+   : ../public/ライフハックの道具箱2023年版
 
-* 補足情報
+** 2020年版
+References
+- [[https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2020%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B08RRQ4ZXS][Amazon.co.jp: ライフハックの道具箱 2020年版 eBook : 倉下忠憲: 本]]
+** 2021年版
+References
++ [[https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2021%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B09P1LHDPY][ライフハックの道具箱 2021年版 | 倉下忠憲, PADAone, ゆうびんや, こなゆき, Tak., 大橋悦夫 | 実践経営・リーダーシップ | Kindleストア | Amazon]]
++ [[https://rashita.net/blog/?p=30836][『ライフハックの道具箱 2021年版』プロジェクト始動 | R-style]]
++ [[https://rashita.net/blog/?tag=%E3%80%8E%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2021%E5%B9%B4%E7%89%88%E3%80%8F][『ライフハックの道具箱 2021年版』 | R-style]]
++ [[https://note.com/rashita/n/n227a80a2446d][『ライフハックの道具箱』について/セッション・ライティング/定期連絡の効用｜倉下忠憲｜note]]
+  ■先へ先への誘惑
+  #+begin_quote
+    「ライフハック」は、いわゆるアーリーアダプターが多く、新しいツールに興味関心を持ち、その情報を多くの人に共有する姿勢を持っています。素晴らしい姿勢です。しかし、彼らのそうした性質は、「通り過ぎてしまったもの」の扱いを軽くしてしまいます。
+
+    新機能が発表されないツールは見向きもされず、日常に溶け込んでしまって何を工夫しているのかも自分では忘れてしまっている話題はわざわざ記事に起こすことをしないのです。
+
+    結果、最新の更新ばかりが目に入るタイムラインでは、「新しいツールの新しい機能」のことばかりが目に留まります。反面、長く使っていてほぼ安定軌道に入っているツールの話題はすっかり抜け落ちるのです。これはいびつでしょう。
+
+    ...
+
+    新しい情報を追い求めるライフハッカーは、そうした定番情報を抜け落としてきたと言えるでしょうし、Googleの「新しい情報ほど評価する」姿勢にすっかり飼いならされてしまったと言えるかもしれません。
+  #+end_quote
+** 2022年版
+References
++ [[https://www.amazon.co.jp/%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1-2022%E5%B9%B4%E7%89%88-%E5%80%89%E4%B8%8B%E5%BF%A0%E6%86%B2-ebook/dp/B0BQZRZQ86/ref=sr_1_1?keywords=%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF%E3%81%AE%E9%81%93%E5%85%B7%E7%AE%B1&qid=1672051795&sr=8-1][ライフハックの道具箱 2022年版 | 倉下忠憲, PADAone, ゆうびんや, こなゆき, Tak., Go Fujita, タカヒロト | 経営情報システム | Kindleストア | Amazon]]
++ [[https://rashita.net/blog/?p=31219][『ライフハックの道具箱 2022年版』発売となりました | R-style]]
++ [[https://rashita.net/blog/?p=31179][『ライフハックの道具箱 2022年版』プロジェクト始動 | R-style]]
+** 2023年版
+* Emacs section
+:PROPERTIES:
+:CREATED:  [2022-11-09 Wed 16:45]
+:header-args+: :tangle (expand-file-name "emacs.txt" output-dir)
+:ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
+:END:
+
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/emacs.txt]["Emacs"の出力ファイル]]
+
+現在の文字数 (目安: 2,000文字前後)
+#+call: wcount-file(file=(expand-file-name "emacs.txt" output-dir))
+
+#+RESULTS:
+: 2181 文字
+
+自動原稿チェック結果
+#+call: lint-file(file=(expand-file-name "emacs.txt" output-dir))
+
+#+RESULTS:
+#+begin_example
+   1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
+   1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
+   3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
+   4:15   ✓ error  Mac OS => MacOS                        prh
+  10:113  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
+
+✖ 5 problems (5 errors, 0 warnings)
+✓ 3 fixable problems.
+Try to run: $ textlint --fix [file]
+
+#+end_example
+
+参考
++ [[https://gihyo.jp/article/2022/11/obsidian-01?utm_source=feed][ローカル環境で動作し、Markdownで書いたノートをつなげるアプリ「Obsidian」とは | gihyo.jp]]
+  + Obsidianを紹介する技評サイト内の記事
+  + 一般ユーザにObsidianのような多様な切り口で語れるツールの紹介としてお手本になる
+
+** イントロ・入手方法
+:PROPERTIES:
+:CREATED:  [2022-11-12 Sat 14:36]
+:END:
+
+#+begin_src text :eval no
+  Emacsは、パソコン上で動作するテキストエディタです。
+  Windows・MacOS・Linux版が無料で利用可能です。
+  各OSでのインストール方法は公式サイトをご覧ください。
+  WindowsまたはMacOSをお使いで実行可能なアプリファイルを手軽に入手したい方は以下のページからダウンロードするのがよいでしょう。
+
+  Windows版Emacsのダウンロードページ: http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/
+  GNU Emacs For Mac OS X: https://emacsformacosx.com/
+#+end_src
+
+- Emacsのインストール方法を整理
+  1. [ ] Executableを公式サイトから入手
+     - 公式サイト: [[https://www.gnu.org/software/emacs/][GNU Emacs - GNU Project]]
+       + [[http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/][Windows版 Emacsのダウンロードページ]]
+       + [[https://emacsformacosx.com/][GNU Emacs For Mac OS X]]
+  2. [ ] 利用OSのGUIアプリマネージャを利用
+     - 個別利用環境に依存した内容は書かない方がよい
+  3. [ ] OSプリインストール版の言及
+     - 旧バージョンの利用を促す危険性があるのでNG
+     - 近年のMacにはemacsがプリインストールされているのだろうか？
+  4. [ ] 利用環境のコマンドラインパッケージマネージャを利用(e.g. brew apt)
+     - 本書の想定読者のニーズと不一致
+  5. [ ] ソースコードをビルド
+     - 本書コンセプトのスコープ外
+
+********* TD TELL: ダウンロードページのリンカナイズを倉下さんに依頼
+********* END
+
+** キーボードで完結するエディタ
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:02]
+:END:
+
+#+begin_src text :eval no
+  プログラムコードの作成から文章執筆まで、テキストデータを扱う作業であれば対応できないものはないと言っても過言ではないほど柔軟性の高いエディタです。
+  キーボードのためのエディタという側面もあり、文字入力以外の操作もキーボードで実行可能な設計になっていることが特徴のひとつです。
+  離れた場所へのカーソル移動、スクロール、ファイルの削除といった他のアプリならばマウスでおこなう操作もキーボードですばやくできてしまいます。
+  多くのショートカットを駆使すれば少ないキータッチで目的の操作がおこなえ、テキスト編集作業がキーボードだけで完結する独特のリズムをもった快楽的な体験となります。
+  脳内でのひらめきをテキストへ落とし込むとき、入力装置を操作することでおきる認知的負荷を大きく抑えることのできる稀有なエディタと言えるでしょう。
+#+end_src
+
+本書の特徴からEmacsに対して一般的に持ち出される以下のような文脈・視点は排除する
+- プログラミング言語編集のための「コードエディタ」としてVS CodeやVimなどとの対比 ([[https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%88%A6%E4%BA%89#bodyContent][Editor War]])
+
+キーボードのためのエディタ
+-
+
+** EmacsのOS性
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:02]
+:END:
+
+#+begin_src text :eval no
+  一般的なテキストエディタと比べてEmacsのユニークな点は、テキスト編集以外の機能も充実していることでしょう。
+  その一例を挙げると、ブラウザ・RSSリーダーなどの情報をインプットするための機能、メール・チャット・SNSなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。
+  通常のテキストエディタがコードや文章を生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。
+  インプットからアウトプットまでのプロセスをEmacsという単一のツールで完結できるので、データの移動や加工、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
+#+end_src
+
+- [[https://github.com/hayamiz/twittering-mode][twittering-mode]]は利用者の少なさや、コードメンテがあまりされてない状況で書くのは適切か？
+  - → 買収からの流れで [[https://codeberg.org/martianh/mastodon.el][mastodon.el]] がにわかに盛り上がってる
+  - 本記事では「SNS」とまるめて表記することにした
+
+** 高いカスタマイズ性
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:06]
+:END:
+
+#+begin_src text :eval no
+  さらにEmacsには、ユーザーの好みに合わせて自由にカスタマイズできるという特性があります。
+  カスタマイズできる項目は、各部の色やフォントなどUIの基本的な要素から、キーボードショートカット、各機能の動作を決定する調整値などで、実に幅広くまたその数は膨大です。
+  そのうえEmacs Lispというプログミング言語を使えば、Emacsが提供するさまざまな機能を自在に組み合わせて使うことができ、自分の生産活動に特化した至福の環境をつくることができます。
+#+end_src
+
+** 学習コスト
+:PROPERTIES:
+:CREATED:  [2022-11-17 Thu 18:07]
+:END:
+
+#+begin_src text :eval no
+  Emacsを快適に使えるようになるためには、その特異なキー操作に慣れたり、設定言語であるEmacs Lispをある程度は理解して書けるようになることが望ましいでしょう。
+  使い方を学んでいく上では、Emacs内蔵の充実したマニュアルが役に立ちます。
+  また世界中の多数のユーザーから、掲示板・動画・SNS・メーリングリストなどのメディアを通してノウハウを手に入れることもできます。
+  さらに近年では、あらかじめ特定の目的のための設定が施されたSpacemacsなどのスターターキットが登場し、初期ユーザーの学習コストを抑えてEmacsを利用開始できる方法として注目を集めています。
+#+end_src
+
+preconfigured emacsの呼び方[[https://www.emacswiki.org/emacs/StarterKits][EmacsWiki]]に倣ってスターターキット
+- starter kit
+- emacs distribution
+
+** オープンソース
+:PROPERTIES:
+:CREATED:  [2022-11-12 Sat 14:37]
+:END:
+
+#+begin_src text :eval no
+  Emacsは長い間オープンソースソフトウェア(OSS)として開発されてきました。
+  オープンソースとは、主に有志が開発し、ソースコードはネット上で公開され、誰でも自由に利用できるソフトウェアを生み出す体制のことです。
+  この意味で企業が主体となって開発する製品ソフトウェアとは異なる性質をもちます。
+  製品ソフトウェアは、企業の経営判断によって開発が終了するといった事態が起こりえますが、OSSではそのようなことはありません。
+  もちろんOSSであっても、開発者やユーザーが離れていくことによりプロジェクトが衰退や消滅するケースはあります。
+  しかしEmacsには、長年にわたって育まれた層の厚いコミュニティがあり、現在でも活発に活動していることから、数年のうちに消滅するといった心配は無用でしょう。
+#+end_src
+
+このパラグラフでは話をオープンソースまでに止めること
+OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるストールマンがFree Softwareムーブメントの先導的役割を果たしたことから、この話題を取り上げたくはなるがこの書籍のスコープではない。
+
+** 2022年のEmacsの話題
+:PROPERTIES:
+:CREATED:  [2022-11-19 Sat 15:03]
+:END:
+
+#+begin_src text :eval no
+  2022年の4月にはEmacsのバージョン28.1がリリースされました。
+  このバージョンではさまざまな機能の追加や不具合修正が施されています。
+  中でも最も注目すべき点は、Emacsの処理速度を格段に速くするための仕組みが導入されたことでしょう。
+  ただし、この機能を有効にするためには決められた方法でアプリを作成する必要があります。
+  28.1であっても本機能を利用できない場合があることにはご注意ください。
+  詳しくは「GccEmacs」というキーワードとご利用のOS名を組み合せてネット検索してみてください。
+#+end_src
+
+- 2022年のEmacsトピックは何と言ってもnative comp(GccEmacs)機能が搭載された28.1が出たことだが本書でどう書くかが課題
+  - [[https://www.masteringemacs.org/article/whats-new-in-emacs-28-1][What's New in Emacs 28.1? - Mastering Emacs]]
+  - 配布しているバイナリはnative compがオンになっているのか？
+
+** アウトロ・総括
+:PROPERTIES:
+:CREATED:  [2022-11-12 Sat 14:38]
+:END:
+
+#+begin_src text :eval no
+  Emacsは使い方を学習する必要でありながらも、使えるようになれば自分のこだわりを徹底的に反映できるツールです。
+  自分のための生産活動の場をじっくりつくりあげることに興味のある方にはおすすめします。
+#+end_src
+
+* Org Mode section
+:PROPERTIES:
+:ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
+:header-args+: :tangle (expand-file-name "org-mode.txt" output-dir)
+:END:
+
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/org-mode.txt]["Org Mode"の原稿]]
+
+現在の文字数
+#+call: wcount-file(file=(expand-file-name "org-mode.txt" output-dir))
+
+#+RESULTS:
+: 1748 文字
+
+自動原稿チェック結果
+#+call: lint-file(file=(expand-file-name "org-mode.txt" output-dir))
+
+#+RESULTS:
+#+begin_example
+   1:74   ✓ error  コンピュータ => パソコン        prh
+   5:10   ✓ error  パソコン => PC                  spellcheck-tech-word
+   9:72   error    文末が"。"で終わっていません。  ja-technical-writing/ja-no-mixed-period
+  17:117  ✓ error  パソコン => PC                  spellcheck-tech-word
+  19:105  ✓ error  パソコン => PC                  spellcheck-tech-word
+
+✖ 5 problems (5 errors, 0 warnings)
+✓ 4 fixable problems.
+Try to run: $ textlint --fix [file]
+
+#+end_example
+
+** 丁寧なイントロ
+:PROPERTIES:
+:CREATED:  [2022-11-20 Sun 13:45]
+:END:
+
+#+begin_src text :eval no
+  Org Modeの説明の前にテキストエディタEmacsとModeの話をしましょう。
+  EmacsにはModeという概念があります。
+  Modeとは、特定のコンピュータ言語のために最適化された表示方法や編集コマンドを提供する内部状態のことです。
+  Emacsはファイルを開くとき、ファイルに書かれた言語を自動的に判別して適切なModeへの切り替えをします。
+  プレーンテキストファイルを開けばText Modeに、JSONファイルを開けばJson Modeに、Pythonのソースコードを開けばPython Modeに切り替わる、といった具合です。
+
+  そしてマークダウンに似た、構造化された文章を表現するための独自記法ファイルを開いたとき有効になるのがOrg Modeです。
+  この独自記法を本書ではOrg記法と呼びます。
+  Org記法では、アウトラインをはじめハイパーリンク・表・TODOなどの表現ができます。
+  Org Modeは、この多様な文書表現を活かして実に多くの機能をユーザーに提供します。
+  つまりOrg Modeとは、Emacsを多機能アウトライナーとして使用する場合の名称だとご理解ください。
+#+end_src
+
+********* TD TELL: Org Modeの表記を変えたことを連絡
+  + Org Mode
+  + org-mode
+  + Org-Mode
+  + Org-mode
+********* END
+
+** アウトライナーとしてのOrg
+:PROPERTIES:
+:CREATED:  [2022-11-09 Wed 16:45]
+:END:
+
+#+begin_src text :eval no
+  アウトライナーとしてのOrg Modeの特筆すべき点は、Emacsの得意とするキーボード操作でアウトライン項目の折り畳み・移動・ズーム・検索などが自在に素早く行えることでしょう。主要なキーボードショートカットを覚えれば、アウトライン操作と文章作成がキーボードという軸でシームレスにつながり、両手をキーボードのホームポジションから移動させることなく、編集対象に最大限の注意を向けながら作業できます。
+#+end_src
+
+** 機能の紹介                                 :ARCHIVE:
+:PROPERTIES:
+:CREATED:  [2022-11-16 Wed 18:35]
+:END:
+
+#+begin_src text :eval no :tangle no
+  もう一つ、Org-modeの特長として挙げられるのが、Emacsの拡張性の高さを活かして生み出された多くの機能を無料で利用できる点です。そのすべてを挙げると際限がないほどですが、一例としては、プロジェクト管理・タスクの実行時間の計測・表計算・メモの簡単な取り込み・いろいろな情報源へのリンク・HTMLなどへのエクスポートと言ったものがあります。さらに2021年には、Roam Researchにヒントを得たOrg-roamというパッケージの安定版がリリースされ、本書で言うネットワークファーミングツールとしての機能も備えるようになりました。これらのOrg-modeが提供する豊富な機能とEmacsが持つカスタマイズ性の高さを組み合わせて、日常生活や仕事における知識・タスク・資料などのさまざまな情報を管理・活用する環境をつくることがOrg-modeを使う醍醐味でしょう。
+#+end_src
+
+- これは2021年版のOrg Modeが提供する機能に関する記述
+- 「多機能」という記述だけでは特に本書の読者には伝わるものは少ない
+- 文字数が限られている中でよさを表現するもっとよい方法があるはず
+
+** 想定される主な使われ方
+:PROPERTIES:
+:CREATED:  [2022-11-23 Wed 16:31]
+:END:
+
+#+begin_src text :eval no
+  Org Modeはパソコン上のファイルの中で情報を管理するので、個人での情報の利活用に向いています。
+  中でも、タスク管理・ナレッジベース構築・アイデア整理・文章作成・プログラミング開発支援の分野で利用されていることが多い印象です。
+
+  以下のリンクからタスク管理をしている様子を動画でご覧いただくことができます。
+
+  Org My Life 01: Org Modeを使ったタスク・プロジェクト管理方法: https://youtu.be/cpD3OH20KDw
+
+  専用のタスク管理アプリと比べるとずいぶん趣の異なる風景がご覧いただけたのではないでしょうか。
+  Emacsは見た目について自由度高く設定できるので、この動画で見たようなダークテーマやフォントサイズはユーザーの好みに合わせて変更できることは付言させてください。
+
+  Org Modeでタスク管理をするときに大活躍するのが動画でも登場したOrg Agendaです。
+  Org Agendaは、与えられた条件によってさまざまな視点のタスクリストを動的につくる機能をもちます。
+  タスク管理の領域以外にも、Org Modeはさまざまな機能を提供しています。
+  ぜひ公式サイトを覗いてご自身の目的にあった機能を見つけてみてください。
+#+end_src
+
+** オープンソース
+:PROPERTIES:
+:CREATED:  [2022-11-30 Wed 16:11]
+:END:
+
+#+begin_src text :eval no
+  Org ModeはEmacsと同様にオープンソースで開発されています。
+  オープンソースの説明はEmacsの節をご覧ください。
+  ソフトウェアとしてのOrg Modeは、コア部分と拡張部分に分けて見ることができます。
+  Emacs本体に組み込まれているコア部分はコミュニティで開発・管理されていて、Org Modeの中心となる機能を提供しています。
+  拡張部分は世界中の開発者が自由な発想でつくったさまざまな機能を提供するもので、インターネット上で公開されています。
+  このような開発体制のため、全体としては巨大なエコシステムを実現しつつ、各ユーザーは好みの拡張機能だけをインストールして利用できます。
+#+end_src
+
+** データと機能の柔軟性
+:PROPERTIES:
+:CREATED:  [2022-11-30 Wed 16:13]
+:END:
+
+#+begin_src text :eval no
+  Org Modeで提供される機能は、どれもカスタマイズ性が高く柔軟に動作するのが特徴です。
+  その理由は、Org記法で構造化されたテキストデータをEmacs Lispというプログラミング言語で扱えるからでしょう。
+  また、データはユーザーのパソコンの中にファイルとして保存されるので、消失するリスクの管理さえすれば何でも自由にできてしまうのが魅力です。
+  例えば、Gitを使ってバージョン管理ができますし、文書変換ツールpandocを使ってPDFに出力してチーム共有もできます。
+#+end_src
+
+** 個人の情報管理ツールの選定基準
+:PROPERTIES:
+:CREATED:  [2022-11-30 Wed 16:12]
+:END:
+
+#+begin_src text :eval no
+  個人的なデータは人生の中で長くつきあうものです。
+  ですからそれを管理するツールは、できれば同じかたちで長く使えるものが望ましいでしょう。
+  その意味では、オープンソース体制での開発や、ユーザーデータがテキスト形式でパソコン内に存在する点は、軽視できないポイントと言えるでしょう。
+  情報管理ツールを選ぶときは表面的な機能や華々しい見た目だけでなく、さまざまな視点を取り入れてみることをおすすめします。
+#+end_src
+
+** アウトライン構造と私たちの思考方法         :ARCHIVE:
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 17:48]
+:END:
+
+#+begin_src text
+  上記の動画では、プロジェクトとタスクをアウトラインの親子関係で表現して管理しました。
+
+  一方でタスク同士は横の関係を築き、リストとして表現されました。
+
+  私たちの暮らしはこのような構造をもった情報で溢れていることにお気づきでしょうか。
+
+  このような親子関係または兄弟関係で情報同士の関係性を表して階層化・リスト化するアウトラインの表現力は力があります。
+
+
+
+
+  アウトライン構造のデータは私たちに馴染深い
+
+  による情報表現と私たちの考え方との親和性です。
+
+  情報の親子関係と兄弟関係を利用した階層式とリスト式を組合わせた表現は実世界のかなりのものを表現できます。
+  今回はプロジェクト・タスクを表現しましたが、私の身のまわりには溢れています。
+
+  近代社会に生きる私たちは「情報をあつかう」と言ったときに知らず知らずのうちにアウトライン構造を内面化しているのではないでしょうか。
+
+  1.階層式・リスト式の情報表現は実世界のいろいろなものに適用可能。
+#+end_src
+
+- 私たちの世界はアウトライン構造の情報で満ちていることを起点にOrgで情報整理することの利点について述べようとしてみたがうまくいかなかったのでボツ
+
+- プロジェクト・タスク
+- カレンダー日時(年・月・日)
+- 行政管理区分(国・県・自治体)
+- 住所
+- インターネットドメイン
+- 企業内組織図
+- 図書分類法
+- 生物分類
+- Webサイトマップ
+- 帳簿
+
+** MarkdownとOrg記法                          :ARCHIVE:
+:PROPERTIES:
+:CREATED:  [2022-11-19 Sat 17:20]
+:END:
+
+#+begin_src text :eval no
+  最後に、Org記法についてふれておきましょう。
+  共通部分の仕様が標準化されているマークダウンとは異なり、Org記法はOrg Modeとともに発展してきました。
+  つまり、Org Modeでの実装が事実上のOrg記法の標準となっています。
+
+  想像に難くありませんが、Org記法はEmacsおよびOrg Modeの都合を色濃く反映したものになりました。
+  その結果、Org記法エディタとしてのOrg Modeは洗練され、関連機能は非常に充実しています。
+  一方で、他のエディタでのOrg記法の編集や、Org Mode自体の外部移植には今のところ輝かしい成功の例を見ません。
+
+  個人の情報管理ツールという分野は、ソフトウェア開発の視点から見て難しさを孕んでいると言えます。
+  その理由は、長期間の利用に耐えること、多様なユーザーのニーズに応え続けなければいけないこと、マネタイズが難しいこと、などが考えられます。
+#+end_src
+
+- 本節は一般ユーザの興味の対象とはなりにくいと判断したのでボツ
+- ただこの内容はOrgを取り巻くツール状況についてけっこうよく書けていると思うので保存しておく
+
+Markdownの標準化関連情報 (内容の裏取り)
+- [[https://www.rfc-editor.org/rfc/rfc7763][RFC 7763: The text/markdown Media Type]]
+- [[https://tex2e.github.io/rfc-translater/html/rfc7764.html][RFC 7764 - Guidance on Markdown: Design Philosophies, Stability Strategies, and Select Registrations 日本語訳]]
+- [[https://en.wikipedia.org/wiki/Markdown][Markdown - Wikipedia]]
+- [[https://qiita.com/tk0miya/items/eb44760f76acfa248e3d][Markdown 界の新星、Markdown for SSW とは - Qiita]]
+- [[https://www.oberlo.com/blog/markdown-editors][You Should Try These Markdown Text-Editors]]
+
+* 「文芸的プログラミング」と原稿執筆への応用 section
+:PROPERTIES:
+:CREATED:  [2022-11-18 Fri 16:01]
+:header-args+: :tangle (expand-file-name "literate-writing.txt" output-dir)
+:END:
+
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/literate-writing.txt]["文芸的..."の原稿]]
+
+現在の文字数
+#+call: wcount-file(file=(expand-file-name "literate-writing.txt" output-dir))
+
+#+RESULTS:
+: 1943 文字
+
+自動原稿チェック結果
+#+call: lint-file(file=(expand-file-name "literate-writing.txt" output-dir))
+
+#+RESULTS:
+:   3:29   ✓ error  コンピュータ => パソコン  prh
+:   5:135  ✓ error  パソコン => PC            spellcheck-tech-word
+:   7:205  ✓ error  パソコン => PC            spellcheck-tech-word
+:
+: ✖ 3 problems (3 errors, 0 warnings)
+: ✓ 3 fixable problems.
+: Try to run: $ textlint --fix [file]
+:
+
+
+** 文芸的プログラミング (Literate Programming)
+:PROPERTIES:
+:CREATED:  [2022-11-12 Sat 15:26]
+:END:
+
+- 文芸的プログラミング
+  + [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
+    #+begin_quote
+    According to Knuth,[8][9] literate programming provides higher-quality programs, since it forces programmers to explicitly state the thoughts behind the program, making poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation.
+    #+end_quote
+  + [[http://www.literateprogramming.com/index.html][Literate Programming]]
+  + [[https://www.cs.tufts.edu/~nr/noweb/][Noweb home page]]
+
+*** LP紹介
+:PROPERTIES:
+:CREATED:  [2022-11-26 Sat 15:23]
+:END:
+
+#+begin_src text :eval no
+  「文芸的プログラミング」は、D.クヌース氏が提案したプログラミング方法論です。
+  ソースコードを書くとき、その理論的背景を説明する文章も同時に書くことを奨励するものです。
+  「文芸的」な読みものをつくり上げるように「プログラミング」できるのでこのような名前になりました。
+
+  一般的にプログラミングとは頭の中で理論を構築し、そこからコンピュータの処理内容を考え、それをコードに落とし込む作業だと言えます。
+  しかし頭の中だけで組立てられた理論は、正確さが欠けていたり最適でなかったりすることがあります。
+  「文芸的プログラミング」では、できるだけ細かい断片ごとにコードと説明文をセットで書くことで、貧弱な理論のもとで書かれようとしているコードを自動的にあぶり出すという効果があります。
+  また、コードを作成する人にとって説明文を書く行為はコードについて深く考えることに相当するので、考えながら書くという姿勢を習慣づけることができるよい環境とも言えます。
+#+end_src
+
+- 「文芸的プログラミング」はプログラミングの質を向上させる目的のものであってドキュメンテーションジェネレータではない
+  + literate programmingは単なるコードとドキュメントを組合わせるシステムではない
+    - [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
+      #+begin_quote
+      Literate programming is very often misunderstood^{[BROKEN LINK: cite_note-MJD2000-12]]} to refer only to formatted documentation produced from a common file with both source code and comments – which is properly called documentation generation – or to voluminous commentaries included with code. This is the converse of literate programming:
+      #+end_quote
+- この意味で2021年版の記述には問題があった
+  + 2021年版の記述
+    #+begin_src text :eval no :tangle no
+      一方で、Org-modeはプログラムコードの作成にも貢献します。一般的にプログラムコードを書く場合、コードの中にコメントとして変数や関数または処理の説明を書いて読み手にプログラムの意図を伝えます。ところが、コメントとして書ける分量は限定的であり、表現力も乏しいことから、プログラムの説明をする手段として充分とは言いがたい面があります。
+
+      この問題を解決する手段をOrg-modeは備えています。Org-modeではコードブロックという、コードを収めるための記述様式があり、これは文書中のどこにでも、何個でも配置することができます。このコードブロックの仕組みを使うと、コードの中にコメントとして説明を書くという従来の構造とは逆の、つまり、説明(ドキュメント)の中にコードを書くという構造をつくることができます。ここでのポイントは、ドキュメント内に分散的に配置されたコードの断片は、Org-modeの機能を使うことにより、結合されてドキュメントとは別の一つの実行可能ファイルとして出力できる点です。
+
+      この仕組みを使うメリットはいくつかあります。まず、ドキュメントはOrg-modeの形式で書けるので、アウトラインの階層構造などを使って表現力豊かにに記述できます。そして、ドキュメント内の各説明とそれを実現するコードを対応するかたちで配置できるので、プログラムの読み手の理解を深めます。「文芸的プログラミング」と呼ばれるこの手法は、プログラム作成のパラダイムを変えうる試みであり、適用範囲も広いため、一部で注目を集めています。Org-modeは文芸的プログラミングを強力にサポートするプラットフォームです。
+    #+end_src
+
+
+*** WEBシステムの説明
+:PROPERTIES:
+:CREATED:  [2022-11-26 Sat 15:26]
+:END:
+
+#+begin_src text :eval no
+  クヌース氏は方法論とともに「文芸的プログラミング」を支援するシステムも発表しています。
+  このシステムでは、主に2つの機能を提供します。
+  1つは、上記で説明したような、コードと説明文が共存する文書を作成可能にする環境の提供です。
+  もう1つは、この文書からコードだけを抜き出し、パソコン上で実行可能なファイルを別途作成する機能です。
+#+end_src
+
+*** LPツールとしてのOrg Mode
+:PROPERTIES:
+:CREATED:  [2022-11-27 Sun 16:52]
+:END:
+
+#+begin_src text :eval no
+  「文芸的プログラミング」を支援するツールはクヌース氏の発表したもののほかにもいくつか存在します。
+  そのうちの1つがOrg Modeです。
+  Org Modeではコードブロックという、コードを収めるための記述様式があります。
+  これはOrg記法の文書中のどこにでも何個でも配置できます。
+  この特性を利用してコードと説明文が寄り添う文書を作成できます。
+  またコードブロック内のコードだけを集約して吐き出すことができ、この結果がパソコンで実行可能なファイルとなります。
+#+end_src
+
+** 執筆への応用
+:PROPERTIES:
+:CREATED:  [2022-11-21 Mon 12:21]
+:END:
+
+#+begin_src text :eval no
+  さて、Org Modeのコードブロックに記述可能なのはプログラミングのコードだけではありません。
+  日本語で書かれた一般的な文章も入れられるのです。
+  この性質を利用すると、例えばコードブロック内に文章を置き、その文章の作成に役立つ情報を周辺に共存させることができます。
+  これは、「文芸的プログラミング」の手法を本や論文の原稿執筆に応用できることを意味します。
+  原稿の素材となるメモや執筆に必要な周辺情報を揃えながら、原稿をつくり上げていくスタイルが可能なのです。
+#+end_src
+
+*** 本原稿を実践例として
+:PROPERTIES:
+:CREATED:  [2022-11-27 Sun 12:58]
+:END:
+
+#+begin_src text :eval no
+  実はみなさんが今読んでいるこの原稿は、この応用手法によってつくり上げられ、Org Modeの機能によって単独ファイルとして書き出されたものです。
+  全体の文書は以下のURLから参照できます。
+
+  https://github.com/p-snow/publications/blob/main/sources/toolbox-for-lifehacking.org
+#+end_src
+
+- メモの種類と効能
+  + 本書全体の説明と執筆までの経緯
+    + 翌年執筆時のための情報整理など
+  + 原稿の締切・文体・文字数の制限
+    + 原稿の基本事項の遵守性の担保
+  + 構文チェック結果
+    + 常に更新されるので執筆最終段階でのカタストロフなエラーを防衛
+  + パラグラフ毎にタイトル付けしてアウトライン化
+    + とにかく仮でもタイトルをつけることによってそこに書いていく文章の軸ができる
+  + 書いた内容を裏付ける情報源へのリンク
+    + 情報の正確性
+  + 疑似他者からのツッコミ
+    + とにかく筆を前に進める効果あり
+
+- 作成された文章(アウトプット)は読者のためのストリーム
+- 「文芸的執筆」で書かれるのは著者のための文脈
+- 読者に見せたい景色と著者が見るべき景色は違う
+- キーワード「タングル(tangle)」
+
+「文芸的ライティング」に関連しそうな記事
+- [[https://rashita.net/blog/?p=31107][執筆はメモからはじめる | R-style]]
+- [[https://www.amazon.co.jp/s/?ie=UTF8&keywords=%E3%83%A9%E3%82%A4%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%AE%E5%93%B2%E5%AD%A6&index=aps&jp-ad-ap=0&tag=googhydr-22&ref=pd_sl_90c3vl0xf7_e&adgrpid=123096038613&hvpone=&hvptwo=&hvadid=526999532797&hvpos=&hvnetw=g&hvrand=13513219974531199108&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1009441&hvtargid=kwd-1348666690798&hydadcr=13759_10902662&gclid=EAIaIQobChMInM65-LXI-wIVlLmWCh2weAaGEAAYASAAEgKK-fD_BwE][Amazon.co.jp : ライティングの哲学]]
+  + [[https://ji-sedai.jp/series/outliner/02.html][第2回 制約と諦めのススメ - 苦しみの執筆論　千葉雅也×山内朋樹×読書猿×瀬下翔太：アウトライナー座談会 | ジセダイ]]
+    #+begin_quote
+    山内　ですね。あとぼくの場合は原稿の書き始めの負荷を下げるとともに、ちゃんと終わらせるってことも重要なテーマで。内容的にも期日的にも。なので依頼が来たらその時点でトピックの頭に〆切の月日を明示したり、下位トピックの冒頭にこの原稿の文字数や方針といったメタ情報のトピックを立てたりするんですよ。原稿があらぬ方向に向かってぐちゃぐちゃになっていったり、〆切間近になっても全体を顧みずに同じ箇所をひたすらこねくり回したりしないように、常に意識しておいたほうがいいメタ情報を可視化しておく。ほとんど行動療法的にこの問題には対処しています。
+    #+end_quote
+  + [[https://ji-sedai.jp/series/outliner/03.html][第3回「考えること」と「書くこと」 - 苦しみの執筆論　千葉雅也×山内朋樹×読書猿×瀬下翔太：アウトライナー座談会 | ジセダイ]]
+    #+begin_quote
+    ツールが思考に対してどんな影響を与えたかという話について、千葉さんの言葉を拝借していえば、「思考しないで思考する」ことに使えているのかなと。アウトライナー上で作業していることが、かなりの部分、全部ではないですが思考の肩代わりをしてくれている。アウトライナー上でどういう作業をどういう手順でやるかということも、手の動きとしてある程度決まってきていて。並べ替える、分割する、分析する、詳細を決めてもう一回隠して......ということを手が覚えていて、頭でやらないといけないことを肩代わりしてくれている、という影響はあった気がしますね。
+    ...
+    書きながらよく詰まることがあるわけです。詰まったらなにをするかというと、「これは知識が足りない詰まり方だから調査をする」「これはアイデアが足りなかったから、『アイデア大全』の技法リストのなかからふたつみっつ飛ばしてなにか使う。突破できたら次に行く」というふうにします。
+    #+end_quote
+- [[https://dot.asahi.com/wa/2022091500019.html?page=1][朝日新聞記者の「文章術」 “先に見出しを考える”が吉？〈週刊朝日〉 | AERA dot. (アエラドット)]]
+- [[https://cyblog.jp/354][考えてから書くか、考えながら書くか | シゴタノ！]]
+*** どんな情報を揃えながら書くのか
+:PROPERTIES:
+:CREATED:  [2022-11-27 Sun 11:08]
+:END:
+
+#+begin_src text :eval no
+  以下では、上記文書の中でどのような情報を揃えながら原稿を書いたのかを、その効能を考察しながら説明してみます。
+#+end_src
+
+#+name: count
+#+HEADER: :var init="1"
+#+begin_src shell :noweb no :eval yes :tangle no :results output :var cfile="tmp-count.txt" :exports none
+  if [ -f ${cfile} ]; then
+    counter=$(cat ${cfile})
+  else
+    counter=${init}
+  fi
+
+  echo -n $((${counter} + 1)) > ${cfile}
+  echo -n ${counter}
+#+end_src
+
+**** バックグラウンド情報
+:PROPERTIES:
+:CREATED:  [2022-11-28 Mon 15:24]
+:END:
+
+#+begin_src text :noweb yes
+  <<count()>>つ目は、書籍全体の説明や私が執筆するまでの経緯などのバックグラウンド情報です。
+  年刊誌である本書へは毎年アップデートした内容を寄稿するのですが、基本事項を再確認して1年ぶりの執筆をスムーズに再スタートさせるのに役立ちます。
+#+end_src
+
+**** 自動原稿チェック
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:29]
+:END:
+
+#+begin_src text :noweb yes
+  <<count()>>つ目は、自動原稿チェックのためのルールとチェック結果です。
+  本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
+  特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
+#+end_src
+**** 疑似小見出し
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:40]
+:END:
+
+#+begin_src text :noweb yes
+  <<count()>>つ目は、文脈的な塊につける疑似小見出しです。
+  文章を書いた後で文脈を見つけて名付けることもありますし、逆に小見出しをつけてから書き始めることもあります。
+  前者はアウトライン操作をするときの最小単位として利用できますし、後者は文章の軸がぶれることなく書き進めるのに役立ちます。
+#+end_src
+**** 情報源へのリンク
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:42]
+:END:
+
+#+begin_src text :noweb tangle
+  <<count()>>つ目は、参考にした情報源へのリンクです。
+  文章内で書いた情報の正確性の確認などをハイスピードで実施できます。
+#+end_src
+**** ツッコミ
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:43]
+:END:
+
+#+begin_src text :noweb tangle
+  <<count()>>つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。
+  ツッコミから重要な気づきを得られることもありますが、今は書き進めたいという段階では足枷になり得ます。
+  ツッコミを保存することで心安らかに筆を進めることができます。
+#+end_src
+*** 総括
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:54]
+:END:
+
+#+begin_src text
+  以上は私の実践ですが、工夫次第でいろいろな執筆手法を実装できる枠組みであることがこの仕組みのよいところです。
+  みなさんも自分で描いた執筆方法を具現化する場としてこのような仕組みを取り入れてみてはいかがでしょうか。
+#+end_src
+* 構文チェック設定
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 12:22]
 :header-args+: :tangle-mode (identity #o644)
@@ -63,31 +709,32 @@
 :END:
 
 ** 自動原稿チェックの設定
-  #+begin_src json :tangle ../config/lhack-tbox.textlintrc :eval no :exports none
-    {
-      "rules": {
-        "preset-ja-technical-writing": {
-          "no-exclamation-question-mark": false,
-          "sentence-length": {
-            "max": 200
-          }
-        },
-        "spellcheck-tech-word": true,
-        "textlint-rule-write-good": true,
-        "preset-ja-spacing": true,
-        "prh": {
-          "rulePaths": [
-            "./lhack-tbox.yml"
-          ]
+
+#+begin_src json :tangle ../config/lhack-tbox.textlintrc :eval no :exports none
+  {
+    "rules": {
+      "preset-ja-technical-writing": {
+        "no-exclamation-question-mark": false,
+        "sentence-length": {
+          "max": 200
         }
+      },
+      "spellcheck-tech-word": true,
+      "textlint-rule-write-good": true,
+      "preset-ja-spacing": true,
+      "prh": {
+        "rulePaths": [
+          "./lhack-tbox.yml"
+        ]
       }
     }
-  #+end_src
+  }
+#+end_src
 
 ** 書籍中で統一する文言 表記ゆれチェック
 
-  統一する文言ルールをチェッカーの設定ファイル形式で記述していく
-  #+begin_src yaml :tangle ../config/lhack-tbox.yml :eval no
+統一する文言ルールをチェッカーの設定ファイル形式で記述していく
+#+begin_src yaml :tangle ../config/lhack-tbox.yml :eval no
     version: 1
 
     rules:
@@ -146,716 +793,25 @@
           - ナロー
           - narrow
           - フォーカス
-  #+end_src
-
-** 想定読者など (個人的な判断)
-- 日本語で「ライフハック」と聞いて文脈が掴める知識労働層
-- 日本のいわゆる「ライフハック・知的生産」クラスタ
-- また、この分野に興味のある層
-- PC利用スキルは標準レベル
-  → 極力、平易な言葉を使用
-- 2021年版を読んだ読者のことも忘れずに差分をできれば明確にする
-- 知的生産ツールとしてのEmacsの記述に止める
-  - エンジニア向けの内容・言葉遣いにはしない
-  - むしろライティングツールとしての有用性のアピールの場としてもいいかもしれない
-
-** 原稿のレギュレーション
-  [[https://rashita.net/blog/?p=31179][プロジェクト始動宣言ページ]]の最後の方に記載あり
-  + [X] 締め切り: 2022年11月いっぱい
-  + [X] 文字数: (各節)2,000字前後
-  + [X] 文体:「です、ます」
-
-* 原稿ステータス
-- [X] [[* Emacs][Emacs]]
-  - アウトプットファイル (提出用)
-    #+name: output-emacs
-    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
-      (file-relative-name
-       (file-name-concat "<<lhack-toolbox-dir()>>" "emacs.txt")
-       default-directory)
-    #+end_src
-
-    #+RESULTS: output-emacs
-    : ../public/ライフハックの道具箱2022年版/emacs.txt
-
-  - 現在の文字数 (目安: 2,000文字前後)
-    #+begin_src shell :tangle no :noweb yes :exports results
-      echo -n $(cat <<output-emacs()>> | wc -m) '文字'
-    #+end_src
-
-    #+RESULTS:
-    : 2181 文字
-
-  - 自動原稿チェック結果
-    #+begin_src shell :tangle no :noweb yes :results output :exports results
-      cat "<<output-emacs()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
-    #+end_src
-
-    #+RESULTS:
-    #+begin_example
-
-    <text>
-       1:8    ✓ error  パソコン => PC                         spellcheck-tech-word
-       1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
-       3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
-       4:15   ✓ error  Mac OS => MacOS                        prh
-      10:113  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
-
-    ✖ 5 problems (5 errors, 0 warnings)
-    ✓ 3 fixable problems.
-    Try to run: $ textlint --fix [file]
-
-    #+end_example
-
-- [X] [[* Org-mode][Org-mode]]
-  - アウトプットファイル (提出用)
-    #+name: output-org
-    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
-      (file-relative-name
-       (file-name-concat "<<lhack-toolbox-dir()>>" "org-mode.txt")
-       default-directory)
-    #+end_src
-
-    #+RESULTS: output-org
-    : ../public/ライフハックの道具箱2022年版/org-mode.txt
-
-  - 現在の文字数
-    #+begin_src shell :tangle no :noweb yes :exports results
-      echo -n $(cat <<output-org()>> | wc -m) '文字'
-    #+end_src
-
-    #+RESULTS:
-    : 1955 文字
-
-  - 自動原稿チェック結果
-    #+begin_src shell :tangle no :noweb yes :results output :exports results
-      cat "<<output-org()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
-    #+end_src
-
-    #+RESULTS:
-    #+begin_example
-
-    <text>
-       1:74   ✓ error  コンピュータ => パソコン        prh
-       7:10   ✓ error  パソコン => PC                  spellcheck-tech-word
-      11:72   error    文末が"。"で終わっていません。  ja-technical-writing/ja-no-mixed-period
-      19:117  ✓ error  パソコン => PC                  spellcheck-tech-word
-      21:105  ✓ error  パソコン => PC                  spellcheck-tech-word
-
-    ✖ 5 problems (5 errors, 0 warnings)
-    ✓ 4 fixable problems.
-    Try to run: $ textlint --fix [file]
-
-    #+end_example
-
-- [X] [[* 「文芸的プログラミング」と原稿執筆への応用][「文芸的プログラミング」と原稿執筆への応用]]
-  - アウトプットファイル (提出用)
-    #+name: output-literate
-    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
-      (file-relative-name
-       (file-name-concat "<<lhack-toolbox-dir()>>" "literate-writing.txt")
-       default-directory)
-    #+end_src
-
-    #+RESULTS: output-literate
-    : ../public/ライフハックの道具箱2022年版/literate-writing.txt
-
-  - 現在の文字数
-    #+begin_src shell :tangle no :noweb yes :exports results
-      echo -n $(cat <<output-literate()>> | wc -m) '文字'
-    #+end_src
-
-    #+RESULTS:
-    : 1931 文字
-
-  - 自動原稿チェック結果
-    #+begin_src shell :tangle no :noweb yes :results output :exports results
-      cat "<<output-literate()>>" | textlint --stdin --config ../config/lhack-tbox.textlintrc | cat -
-    #+end_src
-
-    #+RESULTS:
-    #+begin_example
-
-    <text>
-      3:29   ✓ error  コンピュータ => パソコン  prh
-      5:135  ✓ error  パソコン => PC            spellcheck-tech-word
-      7:205  ✓ error  パソコン => PC            spellcheck-tech-word
-
-    ✖ 3 problems (3 errors, 0 warnings)
-    ✓ 3 fixable problems.
-    Try to run: $ textlint --fix [file]
-
-    #+end_example
-
-* 原稿
-:PROPERTIES:
-:CREATED:  [2022-11-29 Tue 14:23]
-:END:
-
-注意点: それぞれの節は独立して離れた箇所に配置されるので、節同士で内容が依存するようであってはダメ
-
-** Emacs
-:PROPERTIES:
-:CREATED:  [2022-11-09 Wed 16:45]
-:header-args+: :tangle "../public/ライフハックの道具箱2022年版/emacs.txt"
-:ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
-:END:
-
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/emacs.txt]["Emacs"の原稿]]
-
-- 参考
-  + [[https://gihyo.jp/article/2022/11/obsidian-01?utm_source=feed][ローカル環境で動作し、Markdownで書いたノートをつなげるアプリ「Obsidian」とは | gihyo.jp]]
-    + Obsidianを紹介する技評サイト内の記事
-    + 一般ユーザにObsidianのような多様な切り口で語れるツールの紹介としてお手本になる
-
-*** イントロ・入手方法
-:PROPERTIES:
-:CREATED:  [2022-11-12 Sat 14:36]
-:END:
-
-#+begin_src text :eval no
-  Emacsは、パソコン上で動作するテキストエディタです。
-  Windows・MacOS・Linux版が無料で利用可能です。
-  各OSでのインストール方法は公式サイトをご覧ください。
-  WindowsまたはMacOSをお使いで実行可能なアプリファイルを手軽に入手したい方は以下のページからダウンロードするのがよいでしょう。
-
-  Windows版Emacsのダウンロードページ: http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/
-  GNU Emacs For Mac OS X: https://emacsformacosx.com/
 #+end_src
 
-- Emacsのインストール方法を整理
-  1. [X] Executableを公式サイトから入手
-     - 公式サイト: [[https://www.gnu.org/software/emacs/][GNU Emacs - GNU Project]]
-       + [[http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/][Windows版 Emacsのダウンロードページ]]
-       + [[https://emacsformacosx.com/][GNU Emacs For Mac OS X]]
-  2. [ ] 利用OSのGUIアプリマネージャを利用
-     - 個別利用環境に依存した内容は書かない方がよい
-  3. [ ] OSプリインストール版の言及
-     - 旧バージョンの利用を促す危険性があるのでNG
-     - 近年のMacにはemacsがプリインストールされているのだろうか？
-  4. [ ] 利用環境のコマンドラインパッケージマネージャを利用(e.g. brew apt)
-     - 本書の想定読者のニーズと不一致
-  5. [ ] ソースコードをビルド
-     - 本書コンセプトのスコープ外
-
-********** TD TELL: ダウンロードページのリンカナイズを倉下さんに依頼
-********** END
-
-*** キーボードで完結するエディタ
+* Code
 :PROPERTIES:
-:CREATED:  [2022-11-17 Thu 18:02]
+:CREATED:  [2023-11-29 Wed 10:38]
 :END:
 
-#+begin_src text :eval no
-  プログラムコードの作成から文章執筆まで、テキストデータを扱う作業であれば対応できないものはないと言っても過言ではないほど柔軟性の高いエディタです。
-  キーボードのためのエディタという側面もあり、文字入力以外の操作もキーボードで実行可能な設計になっていることが特徴のひとつです。
-  離れた場所へのカーソル移動、スクロール、ファイルの削除といった他のアプリならばマウスでおこなう操作もキーボードですばやくできてしまいます。
-  多くのショートカットを駆使すれば少ないキータッチで目的の操作がおこなえ、テキスト編集作業がキーボードだけで完結する独特のリズムをもった快楽的な体験となります。
-  脳内でのひらめきをテキストへ落とし込むとき、入力装置を操作することでおきる認知的負荷を大きく抑えることのできる稀有なエディタと言えるでしょう。
+#+name: wcount-file
+#+header: :var file=""
+#+begin_src shell :tangle no :noweb yes :exports results
+  echo -n $(cat "${file}" | /usr/bin/wc -m) '文字'
 #+end_src
 
-本書の特徴からEmacsに対して一般的に持ち出される以下のような文脈・視点は排除する
-- プログラミング言語編集のための「コードエディタ」としてVS CodeやVimなどとの対比 ([[https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%88%A6%E4%BA%89#bodyContent][Editor War]])
-
-キーボードのためのエディタ
--
-
-*** EmacsのOS性
-:PROPERTIES:
-:CREATED:  [2022-11-17 Thu 18:02]
-:END:
-
-#+begin_src text :eval no
-  一般的なテキストエディタと比べてEmacsのユニークな点は、テキスト編集以外の機能も充実していることでしょう。
-  その一例を挙げると、ブラウザ・RSSリーダーなどの情報をインプットするための機能、メール・チャット・SNSなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。
-  通常のテキストエディタがコードや文章を生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。
-  インプットからアウトプットまでのプロセスをEmacsという単一のツールで完結できるので、データの移動や加工、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
+#+name: lint-file
+#+header: :var file=""
+#+begin_src shell :tangle no :noweb yes :results output :exports results
+  textlint --config ../config/lhack-tbox.textlintrc "${file}" | tail -n +3
 #+end_src
 
-- [[https://github.com/hayamiz/twittering-mode][twittering-mode]]は利用者の少なさや、コードメンテがあまりされてない状況で書くのは適切か？
-  - → 買収からの流れで [[https://codeberg.org/martianh/mastodon.el][mastodon.el]] がにわかに盛り上がってる
-  - 本記事では「SNS」とまるめて表記することにした
-
-*** 高いカスタマイズ性
-:PROPERTIES:
-:CREATED:  [2022-11-17 Thu 18:06]
-:END:
-
-#+begin_src text :eval no
-  さらにEmacsには、ユーザーの好みに合わせて自由にカスタマイズできるという特性があります。
-  カスタマイズできる項目は、各部の色やフォントなどUIの基本的な要素から、キーボードショートカット、各機能の動作を決定する調整値などで、実に幅広くまたその数は膨大です。
-  そのうえEmacs Lispというプログミング言語を使えば、Emacsが提供するさまざまな機能を自在に組み合わせて使うことができ、自分の生産活動に特化した至福の環境をつくることができます。
-#+end_src
-
-*** 学習コスト
-:PROPERTIES:
-:CREATED:  [2022-11-17 Thu 18:07]
-:END:
-
-#+begin_src text :eval no
-  Emacsを快適に使えるようになるためには、その特異なキー操作に慣れたり、設定言語であるEmacs Lispをある程度は理解して書けるようになることが望ましいでしょう。
-  使い方を学んでいく上では、Emacs内蔵の充実したマニュアルが役に立ちます。
-  また世界中の多数のユーザーから、掲示板・動画・SNS・メーリングリストなどのメディアを通してノウハウを手に入れることもできます。
-  さらに近年では、あらかじめ特定の目的のための設定が施されたSpacemacsなどのスターターキットが登場し、初期ユーザーの学習コストを抑えてEmacsを利用開始できる方法として注目を集めています。
-#+end_src
-
-preconfigured emacsの呼び方[[https://www.emacswiki.org/emacs/StarterKits][EmacsWiki]]に倣ってスターターキット
-- starter kit
-- emacs distribution
-
-*** オープンソース
-:PROPERTIES:
-:CREATED:  [2022-11-12 Sat 14:37]
-:END:
-
-#+begin_src text :eval no
-  Emacsは長い間オープンソースソフトウェア(OSS)として開発されてきました。
-  オープンソースとは、主に有志が開発し、ソースコードはネット上で公開され、誰でも自由に利用できるソフトウェアを生み出す体制のことです。
-  この意味で企業が主体となって開発する製品ソフトウェアとは異なる性質をもちます。
-  製品ソフトウェアは、企業の経営判断によって開発が終了するといった事態が起こりえますが、OSSではそのようなことはありません。
-  もちろんOSSであっても、開発者やユーザーが離れていくことによりプロジェクトが衰退や消滅するケースはあります。
-  しかしEmacsには、長年にわたって育まれた層の厚いコミュニティがあり、現在でも活発に活動していることから、数年のうちに消滅するといった心配は無用でしょう。
-#+end_src
-
-このパラグラフでは話をオープンソースまでに止めること
-OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるストールマンがFree Softwareムーブメントの先導的役割を果たしたことから、この話題を取り上げたくはなるがこの書籍のスコープではない。
-
-*** 2022年のEmacsの話題
-:PROPERTIES:
-:CREATED:  [2022-11-19 Sat 15:03]
-:END:
-
-#+begin_src text :eval no
-  2022年の4月にはEmacsのバージョン28.1がリリースされました。
-  このバージョンではさまざまな機能の追加や不具合修正が施されています。
-  中でも最も注目すべき点は、Emacsの処理速度を格段に速くするための仕組みが導入されたことでしょう。
-  ただし、この機能を有効にするためには決められた方法でアプリを作成する必要があります。
-  28.1であっても本機能を利用できない場合があることにはご注意ください。
-  詳しくは「GccEmacs」というキーワードとご利用のOS名を組み合せてネット検索してみてください。
-#+end_src
-
-- 2022年のEmacsトピックは何と言ってもnative comp(GccEmacs)機能が搭載された28.1が出たことだが本書でどう書くかが課題
-  - [[https://www.masteringemacs.org/article/whats-new-in-emacs-28-1][What's New in Emacs 28.1? - Mastering Emacs]]
-  - 配布しているバイナリはnative compがオンになっているのか？
-
-*** アウトロ・総括
-:PROPERTIES:
-:CREATED:  [2022-11-12 Sat 14:38]
-:END:
-
-#+begin_src text :eval no
-  Emacsは使い方を学習する必要でありながらも、使えるようになれば自分のこだわりを徹底的に反映できるツールです。
-  自分のための生産活動の場をじっくりつくりあげることに興味のある方にはおすすめします。
-#+end_src
-
-** Org Mode
-:PROPERTIES:
-:ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
-:header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
-:END:
-
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/org-mode.txt]["Org Mode"の原稿]]
-
-*** 丁寧なイントロ
-:PROPERTIES:
-:CREATED:  [2022-11-20 Sun 13:45]
-:END:
-
-#+begin_src text :eval no
-  Org Modeの説明の前にテキストエディタEmacsとModeの話をしましょう。
-  EmacsにはModeという概念があります。
-  Modeとは、特定のコンピュータ言語のために最適化された表示方法や編集コマンドを提供する内部状態のことです。
-  Emacsはファイルを開くとき、ファイルに書かれた言語を自動的に判別して適切なModeへの切り替えをします。
-  プレーンテキストファイルを開けばText Modeに、JSONファイルを開けばJson Modeに、Pythonのソースコードを開けばPython Modeに切り替わる、といった具合です。
-
-  そしてマークダウンに似た、構造化された文章を表現するための独自記法ファイルを開いたとき有効になるのがOrg Modeです。
-  この独自記法を本書ではOrg記法と呼びます。
-  Org記法では、アウトラインをはじめハイパーリンク・表・TODOなどの表現ができます。
-  Org Modeは、この多様な文書表現を活かして実に多くの機能をユーザーに提供します。
-  つまりOrg Modeとは、Emacsを多機能アウトライナーとして使用する場合の名称だとご理解ください。
-#+end_src
-
-********** TD TELL: Org Modeの表記を変えたことを連絡
-  + Org Mode
-  + org-mode
-  + Org-Mode
-  + Org-mode
-********** END
-
-
-*** アウトライナーとしてのOrg
-:PROPERTIES:
-:CREATED:  [2022-11-09 Wed 16:45]
-:header-args+: :tangle "../public/ライフハックの道具箱2022年版/org-mode.txt"
-:END:
-
-#+begin_src text :eval no
-  アウトライナーとしてのOrg Modeの特筆すべき点は、Emacsの得意とするキーボード操作でアウトライン項目の折り畳み・移動・ズーム・検索などが自在に素早く行えることでしょう。主要なキーボードショートカットを覚えれば、アウトライン操作と文章作成がキーボードという軸でシームレスにつながり、両手をキーボードのホームポジションから移動させることなく、編集対象に最大限の注意を向けながら作業できます。
-#+end_src
-
-*** 機能の紹介                                :ARCHIVE:
-:PROPERTIES:
-:CREATED:  [2022-11-16 Wed 18:35]
-:END:
-
-#+begin_src text :eval no :tangle no
-  もう一つ、Org-modeの特長として挙げられるのが、Emacsの拡張性の高さを活かして生み出された多くの機能を無料で利用できる点です。そのすべてを挙げると際限がないほどですが、一例としては、プロジェクト管理・タスクの実行時間の計測・表計算・メモの簡単な取り込み・いろいろな情報源へのリンク・HTMLなどへのエクスポートと言ったものがあります。さらに2021年には、Roam Researchにヒントを得たOrg-roamというパッケージの安定版がリリースされ、本書で言うネットワークファーミングツールとしての機能も備えるようになりました。これらのOrg-modeが提供する豊富な機能とEmacsが持つカスタマイズ性の高さを組み合わせて、日常生活や仕事における知識・タスク・資料などのさまざまな情報を管理・活用する環境をつくることがOrg-modeを使う醍醐味でしょう。
-#+end_src
-
-- これは2021年版のOrg Modeが提供する機能に関する記述
-- 「多機能」という記述だけでは特に本書の読者には伝わるものは少ない
-- 文字数が限られている中でよさを表現するもっとよい方法があるはず
-
-*** 想定される主な使われ方
-:PROPERTIES:
-:CREATED:  [2022-11-23 Wed 16:31]
-:END:
-
-#+begin_src text :eval no
-  Org Modeはパソコン上のファイルの中で情報を管理するので、個人での情報の利活用に向いています。
-  中でも、タスク管理・ナレッジベース構築・アイデア整理・文章作成・プログラミング開発支援の分野で利用されていることが多い印象です。
-
-  以下のリンクからタスク管理をしている様子を動画でご覧いただくことができます。
-
-  Org My Life 01: Org Modeを使ったタスク・プロジェクト管理方法: https://youtu.be/cpD3OH20KDw
-
-  専用のタスク管理アプリと比べるとずいぶん趣の異なる風景がご覧いただけたのではないでしょうか。
-  Emacsは見た目について自由度高く設定できるので、この動画で見たようなダークテーマやフォントサイズはユーザーの好みに合わせて変更できることは付言させてください。
-
-  Org Modeでタスク管理をするときに大活躍するのが動画でも登場したOrg Agendaです。
-  Org Agendaは、与えられた条件によってさまざまな視点のタスクリストを動的につくる機能をもちます。
-  タスク管理の領域以外にも、Org Modeはさまざまな機能を提供しています。
-  ぜひ公式サイトを覗いてご自身の目的にあった機能を見つけてみてください。
-#+end_src
-
-*** オープンソース
-:PROPERTIES:
-:CREATED:  [2022-11-30 Wed 16:11]
-:END:
-
-#+begin_src text :eval no
-  Org ModeはEmacsと同様にオープンソースで開発されています。
-  オープンソースの説明はEmacsの節をご覧ください。
-  ソフトウェアとしてのOrg Modeは、コア部分と拡張部分に分けて見ることができます。
-  Emacs本体に組み込まれているコア部分はコミュニティで開発・管理されていて、Org Modeの中心となる機能を提供しています。
-  拡張部分は世界中の開発者が自由な発想でつくったさまざまな機能を提供するもので、インターネット上で公開されています。
-  このような開発体制のため、全体としては巨大なエコシステムを実現しつつ、各ユーザーは好みの拡張機能だけをインストールして利用できます。
-#+end_src
-
-*** データと機能の柔軟性
-:PROPERTIES:
-:CREATED:  [2022-11-30 Wed 16:13]
-:END:
-
-#+begin_src text :eval no
-  Org Modeで提供される機能は、どれもカスタマイズ性が高く柔軟に動作するのが特徴です。
-  その理由は、Org記法で構造化されたテキストデータをEmacs Lispというプログラミング言語で扱えるからでしょう。
-  また、データはユーザーのパソコンの中にファイルとして保存されるので、消失するリスクの管理さえすれば何でも自由にできてしまうのが魅力です。
-  例えば、Gitを使ってバージョン管理ができますし、文書変換ツールpandocを使ってPDFに出力してチーム共有もできます。
-#+end_src
-
-*** 個人の情報管理ツールの選定基準
-:PROPERTIES:
-:CREATED:  [2022-11-30 Wed 16:12]
-:END:
-
-#+begin_src text :eval no
-  個人的なデータは人生の中で長くつきあうものです。
-  ですからそれを管理するツールは、できれば同じかたちで長く使えるものが望ましいでしょう。
-  その意味では、オープンソース体制での開発や、ユーザーデータがテキスト形式でパソコン内に存在する点は、軽視できないポイントと言えるでしょう。
-  情報管理ツールを選ぶときは表面的な機能や華々しい見た目だけでなく、さまざまな視点を取り入れてみることをおすすめします。
-#+end_src
-
-*** アウトライン構造と私たちの思考方法        :ARCHIVE:
-:PROPERTIES:
-:CREATED:  [2022-11-29 Tue 17:48]
-:END:
-
-#+begin_src text
-  上記の動画では、プロジェクトとタスクをアウトラインの親子関係で表現して管理しました。
-
-  一方でタスク同士は横の関係を築き、リストとして表現されました。
-
-  私たちの暮らしはこのような構造をもった情報で溢れていることにお気づきでしょうか。
-
-  このような親子関係または兄弟関係で情報同士の関係性を表して階層化・リスト化するアウトラインの表現力は力があります。
-
-
-
-
-  アウトライン構造のデータは私たちに馴染深い
-
-  による情報表現と私たちの考え方との親和性です。
-
-  情報の親子関係と兄弟関係を利用した階層式とリスト式を組合わせた表現は実世界のかなりのものを表現できます。
-  今回はプロジェクト・タスクを表現しましたが、私の身のまわりには溢れています。
-
-  近代社会に生きる私たちは「情報をあつかう」と言ったときに知らず知らずのうちにアウトライン構造を内面化しているのではないでしょうか。
-
-  1.階層式・リスト式の情報表現は実世界のいろいろなものに適用可能。
-#+end_src
-
-- 私たちの世界はアウトライン構造の情報で満ちていることを起点にOrgで情報整理することの利点について述べようとしてみたがうまくいかなかったのでボツ
-
-- プロジェクト・タスク
-- カレンダー日時(年・月・日)
-- 行政管理区分(国・県・自治体)
-- 住所
-- インターネットドメイン
-- 企業内組織図
-- 図書分類法
-- 生物分類
-- Webサイトマップ
-- 帳簿
-
-*** MarkdownとOrg記法                         :ARCHIVE:
-:PROPERTIES:
-:CREATED:  [2022-11-19 Sat 17:20]
-:END:
-
-#+begin_src text :eval no
-  最後に、Org記法についてふれておきましょう。
-  共通部分の仕様が標準化されているマークダウンとは異なり、Org記法はOrg Modeとともに発展してきました。
-  つまり、Org Modeでの実装が事実上のOrg記法の標準となっています。
-
-  想像に難くありませんが、Org記法はEmacsおよびOrg Modeの都合を色濃く反映したものになりました。
-  その結果、Org記法エディタとしてのOrg Modeは洗練され、関連機能は非常に充実しています。
-  一方で、他のエディタでのOrg記法の編集や、Org Mode自体の外部移植には今のところ輝かしい成功の例を見ません。
-
-  個人の情報管理ツールという分野は、ソフトウェア開発の視点から見て難しさを孕んでいると言えます。
-  その理由は、長期間の利用に耐えること、多様なユーザーのニーズに応え続けなければいけないこと、マネタイズが難しいこと、などが考えられます。
-#+end_src
-
-- 本節は一般ユーザの興味の対象とはなりにくいと判断したのでボツ
-- ただこの内容はOrgを取り巻くツール状況についてけっこうよく書けていると思うので保存しておく
-
-Markdownの標準化関連情報 (内容の裏取り)
-- [[https://www.rfc-editor.org/rfc/rfc7763][RFC 7763: The text/markdown Media Type]]
-- [[https://tex2e.github.io/rfc-translater/html/rfc7764.html][RFC 7764 - Guidance on Markdown: Design Philosophies, Stability Strategies, and Select Registrations 日本語訳]]
-- [[https://en.wikipedia.org/wiki/Markdown][Markdown - Wikipedia]]
-- [[https://qiita.com/tk0miya/items/eb44760f76acfa248e3d][Markdown 界の新星、Markdown for SSW とは - Qiita]]
-- [[https://www.oberlo.com/blog/markdown-editors][You Should Try These Markdown Text-Editors]]
-
-
-** 「文芸的プログラミング」と原稿執筆への応用
-:PROPERTIES:
-:CREATED:  [2022-11-18 Fri 16:01]
-:header-args+: :tangle "../public/ライフハックの道具箱2022年版/literate-writing.txt"
-:END:
-
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/literate-writing.txt]["文芸的..."の原稿]]
-
-*** 文芸的プログラミング (Literate Programming)
-:PROPERTIES:
-:CREATED:  [2022-11-12 Sat 15:26]
-:END:
-
-- 文芸的プログラミング
-  + [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
-    #+begin_quote
-    According to Knuth,[8][9] literate programming provides higher-quality programs, since it forces programmers to explicitly state the thoughts behind the program, making poorly thought-out design decisions more obvious. Knuth also claims that literate programming provides a first-rate documentation system, which is not an add-on, but is grown naturally in the process of exposition of one's thoughts during a program's creation.
-    #+end_quote
-  + [[http://www.literateprogramming.com/index.html][Literate Programming]]
-  + [[https://www.cs.tufts.edu/~nr/noweb/][Noweb home page]]
-
-**** LP紹介
-:PROPERTIES:
-:CREATED:  [2022-11-26 Sat 15:23]
-:END:
-
-#+begin_src text :eval no
-  「文芸的プログラミング」は、D.クヌース氏が提案したプログラミング方法論です。
-  ソースコードを書くとき、その理論的背景を説明する文章も同時に書くことを奨励するものです。
-  「文芸的」な読みものをつくり上げるように「プログラミング」できるのでこのような名前になりました。
-
-  一般的にプログラミングとは頭の中で理論を構築し、そこからコンピュータの処理内容を考え、それをコードに落とし込む作業だと言えます。
-  しかし頭の中だけで組立てられた理論は、正確さが欠けていたり最適でなかったりすることがあります。
-  「文芸的プログラミング」では、できるだけ細かい断片ごとにコードと説明文をセットで書くことで、貧弱な理論のもとで書かれようとしているコードを自動的にあぶり出すという効果があります。
-  また、コードを作成する人にとって説明文を書く行為はコードについて深く考えることに相当するので、考えながら書くという姿勢を習慣づけることができるよい環境とも言えます。
-#+end_src
-
-- 「文芸的プログラミング」はプログラミングの質を向上させる目的のものであってドキュメンテーションジェネレータではない
-  + literate programmingは単なるコードとドキュメントを組合わせるシステムではない
-    - [[https://en.wikipedia.org/wiki/Literate_programming][Literate programming - Wikipedia]]
-      #+begin_quote
-      Literate programming is very often misunderstood^{[BROKEN LINK: cite_note-MJD2000-12]]} to refer only to formatted documentation produced from a common file with both source code and comments – which is properly called documentation generation – or to voluminous commentaries included with code. This is the converse of literate programming:
-      #+end_quote
-- この意味で2021年版の記述には問題があった
-  + 2021年版の記述
-    #+begin_src text :eval no :tangle no
-      一方で、Org-modeはプログラムコードの作成にも貢献します。一般的にプログラムコードを書く場合、コードの中にコメントとして変数や関数または処理の説明を書いて読み手にプログラムの意図を伝えます。ところが、コメントとして書ける分量は限定的であり、表現力も乏しいことから、プログラムの説明をする手段として充分とは言いがたい面があります。
-
-      この問題を解決する手段をOrg-modeは備えています。Org-modeではコードブロックという、コードを収めるための記述様式があり、これは文書中のどこにでも、何個でも配置することができます。このコードブロックの仕組みを使うと、コードの中にコメントとして説明を書くという従来の構造とは逆の、つまり、説明(ドキュメント)の中にコードを書くという構造をつくることができます。ここでのポイントは、ドキュメント内に分散的に配置されたコードの断片は、Org-modeの機能を使うことにより、結合されてドキュメントとは別の一つの実行可能ファイルとして出力できる点です。
-
-      この仕組みを使うメリットはいくつかあります。まず、ドキュメントはOrg-modeの形式で書けるので、アウトラインの階層構造などを使って表現力豊かにに記述できます。そして、ドキュメント内の各説明とそれを実現するコードを対応するかたちで配置できるので、プログラムの読み手の理解を深めます。「文芸的プログラミング」と呼ばれるこの手法は、プログラム作成のパラダイムを変えうる試みであり、適用範囲も広いため、一部で注目を集めています。Org-modeは文芸的プログラミングを強力にサポートするプラットフォームです。
-    #+end_src
-
-
-**** WEBシステムの説明
-:PROPERTIES:
-:CREATED:  [2022-11-26 Sat 15:26]
-:END:
-
-#+begin_src text :eval no
-  クヌース氏は方法論とともに「文芸的プログラミング」を支援するシステムも発表しています。
-  このシステムでは、主に2つの機能を提供します。
-  1つは、上記で説明したような、コードと説明文が共存する文書を作成可能にする環境の提供です。
-  もう1つは、この文書からコードだけを抜き出し、パソコン上で実行可能なファイルを別途作成する機能です。
-#+end_src
-
-**** LPツールとしてのOrg Mode
-:PROPERTIES:
-:CREATED:  [2022-11-27 Sun 16:52]
-:END:
-
-#+begin_src text :eval no
-  「文芸的プログラミング」を支援するツールはクヌース氏の発表したもののほかにもいくつか存在します。
-  そのうちの1つがOrg Modeです。
-  Org Modeではコードブロックという、コードを収めるための記述様式があります。
-  これはOrg記法の文書中のどこにでも何個でも配置できます。
-  この特性を利用してコードと説明文が寄り添う文書を作成できます。
-  またコードブロック内のコードだけを集約して吐き出すことができ、この結果がパソコンで実行可能なファイルとなります。
-#+end_src
-
-*** 執筆への応用
-:PROPERTIES:
-:CREATED:  [2022-11-21 Mon 12:21]
-:END:
-
-#+begin_src text :eval no
-  さて、Org Modeのコードブロックに記述可能なのはプログラミングのコードだけではありません。
-  日本語で書かれた一般的な文章も入れられるのです。
-  この性質を利用すると、例えばコードブロック内に文章を置き、その文章の作成に役立つ情報を周辺に共存させることができます。
-  これは、「文芸的プログラミング」の手法を本や論文の原稿執筆に応用できることを意味します。
-  原稿の素材となるメモや執筆に必要な周辺情報を揃えながら、原稿をつくり上げていくスタイルが可能なのです。
-#+end_src
-
-**** 本原稿を実践例として
-:PROPERTIES:
-:CREATED:  [2022-11-27 Sun 12:58]
-:END:
-
-#+begin_src text :eval no
-  実はみなさんが今読んでいるこの原稿は、この応用手法によってつくり上げられ、Org Modeの機能によって単独ファイルとして書き出されたものです。
-  全体の文書は以下のURLから参照できます。
-
-  https://github.com/p-snow/publications/blob/main/sources/toolbox-for-lifehacking.org
-#+end_src
-
-- メモの種類と効能
-  + 本書全体の説明と執筆までの経緯
-    + 翌年執筆時のための情報整理など
-  + 原稿の締切・文体・文字数の制限
-    + 原稿の基本事項の遵守性の担保
-  + 構文チェック結果
-    + 常に更新されるので執筆最終段階でのカタストロフなエラーを防衛
-  + パラグラフ毎にタイトル付けしてアウトライン化
-    + とにかく仮でもタイトルをつけることによってそこに書いていく文章の軸ができる
-  + 書いた内容を裏付ける情報源へのリンク
-    + 情報の正確性
-  + 疑似他者からのツッコミ
-    + とにかく筆を前に進める効果あり
-
-- 作成された文章(アウトプット)は読者のためのストリーム
-- 「文芸的執筆」で書かれるのは著者のための文脈
-- 読者に見せたい景色と著者が見るべき景色は違う
-- キーワード「タングル(tangle)」
-
-「文芸的ライティング」に関連しそうな記事
-- [[https://rashita.net/blog/?p=31107][執筆はメモからはじめる | R-style]]
-- [[https://www.amazon.co.jp/s/?ie=UTF8&keywords=%E3%83%A9%E3%82%A4%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%AE%E5%93%B2%E5%AD%A6&index=aps&jp-ad-ap=0&tag=googhydr-22&ref=pd_sl_90c3vl0xf7_e&adgrpid=123096038613&hvpone=&hvptwo=&hvadid=526999532797&hvpos=&hvnetw=g&hvrand=13513219974531199108&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1009441&hvtargid=kwd-1348666690798&hydadcr=13759_10902662&gclid=EAIaIQobChMInM65-LXI-wIVlLmWCh2weAaGEAAYASAAEgKK-fD_BwE][Amazon.co.jp : ライティングの哲学]]
-  + [[https://ji-sedai.jp/series/outliner/02.html][第2回 制約と諦めのススメ - 苦しみの執筆論　千葉雅也×山内朋樹×読書猿×瀬下翔太：アウトライナー座談会 | ジセダイ]]
-    #+begin_quote
-    山内　ですね。あとぼくの場合は原稿の書き始めの負荷を下げるとともに、ちゃんと終わらせるってことも重要なテーマで。内容的にも期日的にも。なので依頼が来たらその時点でトピックの頭に〆切の月日を明示したり、下位トピックの冒頭にこの原稿の文字数や方針といったメタ情報のトピックを立てたりするんですよ。原稿があらぬ方向に向かってぐちゃぐちゃになっていったり、〆切間近になっても全体を顧みずに同じ箇所をひたすらこねくり回したりしないように、常に意識しておいたほうがいいメタ情報を可視化しておく。ほとんど行動療法的にこの問題には対処しています。
-    #+end_quote
-  + [[https://ji-sedai.jp/series/outliner/03.html][第3回「考えること」と「書くこと」 - 苦しみの執筆論　千葉雅也×山内朋樹×読書猿×瀬下翔太：アウトライナー座談会 | ジセダイ]]
-    #+begin_quote
-    ツールが思考に対してどんな影響を与えたかという話について、千葉さんの言葉を拝借していえば、「思考しないで思考する」ことに使えているのかなと。アウトライナー上で作業していることが、かなりの部分、全部ではないですが思考の肩代わりをしてくれている。アウトライナー上でどういう作業をどういう手順でやるかということも、手の動きとしてある程度決まってきていて。並べ替える、分割する、分析する、詳細を決めてもう一回隠して......ということを手が覚えていて、頭でやらないといけないことを肩代わりしてくれている、という影響はあった気がしますね。
-    ...
-    書きながらよく詰まることがあるわけです。詰まったらなにをするかというと、「これは知識が足りない詰まり方だから調査をする」「これはアイデアが足りなかったから、『アイデア大全』の技法リストのなかからふたつみっつ飛ばしてなにか使う。突破できたら次に行く」というふうにします。
-    #+end_quote
-- [[https://dot.asahi.com/wa/2022091500019.html?page=1][朝日新聞記者の「文章術」 “先に見出しを考える”が吉？〈週刊朝日〉 | AERA dot. (アエラドット)]]
-- [[https://cyblog.jp/354][考えてから書くか、考えながら書くか | シゴタノ！]]
-**** どんな情報を揃えながら書くのか
-:PROPERTIES:
-:CREATED:  [2022-11-27 Sun 11:08]
-:END:
-
-#+begin_src text :eval no
-  以下では、上記文書の中でどのような情報を揃えながら原稿を書いたのかを、その効能を考察しながら説明してみます。
-#+end_src
-
-#+name: count
-#+HEADER: :var init="1"
-#+begin_src shell :noweb no :eval yes :tangle no :results output :var cfile="tmp-count.txt" :exports none
-  if [ -f ${cfile} ]; then
-    counter=$(cat ${cfile})
-  else
-    counter=${init}
-  fi
-
-  echo -n $((${counter} + 1)) > ${cfile}
-  echo -n ${counter}
-#+end_src
-
-***** バックグラウンド情報
-:PROPERTIES:
-:CREATED:  [2022-11-28 Mon 15:24]
-:END:
-
-#+begin_src text :noweb yes
-  <<count()>>つ目は、書籍全体の説明や私が執筆するまでの経緯などのバックグラウンド情報です。
-  年刊誌である本書へは毎年アップデートした内容を寄稿するのですが、基本事項を再確認して1年ぶりの執筆をスムーズに再スタートさせるのに役立ちます。
-#+end_src
-
-***** 自動原稿チェック
-:PROPERTIES:
-:CREATED:  [2022-11-29 Tue 11:29]
-:END:
-
-#+begin_src text :noweb yes
-  <<count()>>つ目は、自動原稿チェックのためのルールとチェック結果です。
-  本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
-  特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
-#+end_src
-***** 疑似小見出し
-:PROPERTIES:
-:CREATED:  [2022-11-29 Tue 11:40]
-:END:
-
-#+begin_src text :noweb yes
-  <<count()>>つ目は、文脈的な塊につける疑似小見出しです。
-  文章を書いた後で文脈を見つけて名付けることもありますし、逆に小見出しをつけてから書き始めることもあります。
-  前者はアウトライン操作をするときの最小単位として利用できますし、後者は文章の軸がぶれることなく書き進めるのに役立ちます。
-#+end_src
-***** 情報源へのリンク
-:PROPERTIES:
-:CREATED:  [2022-11-29 Tue 11:42]
-:END:
-
-#+begin_src text :noweb tangle
-  <<count()>>つ目は、参考にした情報源へのリンクです。
-  文章内で書いた情報の正確性の確認などをハイスピードで実施できます。
-#+end_src
-***** ツッコミ
-:PROPERTIES:
-:CREATED:  [2022-11-29 Tue 11:43]
-:END:
-
-#+begin_src text :noweb tangle
-  <<count()>>つ目は、とりあえず書いた原稿に対して思い浮かんだツッコミです。
-  ツッコミから重要な気づきを得られることもありますが、今は書き進めたいという段階では足枷になり得ます。
-  ツッコミを保存することで心安らかに筆を進めることができます。
-#+end_src
-**** 総括
-:PROPERTIES:
-:CREATED:  [2022-11-29 Tue 11:54]
-:END:
-
-#+begin_src text
-  以上は私の実践ですが、工夫次第でいろいろな執筆手法を実装できる枠組みであることがこの仕組みのよいところです。
-  みなさんも自分で描いた執筆方法を具現化する場としてこのような仕組みを取り入れてみてはいかがでしょうか。
-#+end_src
 * ToDo
 :PROPERTIES:
 :CREATED:  [2022-12-06 Tue 14:14]
@@ -863,7 +819,7 @@ Markdownの標準化関連情報 (内容の裏取り)
 
 以下のコードを実行するとこのファイルのTODOを確認できる
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :results output silent
   (let ((org-agenda-files `(,(buffer-file-name))))
     (org-agenda nil "t"))
 #+end_src
