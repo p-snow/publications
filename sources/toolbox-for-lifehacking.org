@@ -35,15 +35,13 @@
 1. このファイルの中で「文芸的執筆」スタイルで原稿を執筆
    - 各ステータス(現在の文字数、など)はC-x C-v bでアップデートされる
 2. コマンド'make tangle'で提出稿の書き出し
-   - Emacs内で作業していれば[[file:~/ghq/github.com/p-snow/publications/tangle.el][ファイルセーブするタイミングで上記コマンドが自動実行される仕組み]]になってる
+   - Emacs内で作業していれば[[file:~/data/ghq/github.com/p-snow/publications/tangle.el][ファイルセーブするタイミングで上記コマンドが自動実行される仕組み]]になってる
 3. 倉下さんに提出用ファイルの場所を伝える
 
    提出用ファイルの保存フォルダ
    #+begin_src emacs-lisp :tangle no :noweb yes :exports results
-     (setq output-dir
-           (file-relative-name
-            (expand-file-name "../public/ライフハックの道具箱2023年版" ".")
-            default-directory))
+     (file-relative-name output-dir
+                         default-directory)
    #+end_src
 
    #+RESULTS:
@@ -76,7 +74,7 @@ References
 + [[https://rashita.net/blog/?p=31219][『ライフハックの道具箱 2022年版』発売となりました | R-style]]
 + [[https://rashita.net/blog/?p=31179][『ライフハックの道具箱 2022年版』プロジェクト始動 | R-style]]
 ** 2023年版
-* Emacs section
+* Emacs セクション
 :PROPERTIES:
 :CREATED:  [2022-11-09 Wed 16:45]
 :header-args+: :tangle (expand-file-name "emacs.txt" output-dir)
@@ -89,7 +87,7 @@ References
 #+call: wcount-file(file=(expand-file-name "emacs.txt" output-dir))
 
 #+RESULTS:
-: 2181 文字
+: 2309 文字
 
 自動原稿チェック結果
 #+call: lint-file(file=(expand-file-name "emacs.txt" output-dir))
@@ -100,13 +98,14 @@ References
    1:37   ✓ error  MacOS => Mac OS                        spellcheck-tech-word
    3:70   error    文末が"。"で終わっていません。         ja-technical-writing/ja-no-mixed-period
    4:15   ✓ error  Mac OS => MacOS                        prh
-  10:113  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
+  12:113  error    一つの文で"、"を4つ以上使用しています  ja-technical-writing/max-ten
 
 ✖ 5 problems (5 errors, 0 warnings)
 ✓ 3 fixable problems.
 Try to run: $ textlint --fix [file]
 
 #+end_example
+
 
 参考
 + [[https://gihyo.jp/article/2022/11/obsidian-01?utm_source=feed][ローカル環境で動作し、Markdownで書いたノートをつなげるアプリ「Obsidian」とは | gihyo.jp]]
@@ -172,7 +171,7 @@ Try to run: $ textlint --fix [file]
 
 #+begin_src text :eval no
   一般的なテキストエディタと比べてEmacsのユニークな点は、テキスト編集以外の機能も充実していることでしょう。
-  その一例を挙げると、ブラウザ・RSSリーダーなどの情報をインプットするための機能、メール・チャット・SNSなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。
+  その一例を挙げると、ウェブブラウザ・RSSリーダーなどの情報をインプットするための機能、メール・チャット・SNSなどのコミュニケーションのための機能、ファイラー・バージョン管理などアウトプットを管理するための機能、などがあります。
   通常のテキストエディタがコードや文章を生み出す「アウトプットの場」であるのに対して、Emacsはこのように広い範囲の機能を提供することで「総合的な生産活動の場」として成立します。
   インプットからアウトプットまでのプロセスをEmacsという単一のツールで完結できるので、データの移動や加工、検索などがすべて同じ作法でスムーズにおこなえるのが魅力です。
 #+end_src
@@ -180,6 +179,50 @@ Try to run: $ textlint --fix [file]
 - [[https://github.com/hayamiz/twittering-mode][twittering-mode]]は利用者の少なさや、コードメンテがあまりされてない状況で書くのは適切か？
   - → 買収からの流れで [[https://codeberg.org/martianh/mastodon.el][mastodon.el]] がにわかに盛り上がってる
   - 本記事では「SNS」とまるめて表記することにした
+
+*** Windows、macOS、LinuxのそれぞれのOSについて、Emacsのもっとも一般的なインストール方法を教えてください。 :ai:
+:PROPERTIES:
+:CREATED:  [2023-11-30 Thu 09:49]
+:END:
+
+Windows:
+1. Emacsの公式ウェブサイト（https://www.gnu.org/software/emacs/）にアクセスします。
+2. ダウンロードページに移動し、Windows用の最新のバージョンを選択します（例：emacs-27.1-x86_64.zip）。
+3. ダウンロードが完了したら、zipファイルを解凍します。
+4. 解凍したフォルダ内にあるemacs.exeを実行します。
+
+macOS:
+1. Emacsの公式ウェブサイト（https://www.gnu.org/software/emacs/）にアクセスします。
+2. ダウンロードページに移動し、macOS用の最新のバージョンを選択します（例：emacs-27.1-mac-7.6.dmg）。
+3. ダウンロードが完了したら、dmgファイルをダブルクリックしてマウントします。
+4. マウントされたディスクイメージ内にあるEmacs.appをApplicationsフォルダにドラッグアンドドロップします。
+
+Linux:
+1. ターミナルを開きます。
+2. ディストリビューションのパッケージマネージャを使用してEmacsをインストールします。以下は一般的なディストリビューションのコマンドですが、ディストリビューションによって異なる場合があります。
+   - UbuntuおよびDebian: sudo apt-get install emacs
+   - FedoraおよびCentOS: sudo dnf install emacs
+   - Arch Linux: sudo pacman -S emacs
+3. インストールが完了したら、ターミナルでemacsコマンドを実行してEmacsを起動します。
+
+これらの手順に従ってEmacsをインストールすると、Windows、macOS、LinuxのすべてのOSで一般的に利用できるEmacsのインストールが完了します。
+
+** 生成AI
+:PROPERTIES:
+:CREATED:  [2023-11-29 Wed 17:12]
+:END:
+
+主な生成AI関連のEmacsパッケージ
+- [[https://github.com/stuhlmueller/gpt.el][GitHub - stuhlmueller/gpt.el: A simple Emacs package for calling instruction-following language models]]
+- [[https://github.com/rksm/org-ai][GitHub - rksm/org-ai: Emacs as your personal AI assistant. Use LLMs such as ChatGPT or LLaMA for text generation or DALL-E and Stable Diffusion for image generation. Also supports speech input / output.]]
+- [[https://github.com/karthink/gptel][GitHub - karthink/gptel: A simple LLM client for Emacs]]
+- [[https://github.com/xenodium/chatgpt-shell][GitHub - xenodium/chatgpt-shell: ChatGPT and DALL-E Emacs shells + Org babel 🦄 + a shell maker for other providers]]
+
+#+begin_src text
+  2022年ごろから盛り上がりを見せる生成AIの存在は、「総合的な生産活動の場」としてのEmacsにさらなる可能性をもたらします。
+  2023年には生成AI関連の多数のEmacs拡張パッケージが開発され、Emacs上でChatGPTなどの生成AIサービスを快適に利用できるようになりました。
+  これによりアウトプットをつくり上げるまでのさまざまな過程で生成AIのサポートをうけることが可能になり、Emacsは「AIとも協調する場」に進化しました。
+#+end_src
 
 ** 高いカスタマイズ性
 :PROPERTIES:
@@ -225,7 +268,27 @@ preconfigured emacsの呼び方[[https://www.emacswiki.org/emacs/StarterKits][Em
 このパラグラフでは話をオープンソースまでに止めること
 OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるストールマンがFree Softwareムーブメントの先導的役割を果たしたことから、この話題を取り上げたくはなるがこの書籍のスコープではない。
 
-** 2022年のEmacsの話題
+*** オープンソースの定義は何ですか。               :ai:
+:PROPERTIES:
+:CREATED:  [2023-11-30 Thu 09:40]
+:END:
+
+オープンソースの定義は、ソフトウェアのソースコードが公開され、誰でも自由に利用、研究、変更、再配布することができるという原則です。
+
+*** OSSとFOSS、FLOSSの違いを、用語を使うときの注意点も含めて説明してください。 :ai:
+:PROPERTIES:
+:CREATED:  [2023-11-30 Thu 09:46]
+:END:
+
+OSS（オープンソースソフトウェア）は、ソフトウェアのソースコードが一般に公開されていることを指します。ただし、ソフトウェアのライセンスによって利用や再配布の条件が異なるため、注意が必要です。一部のOSSは商用利用を制限するライセンスを採用している場合もあります。
+
+FOSS（フリーオープンソースソフトウェア）は、自由な利用、再配布、改変が特徴であり、ソースコードが公開されているだけでなく、ライセンスが自由に再利用を許可するものを指します。FOSSの例としては、GNU General Public License (GPL) や MIT License があります。
+
+FLOSS（フリーソフトウェア/オープンソースソフトウェア）は、フリーソフトウェアとオープンソースソフトウェアの両方の特徴を兼ね備えているソフトウェアを指します。フリーソフトウェアは使用、研究、改変、再配布が制約なく行えるものを指し、オープンソースはソースコードが公開されることを強調します。
+
+注意点としては、これらの用語は時に混同されることがあり、特にFOSSとOSSの違いが明確にされず使われることがある点です。また、それぞれの用語には異なる思想や価値観があるため、正確な用語の使用とライセンスの理解が重要です。
+
+** 2022年のEmacsの話題                         :ARCHIVE:
 :PROPERTIES:
 :CREATED:  [2022-11-19 Sat 15:03]
 :END:
@@ -243,6 +306,20 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
   - [[https://www.masteringemacs.org/article/whats-new-in-emacs-28-1][What's New in Emacs 28.1? - Mastering Emacs]]
   - 配布しているバイナリはnative compがオンになっているのか？
 
+** 2023年のEmacsの話題
+:PROPERTIES:
+:CREATED:  [2023-11-29 Wed 15:04]
+:END:
+
+- [[https://www.masteringemacs.org/article/whats-new-in-emacs-29-1][What's New in Emacs 29.1? - Mastering Emacs]]
+- [[https://www.gnu.org/software/emacs/history.html][GNU Emacs Release History]]
+
+#+begin_src text
+  2023年7月末、新たに多くの機能が追加されたEmacsバージョン29.1がリリースされました。
+  前回のメジャーバージョン28.1は2022年4月にリリースされているので、わずか1年強という期間をあけてのリリースとなります。
+  これはEmacsコミュニティが依然として活発であることの証として捉えてよいでしょう。
+#+end_src
+
 ** アウトロ・総括
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 14:38]
@@ -253,7 +330,7 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
   自分のための生産活動の場をじっくりつくりあげることに興味のある方にはおすすめします。
 #+end_src
 
-* Org Mode section
+* Org Mode セクション
 :PROPERTIES:
 :ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
 :header-args+: :tangle (expand-file-name "org-mode.txt" output-dir)
@@ -265,7 +342,7 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 #+call: wcount-file(file=(expand-file-name "org-mode.txt" output-dir))
 
 #+RESULTS:
-: 1748 文字
+: 1948 文字
 
 自動原稿チェック結果
 #+call: lint-file(file=(expand-file-name "org-mode.txt" output-dir))
@@ -273,10 +350,10 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 #+RESULTS:
 #+begin_example
    1:74   ✓ error  コンピュータ => パソコン        prh
-   5:10   ✓ error  パソコン => PC                  spellcheck-tech-word
-   9:72   error    文末が"。"で終わっていません。  ja-technical-writing/ja-no-mixed-period
-  17:117  ✓ error  パソコン => PC                  spellcheck-tech-word
-  19:105  ✓ error  パソコン => PC                  spellcheck-tech-word
+   7:10   ✓ error  パソコン => PC                  spellcheck-tech-word
+  11:72   error    文末が"。"で終わっていません。  ja-technical-writing/ja-no-mixed-period
+  19:117  ✓ error  パソコン => PC                  spellcheck-tech-word
+  21:105  ✓ error  パソコン => PC                  spellcheck-tech-word
 
 ✖ 5 problems (5 errors, 0 warnings)
 ✓ 4 fixable problems.
@@ -296,7 +373,7 @@ Try to run: $ textlint --fix [file]
   Emacsはファイルを開くとき、ファイルに書かれた言語を自動的に判別して適切なModeへの切り替えをします。
   プレーンテキストファイルを開けばText Modeに、JSONファイルを開けばJson Modeに、Pythonのソースコードを開けばPython Modeに切り替わる、といった具合です。
 
-  そしてマークダウンに似た、構造化された文章を表現するための独自記法ファイルを開いたとき有効になるのがOrg Modeです。
+  そしてマークダウンに似た、階層化された文章を表現するための独自記法ファイルを開いたとき有効になるのがOrg Modeです。
   この独自記法を本書ではOrg記法と呼びます。
   Org記法では、アウトラインをはじめハイパーリンク・表・TODOなどの表現ができます。
   Org Modeは、この多様な文書表現を活かして実に多くの機能をユーザーに提供します。
@@ -462,7 +539,7 @@ Markdownの標準化関連情報 (内容の裏取り)
 - [[https://qiita.com/tk0miya/items/eb44760f76acfa248e3d][Markdown 界の新星、Markdown for SSW とは - Qiita]]
 - [[https://www.oberlo.com/blog/markdown-editors][You Should Try These Markdown Text-Editors]]
 
-* 「文芸的プログラミング」と原稿執筆への応用 section
+* 「文芸的プログラミング」と原稿執筆への応用 セクション
 :PROPERTIES:
 :CREATED:  [2022-11-18 Fri 16:01]
 :header-args+: :tangle (expand-file-name "literate-writing.txt" output-dir)
@@ -626,6 +703,8 @@ Markdownの標準化関連情報 (内容の裏取り)
 :CREATED:  [2022-11-27 Sun 11:08]
 :END:
 
+- Org Mode のアウトライン構造を活かしている事例があれば積極的に書く
+
 #+begin_src text :eval no
   以下では、上記文書の中でどのような情報を揃えながら原稿を書いたのかを、その効能を考察しながら説明してみます。
 #+end_src
@@ -643,7 +722,7 @@ Markdownの標準化関連情報 (内容の裏取り)
   echo -n ${counter}
 #+end_src
 
-**** バックグラウンド情報
+**** バックグラウンド情報                    :ARCHIVE:
 :PROPERTIES:
 :CREATED:  [2022-11-28 Mon 15:24]
 :END:
@@ -653,27 +732,43 @@ Markdownの標準化関連情報 (内容の裏取り)
   年刊誌である本書へは毎年アップデートした内容を寄稿するのですが、基本事項を再確認して1年ぶりの執筆をスムーズに再スタートさせるのに役立ちます。
 #+end_src
 
-**** 自動原稿チェック
+**** 執筆行為の関連情報
 :PROPERTIES:
-:CREATED:  [2022-11-29 Tue 11:29]
+:CREATED:  [2022-11-28 Mon 15:24]
 :END:
 
+- 締切日
+- 要求仕様 (文字数・文体制限)
+- 執筆までの経緯
+- コミュニケーションチャンネル
+
 #+begin_src text :noweb yes
-  <<count()>>つ目は、自動原稿チェックのためのルールとチェック結果です。
-  本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
-  特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
+  <<count()>>つ目は、執筆行為に関連する情報です。
+  締切日や文字数制限、文体の制約などの遵守する必要がある情報は近くに置き確認する手間が少なければ少ないほどよいでしょう。
+  本書は年刊誌で1年ごとに執筆する機会があるので、昨年までの執筆時に残した情報をもとに、
+  前の版までの内容と整合性をもたせる内容を書くや、
+  今年の作業時間を見積もったりすることができます。
 #+end_src
-**** 疑似小見出し
+
+**** 小見出し
 :PROPERTIES:
 :CREATED:  [2022-11-29 Tue 11:40]
 :END:
 
 #+begin_src text :noweb yes
   <<count()>>つ目は、文脈的な塊につける疑似小見出しです。
+
+  Org Modeのアウトライナー機能を利用して文章の階層化をおこなったのちにそれぞれに見出しをつけます。
+
+  この見出しは本文に載せるものではありませんが、
+
+
   文章を書いた後で文脈を見つけて名付けることもありますし、逆に小見出しをつけてから書き始めることもあります。
+
   前者はアウトライン操作をするときの最小単位として利用できますし、後者は文章の軸がぶれることなく書き進めるのに役立ちます。
 #+end_src
-**** 情報源へのリンク
+
+**** 情報源へのリンクとAIの回答
 :PROPERTIES:
 :CREATED:  [2022-11-29 Tue 11:42]
 :END:
@@ -682,7 +777,24 @@ Markdownの標準化関連情報 (内容の裏取り)
   <<count()>>つ目は、参考にした情報源へのリンクです。
   文章内で書いた情報の正確性の確認などをハイスピードで実施できます。
 #+end_src
-**** ツッコミ
+
+**** 自動原稿チェック
+:PROPERTIES:
+:CREATED:  [2022-11-29 Tue 11:29]
+:END:
+
+#+begin_src text :noweb yes
+  <<count()>>つ目は、自動原稿チェックのためのルールとチェック結果です。
+
+  本書は数名の著者が記事を持ちよるかたちの年刊誌です。
+
+  他の方の文言に合わせられる
+
+
+  本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
+  特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
+#+end_src
+**** ツッコミ                                :ARCHIVE:
 :PROPERTIES:
 :CREATED:  [2022-11-29 Tue 11:43]
 :END:
@@ -810,6 +922,7 @@ Markdownの標準化関連情報 (内容の裏取り)
 #+header: :var file=""
 #+begin_src shell :tangle no :noweb yes :results output :exports results
   textlint --config ../config/lhack-tbox.textlintrc "${file}" | tail -n +3
+  # echo ${file}
 #+end_src
 
 * ToDo
