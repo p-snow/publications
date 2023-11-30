@@ -185,27 +185,29 @@ Try to run: $ textlint --fix [file]
 :CREATED:  [2023-11-30 Thu 09:49]
 :END:
 
-Windows:
-1. Emacsの公式ウェブサイト（https://www.gnu.org/software/emacs/）にアクセスします。
-2. ダウンロードページに移動し、Windows用の最新のバージョンを選択します（例：emacs-27.1-x86_64.zip）。
-3. ダウンロードが完了したら、zipファイルを解凍します。
-4. 解凍したフォルダ内にあるemacs.exeを実行します。
+#+begin_example
+  Windows:
+  1. Emacsの公式ウェブサイト（https://www.gnu.org/software/emacs/）にアクセスします。
+  2. ダウンロードページに移動し、Windows用の最新のバージョンを選択します（例：emacs-27.1-x86_64.zip）。
+  3. ダウンロードが完了したら、zipファイルを解凍します。
+  4. 解凍したフォルダ内にあるemacs.exeを実行します。
 
-macOS:
-1. Emacsの公式ウェブサイト（https://www.gnu.org/software/emacs/）にアクセスします。
-2. ダウンロードページに移動し、macOS用の最新のバージョンを選択します（例：emacs-27.1-mac-7.6.dmg）。
-3. ダウンロードが完了したら、dmgファイルをダブルクリックしてマウントします。
-4. マウントされたディスクイメージ内にあるEmacs.appをApplicationsフォルダにドラッグアンドドロップします。
+  macOS:
+  1. Emacsの公式ウェブサイト（https://www.gnu.org/software/emacs/）にアクセスします。
+  2. ダウンロードページに移動し、macOS用の最新のバージョンを選択します（例：emacs-27.1-mac-7.6.dmg）。
+  3. ダウンロードが完了したら、dmgファイルをダブルクリックしてマウントします。
+  4. マウントされたディスクイメージ内にあるEmacs.appをApplicationsフォルダにドラッグアンドドロップします。
 
-Linux:
-1. ターミナルを開きます。
-2. ディストリビューションのパッケージマネージャを使用してEmacsをインストールします。以下は一般的なディストリビューションのコマンドですが、ディストリビューションによって異なる場合があります。
-   - UbuntuおよびDebian: sudo apt-get install emacs
-   - FedoraおよびCentOS: sudo dnf install emacs
-   - Arch Linux: sudo pacman -S emacs
-3. インストールが完了したら、ターミナルでemacsコマンドを実行してEmacsを起動します。
+  Linux:
+  1. ターミナルを開きます。
+  2. ディストリビューションのパッケージマネージャを使用してEmacsをインストールします。以下は一般的なディストリビューションのコマンドですが、ディストリビューションによって異なる場合があります。
+     - UbuntuおよびDebian: sudo apt-get install emacs
+     - FedoraおよびCentOS: sudo dnf install emacs
+     - Arch Linux: sudo pacman -S emacs
+  3. インストールが完了したら、ターミナルでemacsコマンドを実行してEmacsを起動します。
 
-これらの手順に従ってEmacsをインストールすると、Windows、macOS、LinuxのすべてのOSで一般的に利用できるEmacsのインストールが完了します。
+  これらの手順に従ってEmacsをインストールすると、Windows、macOS、LinuxのすべてのOSで一般的に利用できるEmacsのインストールが完了します。
+#+end_example
 
 ** 生成AI
 :PROPERTIES:
@@ -273,20 +275,24 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 :CREATED:  [2023-11-30 Thu 09:40]
 :END:
 
-オープンソースの定義は、ソフトウェアのソースコードが公開され、誰でも自由に利用、研究、変更、再配布することができるという原則です。
+#+begin_example
+  オープンソースの定義は、ソフトウェアのソースコードが公開され、誰でも自由に利用、研究、変更、再配布することができるという原則です。
+#+end_example
 
 *** OSSとFOSS、FLOSSの違いを、用語を使うときの注意点も含めて説明してください。 :ai:
 :PROPERTIES:
 :CREATED:  [2023-11-30 Thu 09:46]
 :END:
 
-OSS（オープンソースソフトウェア）は、ソフトウェアのソースコードが一般に公開されていることを指します。ただし、ソフトウェアのライセンスによって利用や再配布の条件が異なるため、注意が必要です。一部のOSSは商用利用を制限するライセンスを採用している場合もあります。
+#+begin_example
+  OSS（オープンソースソフトウェア）は、ソフトウェアのソースコードが一般に公開されていることを指します。ただし、ソフトウェアのライセンスによって利用や再配布の条件が異なるため、注意が必要です。一部のOSSは商用利用を制限するライセンスを採用している場合もあります。
 
-FOSS（フリーオープンソースソフトウェア）は、自由な利用、再配布、改変が特徴であり、ソースコードが公開されているだけでなく、ライセンスが自由に再利用を許可するものを指します。FOSSの例としては、GNU General Public License (GPL) や MIT License があります。
+  FOSS（フリーオープンソースソフトウェア）は、自由な利用、再配布、改変が特徴であり、ソースコードが公開されているだけでなく、ライセンスが自由に再利用を許可するものを指します。FOSSの例としては、GNU General Public License (GPL) や MIT License があります。
 
-FLOSS（フリーソフトウェア/オープンソースソフトウェア）は、フリーソフトウェアとオープンソースソフトウェアの両方の特徴を兼ね備えているソフトウェアを指します。フリーソフトウェアは使用、研究、改変、再配布が制約なく行えるものを指し、オープンソースはソースコードが公開されることを強調します。
+  FLOSS（フリーソフトウェア/オープンソースソフトウェア）は、フリーソフトウェアとオープンソースソフトウェアの両方の特徴を兼ね備えているソフトウェアを指します。フリーソフトウェアは使用、研究、改変、再配布が制約なく行えるものを指し、オープンソースはソースコードが公開されることを強調します。
 
-注意点としては、これらの用語は時に混同されることがあり、特にFOSSとOSSの違いが明確にされず使われることがある点です。また、それぞれの用語には異なる思想や価値観があるため、正確な用語の使用とライセンスの理解が重要です。
+  注意点としては、これらの用語は時に混同されることがあり、特にFOSSとOSSの違いが明確にされず使われることがある点です。また、それぞれの用語には異なる思想や価値観があるため、正確な用語の使用とライセンスの理解が重要です。
+#+end_example
 
 ** 2022年のEmacsの話題                         :ARCHIVE:
 :PROPERTIES:
@@ -545,26 +551,35 @@ Markdownの標準化関連情報 (内容の裏取り)
 :header-args+: :tangle (expand-file-name "literate-writing.txt" output-dir)
 :END:
 
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/literate-writing.txt]["文芸的..."の原稿]]
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2023年版/literate-writing.txt]["文芸的..."の原稿]]
 
 現在の文字数
 #+call: wcount-file(file=(expand-file-name "literate-writing.txt" output-dir))
 
 #+RESULTS:
-: 1943 文字
+: 2009 文字
 
 自動原稿チェック結果
 #+call: lint-file(file=(expand-file-name "literate-writing.txt" output-dir))
 
 #+RESULTS:
-:   3:29   ✓ error  コンピュータ => パソコン  prh
-:   5:135  ✓ error  パソコン => PC            spellcheck-tech-word
-:   7:205  ✓ error  パソコン => PC            spellcheck-tech-word
-:
-: ✖ 3 problems (3 errors, 0 warnings)
-: ✓ 3 fixable problems.
-: Try to run: $ textlint --fix [file]
-:
+#+begin_example
+   3:29   ✓ error  コンピュータ => パソコン                                                                                    prh
+   5:135  ✓ error  パソコン => PC                                                                                              spellcheck-tech-word
+   7:205  ✓ error  パソコン => PC                                                                                              spellcheck-tech-word
+  17:121  error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+  18:24   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+  19:15   ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
+解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
+  23:43   error    一文に二回以上利用されている助詞 "に" がみつかりました。                                                    ja-technical-writing/no-doubled-joshi
+  25:23   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+  38:13   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+
+✖ 9 problems (9 errors, 0 warnings)
+✓ 4 fixable problems.
+Try to run: $ textlint --fix [file]
+
+#+end_example
 
 
 ** 文芸的プログラミング (Literate Programming)
@@ -772,6 +787,8 @@ Markdownの標準化関連情報 (内容の裏取り)
 :PROPERTIES:
 :CREATED:  [2022-11-29 Tue 11:42]
 :END:
+
+AIはタグ打ちする
 
 #+begin_src text :noweb tangle
   <<count()>>つ目は、参考にした情報源へのリンクです。
