@@ -77,20 +77,20 @@ References
 * Emacs セクション
 :PROPERTIES:
 :CREATED:  [2022-11-09 Wed 16:45]
-:header-args+: :tangle (expand-file-name "emacs.txt" output-dir)
+:header-args+: :tangle (expand-file-name "Emacs.txt" output-dir)
 :ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
 :END:
 
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/emacs.txt]["Emacs"の出力ファイル]]
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/Emacs.txt]["Emacs"の出力ファイル]]
 
 現在の文字数 (目安: 2,000文字前後)
-#+call: wcount-file(file=(expand-file-name "emacs.txt" output-dir))
+#+call: wcount-file(file=(expand-file-name "Emacs.txt" output-dir))
 
 #+RESULTS:
 : 2309 文字
 
 自動原稿チェック結果
-#+call: lint-file(file=(expand-file-name "emacs.txt" output-dir))
+#+call: lint-file(file=(expand-file-name "Emacs.txt" output-dir))
 
 #+RESULTS:
 #+begin_example
@@ -339,19 +339,19 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 * Org Mode セクション
 :PROPERTIES:
 :ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
-:header-args+: :tangle (expand-file-name "org-mode.txt" output-dir)
+:header-args+: :tangle (expand-file-name "Org Mode.txt" output-dir)
 :END:
 
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/org-mode.txt]["Org Mode"の原稿]]
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2022年版/Org Mode.txt]["Org Mode"の原稿]]
 
 現在の文字数
-#+call: wcount-file(file=(expand-file-name "org-mode.txt" output-dir))
+#+call: wcount-file(file=(expand-file-name "Org Mode.txt" output-dir))
 
 #+RESULTS:
 : 1948 文字
 
 自動原稿チェック結果
-#+call: lint-file(file=(expand-file-name "org-mode.txt" output-dir))
+#+call: lint-file(file=(expand-file-name "Org Mode.txt" output-dir))
 
 #+RESULTS:
 #+begin_example
@@ -548,34 +548,33 @@ Markdownの標準化関連情報 (内容の裏取り)
 * 「文芸的プログラミング」と原稿執筆への応用 セクション
 :PROPERTIES:
 :CREATED:  [2022-11-18 Fri 16:01]
-:header-args+: :tangle (expand-file-name "literate-writing.txt" output-dir)
+:header-args+: :tangle (expand-file-name "「文芸的プログラミング」と原稿執筆への応用.txt" output-dir)
 :END:
 
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2023年版/literate-writing.txt]["文芸的..."の原稿]]
+#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2023年版/「文芸的プログラミング」と原稿執筆への応用.txt]["文芸的..."の原稿]]
 
 現在の文字数
-#+call: wcount-file(file=(expand-file-name "literate-writing.txt" output-dir))
+#+call: wcount-file(file=(expand-file-name "「文芸的プログラミング」と原稿執筆への応用.txt" output-dir))
 
 #+RESULTS:
-: 2009 文字
+: 2007 文字
 
 自動原稿チェック結果
-#+call: lint-file(file=(expand-file-name "literate-writing.txt" output-dir))
+#+call: lint-file(file=(expand-file-name "「文芸的プログラミング」と原稿執筆への応用.txt" output-dir))
 
 #+RESULTS:
 #+begin_example
    3:29   ✓ error  コンピュータ => パソコン                                                                                    prh
    5:135  ✓ error  パソコン => PC                                                                                              spellcheck-tech-word
    7:205  ✓ error  パソコン => PC                                                                                              spellcheck-tech-word
-  17:121  error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
-  18:24   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
-  19:15   ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
+  19:121  error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+  20:24   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+  21:15   ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
 解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
-  23:43   error    一文に二回以上利用されている助詞 "に" がみつかりました。                                                    ja-technical-writing/no-doubled-joshi
-  25:23   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
-  38:13   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+  31:72   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
+  35:13   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
 
-✖ 9 problems (9 errors, 0 warnings)
+✖ 8 problems (8 errors, 0 warnings)
 ✓ 4 fixable problems.
 Try to run: $ textlint --fix [file]
 
@@ -679,7 +678,7 @@ Try to run: $ textlint --fix [file]
   https://github.com/p-snow/publications/blob/main/sources/toolbox-for-lifehacking.org
 
   ここでは、Org Modeのアウトライナー機能を利用して、原稿の一段落がひとつの項目に対応するように配置しています。
-  すべての項目に見出しをつけて文章全体の構成を俯瞰しやすく、また順序や親子関係を簡単に変更できます。
+  すべての項目に見出しをつけることで文章全体の構成を俯瞰しやすくするとともに、説明順序の入替えや原稿の構造的な見直しを容易にしています。
 #+end_src
 
 - メモの種類と効能
@@ -724,7 +723,7 @@ Try to run: $ textlint --fix [file]
 - Org Mode のアウトライン構造を活かしている事例があれば積極的に書く
 
 #+begin_src text :eval no
-  以下では、上記文書の中でどのような情報を揃えながら原稿を書いたのかを、その効能を考察しながら説明してみます。
+  以下では、本手法で原稿を書き上げるときにどのような情報を揃えて活かしたのかを、その効能を考察しながら説明していきます。
 #+end_src
 
 #+name: count
@@ -793,9 +792,9 @@ Try to run: $ textlint --fix [file]
 AIはタグ打ちする
 
 #+begin_src text :noweb tangle
-  <<count()>>つ目は、参考にした情報です。
+  <<count()>>つ目は、参考情報です。
 
-  ウェブページや本の場合は情報源に繋がるリンクを張り、特にポイントとなる箇所の抜粋を入れます。
+  情報源がウェブページや本の場合は情報源に繋がるリンクを張り、特にポイントとなる箇所の抜粋を入れます。
   AIとのインタラクションは、質問を見出しに置きAIの回答を中身に入れ"AI"というタグをつけます。
 
   私自身、AIの利用方法は試行錯誤中ですが、AIの回答を情報源として利用する場合は、そのときの質問と回答を残しておくのがよいと感じています。
@@ -807,15 +806,14 @@ AIはタグ打ちする
 :END:
 
 #+begin_src text :noweb yes
-  <<count()>>つ目は、自動原稿チェックのためのルールとチェック結果です。
+  <<count()>>つ目は、原稿の自動チェックの結果です。
+
+  本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
+  「てにをは」や
 
   本書は数名の著者が記事を持ちよるかたちの年刊誌です。
 
   他の方の文言に合わせられる
-
-
-  本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
-  特に締切間際の慌しい状況で見落しがちな初歩的な問題の発見・修正に役立ちます。
 #+end_src
 **** ツッコミ                                :ARCHIVE:
 :PROPERTIES:
