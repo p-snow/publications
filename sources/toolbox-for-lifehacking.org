@@ -557,28 +557,20 @@ Markdownの標準化関連情報 (内容の裏取り)
 #+call: wcount-file(file=(expand-file-name "「文芸的プログラミング」と原稿執筆への応用.txt" output-dir))
 
 #+RESULTS:
-: 2007 文字
+: 1918 文字
 
 自動原稿チェック結果
 #+call: lint-file(file=(expand-file-name "「文芸的プログラミング」と原稿執筆への応用.txt" output-dir))
 
 #+RESULTS:
-#+begin_example
-   3:29   ✓ error  コンピュータ => パソコン                                                                                    prh
-   5:135  ✓ error  パソコン => PC                                                                                              spellcheck-tech-word
-   7:205  ✓ error  パソコン => PC                                                                                              spellcheck-tech-word
-  19:121  error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
-  20:24   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
-  21:15   ✓ error  【dict2】 "することができます"は冗長な表現です。"することが"を省き簡潔な表現にすると文章が明瞭になります。
-解説: https://github.com/textlint-ja/textlint-rule-ja-no-redundant-expression#dict2  ja-technical-writing/ja-no-redundant-expression
-  31:72   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
-  35:13   error    文末が"。"で終わっていません。                                                                              ja-technical-writing/ja-no-mixed-period
-
-✖ 8 problems (8 errors, 0 warnings)
-✓ 4 fixable problems.
-Try to run: $ textlint --fix [file]
-
-#+end_example
+:   3:29   ✓ error  コンピュータ => パソコン  prh
+:   5:135  ✓ error  パソコン => PC            spellcheck-tech-word
+:   7:205  ✓ error  パソコン => PC            spellcheck-tech-word
+:
+: ✖ 3 problems (3 errors, 0 warnings)
+: ✓ 3 fixable problems.
+: Try to run: $ textlint --fix [file]
+:
 
 
 ** 文芸的プログラミング (Literate Programming)
@@ -762,10 +754,7 @@ Try to run: $ textlint --fix [file]
 
 #+begin_src text :noweb yes
   <<count()>>つ目は、執筆行為に関連する情報です。
-  締切日や文字数制限、文体の制約などの遵守する必要がある情報は近くに置き確認する手間が少なければ少ないほどよいでしょう。
-  本書は年刊誌で1年ごとに執筆する機会があるので、昨年までの執筆時に残した情報をもとに、
-  前の版までの内容と整合性をもたせる内容を書くや、
-  今年の作業時間を見積もったりすることができます。
+  締め切り日や文字数の制限、文体の制約などの遵守する必要がある情報は近くに置いて手早く確認できるのが望ましいです。
 #+end_src
 
 **** 小見出し                                :ARCHIVE:
@@ -792,12 +781,10 @@ Try to run: $ textlint --fix [file]
 AIはタグ打ちする
 
 #+begin_src text :noweb tangle
-  <<count()>>つ目は、参考情報です。
-
-  情報源がウェブページや本の場合は情報源に繋がるリンクを張り、特にポイントとなる箇所の抜粋を入れます。
-  AIとのインタラクションは、質問を見出しに置きAIの回答を中身に入れ"AI"というタグをつけます。
-
-  私自身、AIの利用方法は試行錯誤中ですが、AIの回答を情報源として利用する場合は、そのときの質問と回答を残しておくのがよいと感じています。
+  <<count()>>つ目は、参考情報とその発信源です。
+  情報源がウェブページや本の場合はそれらに繋がるリンクを張り、特にポイントとなる箇所の抜粋を入れます。
+  生成AIから得た情報を取り入れる場合は、質問と回答をセットで保存し"AI"というタグをつけます。
+  私自身AIの利用方法は試行錯誤中ですがハルシネーションの懸念があるので、どこまでがAIから得た情報なのかハッキリさせておくことが肝要だとおもっています。
 #+end_src
 
 **** 自動原稿チェック
@@ -806,15 +793,11 @@ AIはタグ打ちする
 :END:
 
 #+begin_src text :noweb yes
-  <<count()>>つ目は、原稿の自動チェックの結果です。
-
-  本書で要求される表現方針と普段の自分の言葉遣いとのミスマッチを予め洗い出しておき、ルール違反を即座に検知できる仕組みをつくります。
-  「てにをは」や
-
-  本書は数名の著者が記事を持ちよるかたちの年刊誌です。
-
-  他の方の文言に合わせられる
+  <<count()>>つ目は、原稿自動チェックのためのルールと結果です。
+  本書は数名の著者が記事を持ちよるかたちの書籍なので、他章の言葉遣いからかけ離れものにならないように予めルールを記述しておきます。
+  他にもスペルミスの指摘やテクニカルライティングの基礎事項にもとづくアドバイスも確認できます。
 #+end_src
+
 **** ツッコミ                                :ARCHIVE:
 :PROPERTIES:
 :CREATED:  [2022-11-29 Tue 11:43]
