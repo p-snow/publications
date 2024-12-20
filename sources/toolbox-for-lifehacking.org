@@ -81,8 +81,6 @@ References
 :ID:       8754255c-d0e2-4b90-98d5-a3ea009c3db2
 :END:
 
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2023年版/Emacs.txt]["Emacs"の出力ファイル]]
-
 現在の文字数 (目安: 2,000文字前後)
 #+call: wcount-file(file=(expand-file-name "Emacs.txt" output-dir))
 
@@ -212,6 +210,7 @@ Try to run: $ textlint --fix [file]
 ** 生成AI
 :PROPERTIES:
 :CREATED:  [2023-11-29 Wed 17:12]
+:ID:       4853d22e-108e-41b5-a55b-4208e9364b08
 :END:
 
 主な生成AI関連のEmacsパッケージ
@@ -221,9 +220,9 @@ Try to run: $ textlint --fix [file]
 - [[https://github.com/xenodium/chatgpt-shell][GitHub - xenodium/chatgpt-shell: ChatGPT and DALL-E Emacs shells + Org babel 🦄 + a shell maker for other providers]]
 
 #+begin_src text
-  2022年ごろから盛り上がりを見せる生成AIの存在は、「総合的な生産活動の場」としてのEmacsにさらなる可能性をもたらします。
-  2023年には生成AI関連の多数のEmacs拡張パッケージが開発され、Emacs上でChatGPTなどのサービスを快適に利用できるようになりました。
-  これによりアウトプットをつくり上げるまでのさまざまな過程でAIのサポートをうけることが可能になり、Emacsは「AIとも協調する場」に進化しました。
+近年、盛り上がりを見せる生成AIの存在は、「総合的な生産活動の場」としてのEmacsにさらなる可能性をもたらします。
+2024年は生成AI関連のEmacs拡張パッケージが成熟期に入り、AIの利用がより容易になりました。
+これによりアウトプットをつくり上げるまでのさまざまな過程でAIのサポートをうけることが可能になり、Emacsは「AIとも協調する場」に進化しました。
 #+end_src
 
 ** 高いカスタマイズ性
@@ -257,6 +256,7 @@ preconfigured emacsの呼び方[[https://www.emacswiki.org/emacs/StarterKits][Em
 ** オープンソース
 :PROPERTIES:
 :CREATED:  [2022-11-12 Sat 14:37]
+:ID:       35675b7c-5828-48aa-b192-a0afddbdc720
 :END:
 
 #+begin_src text :eval no
@@ -313,9 +313,10 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
   - [[https://www.masteringemacs.org/article/whats-new-in-emacs-28-1][What's New in Emacs 28.1? - Mastering Emacs]]
   - 配布しているバイナリはnative compがオンになっているのか？
 
-** 2023年のEmacsの話題
+** 2023年のEmacsの話題                         :ARCHIVE:
 :PROPERTIES:
 :CREATED:  [2023-11-29 Wed 15:04]
+:ID:       9d7c2ad3-566f-485b-bef4-88b4b8c18e2c
 :END:
 
 - [[https://www.masteringemacs.org/article/whats-new-in-emacs-29-1][What's New in Emacs 29.1? - Mastering Emacs]]
@@ -325,6 +326,25 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
   2023年7月末、新たに多くの機能が追加されたEmacsバージョン29.1がリリースされました。
   前回のメジャーバージョン28.1は2022年4月にリリースされているので、わずか1年強という期間を経てのリリースとなります。
   これはEmacs開発陣が依然として精力的であることを示すものと言えるでしょう。
+#+end_src
+
+** 2024年のEmacsの話題
+:PROPERTIES:
+:CREATED:  [2023-11-29 Wed 15:04]
+:ID:       9d7c2ad3-566f-485b-bef4-88b4b8c18e2c
+:END:
+
+- [[https://lists.gnu.org/archive/html/emacs-devel/2024-05/msg00789.html][A new Emacs maintainer: Andrea Corallo.]]
+- [[https://bzg.fr/en/org-has-a-new-maintainer/][🦄 Org Mode has a new maintainer - Bastien Guerry]]
+- [[https://gazlog.jp/entry/linux-os-share-uprise/][Linux OSのシェアが過去最高の4.5%を記録。要因はSteam DeckやWindowsの改悪？]]
+
+#+begin_src text
+2024年は、EmacsおよびOrg Modeのメンテナ(主要開発者)が、交代や追加公認されるなどしてその顔ぶれが変わるという事がありました。
+しかし、このニュースを開発における不安材料だと見るEmacsユーザはあまりいないでしょう。
+その理由は、開発方針についての意見交換が日々、オープンな場で行われていることによる安心感があるからではないでしょうか。
+
+折しも2024年はオープンソースで開発されているOSのLinuxが前年比40%増となる市場シェアの4.5%を獲得したことが話題となりました。
+これらコミュニティベースで開発されるソフトウェアを利用して、製品ソフトウェアにはない魅力を体感してみてはいかがでしょうか。
 #+end_src
 
 ** アウトロ・総括
@@ -342,8 +362,6 @@ OSSの話の延長にはFLOSSの話があり、GNU Emacsの始祖であるスト
 :ID:       f2ac8a38-bc45-4566-8b50-262cc0c5ac07
 :header-args+: :tangle (expand-file-name "Org Mode.txt" output-dir)
 :END:
-
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2023年版/Org Mode.txt]["Org Mode"の原稿]]
 
 現在の文字数
 #+call: wcount-file(file=(expand-file-name "Org Mode.txt" output-dir))
@@ -551,8 +569,6 @@ Markdownの標準化関連情報 (内容の裏取り)
 :CREATED:  [2022-11-18 Fri 16:01]
 :header-args+: :tangle (expand-file-name "「文芸的プログラミング」と原稿執筆への応用.txt" output-dir)
 :END:
-
-#+transclude: [[file:~/data/ghq/github.com/p-snow/publications/public/ライフハックの道具箱2023年版/「文芸的プログラミング」と原稿執筆への応用.txt]["文芸的..."の原稿]]
 
 現在の文字数
 #+call: wcount-file(file=(expand-file-name "「文芸的プログラミング」と原稿執筆への応用.txt" output-dir))

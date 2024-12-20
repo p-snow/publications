@@ -23,7 +23,7 @@
        (org-confirm-babel-evaluate nil)
        (org-id-locations-file nil)
        (output-dir (file-relative-name
-                    (expand-file-name "../public/ライフハックの道具箱2023年版" ".")
+                    (expand-file-name "../public/ライフハックの道具箱2024年版" ".")
                     default-directory)))
   (mapc (lambda (org-file)
           (org-babel-lob-ingest org-file))
